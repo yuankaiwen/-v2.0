@@ -1,4 +1,4 @@
-package com.example.lenovo.bussearch;
+package com.search.bus.bussearch;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
