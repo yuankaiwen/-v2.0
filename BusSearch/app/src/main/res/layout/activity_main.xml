@@ -27,8 +27,7 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="center"
-            android:padding="5dp"
-            android:onClick="clickMenu">
+            android:padding="5dp">
             <LinearLayout
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -39,7 +38,7 @@
                     android:id="@+id/btn11"
                     android:layout_width="50dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/fragment_search"></ImageButton>
+                    android:background="@drawable/fragment_search"/>
                 <TextView
                     android:id="@+id/tv_menu_home"
                     android:layout_width="wrap_content"
@@ -58,7 +57,7 @@
                     android:id="@+id/btn22"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/fragment_surroundings"></ImageButton>
+                    android:background="@drawable/fragment_surroundings"/>
                 <TextView
                     android:id="@+id/tv_menu_hom"
                     android:layout_width="wrap_content"
@@ -76,7 +75,7 @@
                     android:id="@+id/btn33"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/fragment_settings"></ImageButton>
+                    android:background="@drawable/fragment_settings"/>
                 <TextView
                     android:id="@+id/tv_menu_ho"
                     android:layout_width="wrap_content"

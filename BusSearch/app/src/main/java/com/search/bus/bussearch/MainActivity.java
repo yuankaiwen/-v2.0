@@ -3,8 +3,7 @@ package com.search.bus.bussearch;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -21,9 +20,9 @@ public class MainActivity extends Activity {
     private ImageButton btn2;
     private ImageButton btn3;
     //声明Fragment属性
-    private ChaxunFragment mChaxun;
-    private ZhoubianFragment mZhoubian;
-    private ShezhiFragment mShezhi;
+    private Search_Fragment mChaxun;
+    private Surround_Fragment mZhoubian;
+    private Setting_Fragment mShezhi;
     View.OnClickListener Listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -34,20 +33,20 @@ public class MainActivity extends Activity {
             switch (v.getId()) {
                 case R.id.btn11:
                     if (mChaxun == null) {
-                        mChaxun = new ChaxunFragment();
+                        mChaxun = new Search_Fragment();
                     }
                     //3.设置页面
                     transaction.replace(R.id.fl, mChaxun);
                     break;
                 case R.id.btn22:
                     if (mZhoubian == null) {
-                        mZhoubian = new ZhoubianFragment();
+                        mZhoubian = new Surround_Fragment();
                     }
                     transaction.replace(R.id.fl, mZhoubian);
                     break;
                 case R.id.btn33:
                     if (mShezhi == null) {
-                        mShezhi = new ShezhiFragment();
+                        mShezhi = new Setting_Fragment();
                     }
                     transaction.replace(R.id.fl, mShezhi);
                     break;
@@ -91,7 +90,7 @@ public class MainActivity extends Activity {
         FragmentManager fm = getFragmentManager();
         //2.获取FragmentTransaction对象
         FragmentTransaction transaction = fm.beginTransaction();
-        mChaxun = new ChaxunFragment();
+        mChaxun = new Search_Fragment();
         //3.设置页面
         transaction.replace(R.id.fl, mChaxun);
         //4.执行更改
