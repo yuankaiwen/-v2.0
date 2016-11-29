@@ -9,7 +9,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-
+/*
+作者 夏晔
+更新 fragment跳转
+2016/11/29
+ */
 public class MainActivity extends Activity {
     private LinearLayout ll;
     FrameLayout fl;

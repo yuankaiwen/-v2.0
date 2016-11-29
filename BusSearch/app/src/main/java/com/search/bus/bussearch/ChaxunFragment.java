@@ -9,7 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
- * Created by lenovo on 2016/11/29.
+ * 作者 夏晔
+ * 2016/11/29.
  */
 public class ChaxunFragment extends Fragment {
     private View view;
