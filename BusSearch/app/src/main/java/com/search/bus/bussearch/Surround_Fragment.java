@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 /**
  * Created by lenovo on 2016/11/29.
  */
-public class ShezhiFragment extends Fragment {
+public class Surround_Fragment extends Fragment {
 
     private FragmentManager fm;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.shezhifragment, container, false);
+        return inflater.inflate(R.layout.surround_fragment, container, false);
     }
 
 }

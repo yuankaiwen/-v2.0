@@ -11,7 +11,7 @@ import android.widget.Button;
 /**
  * Created by lenovo on 2016/11/29.
  */
-public class ChaxunFragment extends Fragment {
+public class Search_Fragment extends Fragment {
     private View view;
     private Button btn2;
     private Button btn3;
@@ -19,7 +19,7 @@ public class ChaxunFragment extends Fragment {
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.chaxunfragment, container, false);
+        return inflater.inflate(R.layout.search_fragment, container, false);
     }
 
 }
