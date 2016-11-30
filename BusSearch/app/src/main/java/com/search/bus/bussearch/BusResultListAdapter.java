@@ -12,6 +12,11 @@ import com.amap.api.services.route.BusPath;
 import com.amap.api.services.route.BusRouteResult;
 
 import java.util.List;
+/**
+ * 作者 苑凯文
+ * 2016/11/29.
+ * 路线显示的adapter
+ */
 
 public class BusResultListAdapter extends BaseAdapter {
 	private Context mContext;

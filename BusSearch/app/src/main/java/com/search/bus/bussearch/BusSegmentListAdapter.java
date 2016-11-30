@@ -16,6 +16,11 @@ import com.amap.api.services.route.RailwayStationItem;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 作者 苑凯文
+ * 2016/11/29.
+ * 路线详情的adapter
+ */
 
 public class BusSegmentListAdapter extends BaseAdapter {
 	private Context mContext;

@@ -11,6 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amap.api.services.core.AMapException;
+/**
+ * 作者 苑凯文
+ * 2016/11/29.
+ * toast提示信息
+ */
 
 public class ToastUtil {
 	

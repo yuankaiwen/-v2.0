@@ -19,6 +19,11 @@ import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.Marker;
 import com.amap.api.services.route.BusPath;
 import com.amap.api.services.route.BusRouteResult;
+/**
+ * 作者 苑凯文
+ * 2016/11/29.
+ * 公交路线详情页面
+ */
 
 public class BusRouteDetailActivity extends Activity implements OnMapLoadedListener,
 		OnMapClickListener, InfoWindowAdapter, OnInfoWindowClickListener, OnMarkerClickListener {

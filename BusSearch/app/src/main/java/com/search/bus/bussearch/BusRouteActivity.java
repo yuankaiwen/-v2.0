@@ -28,6 +28,11 @@ import com.amap.api.services.route.RouteSearch;
 import com.amap.api.services.route.RouteSearch.BusRouteQuery;
 import com.amap.api.services.route.RouteSearch.OnRouteSearchListener;
 import com.amap.api.services.route.WalkRouteResult;
+/**
+ * 作者 苑凯文
+ * 2016/11/29.
+ * 公交路线显示页面
+ */
 
 
 public class BusRouteActivity extends Activity implements OnMapClickListener,

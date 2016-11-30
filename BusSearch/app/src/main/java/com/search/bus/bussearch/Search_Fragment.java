@@ -25,15 +25,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * 作者 夏晔
- * 2016/11/29.
+ * 作者 夏晔       修改者：苑凯文
+ * 2016/11/29.     2016/11/29
+ *                 编写获取输入地址坐标及跳转到路线页面
  */
 public class Search_Fragment extends Fragment  implements
         GeocodeSearch.OnGeocodeSearchListener, View.OnClickListener{
-    private View view;
-    private Button btn2;
-    private Button btn3;
-    private FragmentManager fm;
     private ProgressDialog progDialog = null;
     private GeocodeSearch geocoderSearch;
     private LatLonPoint a = new LatLonPoint(1,1);
@@ -63,7 +60,6 @@ public class Search_Fragment extends Fragment  implements
         if (aMap == null) {
             aMap = mapView.getMap();
         }
-
         geocoderSearch = new GeocodeSearch(getActivity());
         geocoderSearch.setOnGeocodeSearchListener(this);
         progDialog = new ProgressDialog(getActivity());
@@ -81,7 +77,7 @@ public class Search_Fragment extends Fragment  implements
      */
     @Override
     public void onPause() {
-        
+
         super.onPause();
         mapView.onPause();
     }
@@ -177,7 +173,7 @@ public class Search_Fragment extends Fragment  implements
                         getActivity().overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     }
                 };
-                timer.schedule(task, 2000);
+                timer.schedule(task, 3000);
 
                 break;
             default:
