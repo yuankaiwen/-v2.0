@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.amap.api.maps2d.AMap;
@@ -34,11 +35,15 @@ public class Surround_Fragment extends Fragment {
     private AMap aMap;
     private MarkerOptions markerOption,markerOption1;
     private Marker marker,marker1;
+    private Button btn1,btn2;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.surround_fragment, container, false);
+        btn1=(Button)view.findViewById(R.id.clearMap);
+        btn2=(Button)view.findViewById(R.id.resetMap);
+        setListener();
         mapView = (MapView)view.findViewById(R.id.map);//获取控件
         mapView.onCreate(savedInstanceState);// 此方法必须重写
         if (aMap == null) {
@@ -46,6 +51,31 @@ public class Surround_Fragment extends Fragment {
             setUpMap();
         }
         return view;
+    }
+
+    /**
+     * 作者：李越
+     * 2016.12.1
+     * 对button添加点击事件
+     */
+    private void setListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (aMap != null) {
+                    aMap.clear();
+                }
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (aMap != null) {
+                    aMap.clear();
+                    addMarkersToMap();
+                }
+            }
+        });
     }
 
     /**
