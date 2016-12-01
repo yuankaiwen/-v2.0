@@ -41,7 +41,7 @@ public class Surround_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.surround_fragment, container, false);
-        btn1=(Button)view.findViewById(R.id.clearMap);
+        btn1=(Button)view.findViewById(R.id.clearMap);//获取控件
         btn2=(Button)view.findViewById(R.id.resetMap);
         setListener();
         mapView = (MapView)view.findViewById(R.id.map);//获取控件
@@ -63,7 +63,7 @@ public class Surround_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (aMap != null) {
-                    aMap.clear();
+                    aMap.clear();//清除覆盖物
                 }
             }
         });
@@ -72,7 +72,7 @@ public class Surround_Fragment extends Fragment {
             public void onClick(View v) {
                 if (aMap != null) {
                     aMap.clear();
-                    addMarkersToMap();
+                    addMarkersToMap();//添加覆盖物
                 }
             }
         });
