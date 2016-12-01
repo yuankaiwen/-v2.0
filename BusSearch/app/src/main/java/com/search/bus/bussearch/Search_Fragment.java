@@ -132,7 +132,7 @@ public class Search_Fragment extends Fragment  implements
      * 地理编码查询回调
      */
     public void onGeocodeSearched(GeocodeResult result, int rCode) {
-        dismissDialog();
+
         if (rCode == AMapException.CODE_AMAP_SUCCESS) {
             if (result != null && result.getGeocodeAddressList() != null
                     && result.getGeocodeAddressList().size() > 0) {
@@ -173,8 +173,7 @@ public class Search_Fragment extends Fragment  implements
                         getActivity().overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     }
                 };
-                timer.schedule(task, 3000);
-
+                timer.schedule(task, 3300);
                 break;
             default:
                 break;

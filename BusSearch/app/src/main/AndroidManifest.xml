@@ -35,6 +35,7 @@
         </activity>
         <activity android:name=".BusRouteActivity"/>
         <activity android:name=".BusRouteDetailActivity"/>
+        <service android:name="com.amap.api.location.APSService"></service>
     </application>
 
 </manifest>
