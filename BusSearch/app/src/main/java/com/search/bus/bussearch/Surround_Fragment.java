@@ -228,7 +228,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         aMap.addText(textOptions);
         //标注覆盖物
         markerOption = new MarkerOptions().icon(BitmapDescriptorFactory
-                .defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+                .fromResource(R.drawable.bussearch_gps))
                 .position(new LatLng(39.918058, 116.397026))
                 .title("故宫")
                 .snippet("详细信息")
@@ -244,7 +244,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         aMap.addText(textOptions1);
         //标注覆盖物
         markerOption1 = new MarkerOptions().icon(BitmapDescriptorFactory
-                .defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+                .fromResource(R.drawable.bussearch_gps))
                 .position(new LatLng(39.908692, 116.397477))
                 .title("天安门")
                 .snippet("详细信息")
