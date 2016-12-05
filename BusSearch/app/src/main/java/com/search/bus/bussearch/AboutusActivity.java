@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by lenovo on 2016/12/5.
+ *作者 夏晔
+ 更新  关于我们界面
+ 时间  2016/12/5
  */
 public class AboutusActivity extends Activity{
     @Override
