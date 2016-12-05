@@ -4,6 +4,9 @@
 <!-- 修改者 李越
      添加地图控件
      日期  2016.11.29 -->
+<!-- 修改者 汪仑
+     删除位置按钮
+     日期  2016.12.5 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -19,7 +22,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|right"
+            android:layout_gravity="top|left"
             android:background="@color/transparent"
             android:orientation="vertical"
             android:padding="5dp" >
@@ -28,12 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
-                <Button
-                    android:id="@+id/location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="我的位置" />
+
 
                 <Button
                     android:id="@+id/clearMap"

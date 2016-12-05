@@ -24,6 +24,8 @@ import com.amap.api.services.geocoder.GeocodeQuery;
 import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeResult;
+import com.amap.api.services.help.Inputtips;
+import com.amap.api.services.help.InputtipsQuery;
 import com.amap.api.services.help.Tip;
 
 import java.util.ArrayList;
@@ -37,7 +39,7 @@ import java.util.TimerTask;
  *                 编写获取输入地址坐标及跳转到路线页面
  */
 public class Search_Fragment extends Fragment  implements
-        GeocodeSearch.OnGeocodeSearchListener,TextWatcher, View.OnClickListener{
+        GeocodeSearch.OnGeocodeSearchListener,TextWatcher, View.OnClickListener, Inputtips.InputtipsListener {
     private ProgressDialog progDialog = null;
     private GeocodeSearch geocoderSearch;
     private LatLonPoint a = new LatLonPoint(1,1);
@@ -72,6 +74,7 @@ public class Search_Fragment extends Fragment  implements
                     getActivity(),
                     R.layout.route_inputs, listString);
             et1.setAdapter(aAdapter);
+            et2.setAdapter(aAdapter);
             aAdapter.notifyDataSetChanged();
         } else {
             ToastUtil.showerror(getActivity(), rCode);
@@ -211,7 +214,13 @@ public class Search_Fragment extends Fragment  implements
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+        String newText = s.toString().trim();
+        if (!AMapUtil.IsEmptyOrNullString(newText)) {
+            InputtipsQuery inputquery = new InputtipsQuery(newText, "石家庄");
+            Inputtips inputTips = new Inputtips(getActivity(), inputquery);
+            inputTips.setInputtipsListener(this);
+            inputTips.requestInputtipsAsyn();
+        }
     }
 
     @Override
