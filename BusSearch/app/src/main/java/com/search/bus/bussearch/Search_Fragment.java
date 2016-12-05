@@ -5,9 +5,13 @@ import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,7 +24,10 @@ import com.amap.api.services.geocoder.GeocodeQuery;
 import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeResult;
+import com.amap.api.services.help.Tip;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,7 +37,7 @@ import java.util.TimerTask;
  *                 编写获取输入地址坐标及跳转到路线页面
  */
 public class Search_Fragment extends Fragment  implements
-        GeocodeSearch.OnGeocodeSearchListener, View.OnClickListener{
+        GeocodeSearch.OnGeocodeSearchListener,TextWatcher, View.OnClickListener{
     private ProgressDialog progDialog = null;
     private GeocodeSearch geocoderSearch;
     private LatLonPoint a = new LatLonPoint(1,1);
@@ -38,20 +45,37 @@ public class Search_Fragment extends Fragment  implements
     public static LatLonPoint addressName1 = new LatLonPoint(0,0);
     private AMap aMap;
     private MapView mapView;
-    private EditText et1;
-    private EditText et2;
+    private AutoCompleteTextView et1;
+    private AutoCompleteTextView et2;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view1 = inflater.inflate(R.layout.search_fragment, container, false);
         mapView = (MapView)view1.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);// 此方法必须重写
-        et1 =(EditText)view1.findViewById(R.id.Et_1);
-        et2 =(EditText)view1.findViewById(R.id.Et_2);
+        et1 =(AutoCompleteTextView)view1.findViewById(R.id.Et_1);
+        et2 =(AutoCompleteTextView)view1.findViewById(R.id.Et_2);
+        et1.addTextChangedListener(this);
+        et2.addTextChangedListener(this);
         Button geoButton = (Button)view1.findViewById(R.id.geoButton);
         geoButton.setOnClickListener(this);
         init();
         return view1;
+    }
+    public void onGetInputtips(List<Tip> tipList, int rCode) {
+        if (rCode == AMapException.CODE_AMAP_SUCCESS) {// 正确返回
+            List<String> listString = new ArrayList<String>();
+            for (int i = 0; i < tipList.size(); i++) {
+                listString.add(tipList.get(i).getName());
+            }
+            ArrayAdapter<String> aAdapter = new ArrayAdapter<String>(
+                    getActivity(),
+                    R.layout.route_inputs, listString);
+            et1.setAdapter(aAdapter);
+            aAdapter.notifyDataSetChanged();
+        } else {
+            ToastUtil.showerror(getActivity(), rCode);
+        }
     }
     /**
      * 初始化AMap对象
@@ -132,7 +156,7 @@ public class Search_Fragment extends Fragment  implements
      * 地理编码查询回调
      */
     public void onGeocodeSearched(GeocodeResult result, int rCode) {
-        dismissDialog();
+
         if (rCode == AMapException.CODE_AMAP_SUCCESS) {
             if (result != null && result.getGeocodeAddressList() != null
                     && result.getGeocodeAddressList().size() > 0) {
@@ -174,10 +198,24 @@ public class Search_Fragment extends Fragment  implements
                     }
                 };
                 timer.schedule(task, 3000);
-
                 break;
             default:
                 break;
         }
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
     }
 }
