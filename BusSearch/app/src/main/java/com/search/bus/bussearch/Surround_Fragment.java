@@ -43,7 +43,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private AMap aMap;
     private MarkerOptions markerOption,markerOption1;
     private Marker marker,marker1;
-    private Button btn1,btn2,btn3;
+    private Button btn1,btn2;
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
@@ -55,7 +55,6 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         View view=inflater.inflate(R.layout.surround_fragment, container, false);
         btn1=(Button)view.findViewById(R.id.clearMap);//获取控件
         btn2=(Button)view.findViewById(R.id.resetMap);
-        btn3=(Button)view.findViewById(R.id.location);//定位按钮
         setListener();
         mapView = (MapView)view.findViewById(R.id.map);//获取控件
         mapView.onCreate(savedInstanceState);// 此方法必须重写
@@ -63,6 +62,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             aMap = mapView.getMap();
             setUpMap();
         }
+        setLocation(); //定位
         return view;
     }
 
@@ -89,13 +89,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 }
             }
         });
-        //定位按钮点击事件
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setLocation();
-            }
-        });
+
+
 
     }
     /**
