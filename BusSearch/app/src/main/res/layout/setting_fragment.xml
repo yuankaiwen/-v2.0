@@ -1,13 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 作者 夏晔
-     日期  2016/11/29 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="设置">
+     日期  2016/11/29
+     -->
+<!-- 编写：温阳
+     日期：2016/12/5
+     -->
 
-    </TextView>
+
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+
+    tools:context="com.search.bus.bussearch.MainActivity"
+android:orientation="vertical">
+
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingTop="10.0dip" >
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="1.0dip"
+            android:shrinkColumns="0"
+            android:stretchColumns="0" >
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:paddingBottom="10.0dip"
+                android:paddingTop="10.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:drawableLeft="@drawable/women1"
+                    android:drawableRight="@drawable/jiji"
+                    android:drawablePadding="10.0dip"
+                    android:gravity="center"
+                    android:text="关于我们"
+                    android:textColor="#ff333333"
+                    android:textSize="16.0sp"
+                    />
+            </TableRow>
+
+            <View
+                android:layout_height="0.5dip"
+                android:background="#000000" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:paddingBottom="10.0dip"
+                android:paddingTop="10.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:drawableLeft="@drawable/banben1"
+                    android:drawableRight="@drawable/jiji"
+                    android:drawablePadding="10.0dip"
+                    android:gravity="center"
+                    android:text="版本信息"
+                    android:textColor="#ff333333"
+                    android:textSize="16.0sp"
+                    />
+            </TableRow>
+            <View
+
+                android:layout_height="0.5dip"
+
+                android:background="#000000" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:paddingBottom="10.0dip"
+                android:paddingTop="10.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:drawableLeft="@drawable/gengxin1"
+                    android:drawableRight="@drawable/jiji"
+                    android:drawablePadding="10.0dip"
+                    android:gravity="center"
+                    android:text="检查更新"
+                    android:textColor="#ff333333"
+                    android:textSize="16.0sp"
+                    />
+            </TableRow>
+
+            <View
+                android:layout_height="0.5dip"
+                android:background="#000000" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:paddingBottom="10.0dip"
+                android:paddingTop="10.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:drawableLeft="@drawable/shuoming1"
+                    android:drawableRight="@drawable/jiji"
+                    android:drawablePadding="10.0dip"
+                    android:gravity="center"
+                    android:text="使用介绍"
+                    android:textColor="#ff333333"
+                    android:textSize="16.0sp"
+                    />
+            </TableRow>
+            <View
+                android:layout_height="0.5dip"
+                android:background="#000000" />
+        </TableLayout>
+    </LinearLayout>
 </LinearLayout>
+</RelativeLayout>
