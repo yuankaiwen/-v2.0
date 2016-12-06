@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**                         作者：李烨                           作者：李烨                   李烨
- * 作者 夏晔                版本信息、检查更新的编写            关于我们跳转、点击           使用介绍点击、跳转
- *  2016/11/29.             2016/12/5                           2016/12/6                      2016/12/6
+/**                         作者：李烨                           作者：李烨
+ * 作者 夏晔                版本信息、检查更新的编写            关于我们跳转、点击
+ *  2016/11/29.             2016/12/5                           2016/12/6
  */
 
 
@@ -21,9 +21,10 @@ public class Setting_Fragment extends Fragment {
 
     private FragmentManager fm;
     private Context context;
-    private TextView typeNews,upDate,about_us,introduce;
-
-
+    private TextView typeNews;
+    private TextView upDate;
+    private  TextView about_us;
+    private  TextView introduce;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.setting_fragment, container, false);
@@ -42,8 +43,7 @@ public class Setting_Fragment extends Fragment {
         typeNewsListener();
         upDateListener();
         //关于我们
-        introduceListener();
-        about_usListener();
+
 
         return view;
 
@@ -98,20 +98,5 @@ public class Setting_Fragment extends Fragment {
             }
         });
     }
-    /**
-     * 给使用介绍添加点击事件及跳转
-     * 作者：李烨
-     * 时间：2016/12/6
-     */
-    private void introduceListener(){
-        context=getActivity().getApplicationContext();
-        introduce.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent2 = new Intent();
-                intent2.setClass(context,Introduce.class);
-                startActivity(intent2);
-            }
-        });
-    }
+
 }
