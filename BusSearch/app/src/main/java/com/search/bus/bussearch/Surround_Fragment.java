@@ -77,6 +77,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             public void onClick(View v) {
                 if (aMap != null) {
                     aMap.clear();//清除覆盖物
+                    setLocation();
                 }
             }
         });
@@ -84,7 +85,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             @Override
             public void onClick(View v) {
                 if (aMap != null) {
-                    aMap.clear();
+
                     addMarkersToMap();//添加覆盖物
                 }
             }
