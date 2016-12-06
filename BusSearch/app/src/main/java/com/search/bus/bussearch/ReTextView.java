@@ -15,7 +15,7 @@ import java.util.List;
  时间  2016/12/5
  */
 
-public class ASDAS extends TextView {
+public class ReTextView extends TextView {
 
 
     private float step =0f;
@@ -24,12 +24,12 @@ public class ASDAS extends TextView {
     private float width;
     private List<String> textList = new ArrayList<String>();    //分行保存textview的显示信息。
 
-    public ASDAS(Context context, AttributeSet attrs) {
+    public ReTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
 
-    public ASDAS(Context context) {
+    public ReTextView(Context context) {
         super(context);
     }
 
