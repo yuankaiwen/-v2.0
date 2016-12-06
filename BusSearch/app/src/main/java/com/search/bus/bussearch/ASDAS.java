@@ -18,6 +18,7 @@ import java.util.List;
 
 public class ASDAS extends TextView {
 
+
     private float step =0f;
     private Paint mPaint=new Paint(); ;
     private String text;
