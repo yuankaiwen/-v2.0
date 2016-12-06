@@ -186,9 +186,8 @@ public class Search_Fragment extends Fragment  implements
              * 响应地理编码按钮
              */
             case R.id.geoButton:
-                getLatlon(name);
-
                 getLatlon(name1);
+                getLatlon(name);
                 /*
                 * 将跳转页面延迟几秒进行使前两个函数能够调用完成
                 * */
@@ -202,7 +201,7 @@ public class Search_Fragment extends Fragment  implements
                         getActivity().overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     }
                 };
-                timer.schedule(task, 2500);
+                timer.schedule(task, 2000);
                 break;
             default:
                 break;
