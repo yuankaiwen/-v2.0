@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 作者 夏晔
+     更新  关于我们界面
+     时间  2016/12/5
+     -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/g_return"
+            android:src="@drawable/back"/>
+    </LinearLayout>
+    <com.search.bus.bussearch.ASDAS
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textSize="20dp"
+        android:text="开发团队:                李越   项目经理 开发工程师         李烨   产品经理 开发工程师         苑凯文  开发工程师              夏晔   UI设计 开发工程师         温阳   UI设计 测试工程师         汪伦   开发工程师     "/>
+
+</LinearLayout>
