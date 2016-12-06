@@ -23,6 +23,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:textSize="20dp"
-        android:text="开发团队:                李越   项目经理 开发工程师         李烨   产品经理 开发工程师         苑凯文  开发工程师              夏晔   UI设计 开发工程师         温阳   UI设计 测试工程师         汪伦   开发工程师     "/>
+        android:text="        开发团队项目经理：       李越          产品经理：       李烨          开发工程师：      李越          李烨          夏晔          汪伦          苑凯文         UI设计：       夏晔          温阳          测试工程师：      温阳          "/>
 
 </LinearLayout>
