@@ -36,6 +36,7 @@
         <activity android:name=".BusRouteActivity"/>
         <activity android:name=".BusRouteDetailActivity"/>
         <activity android:name=".AboutusActivity"/>
+        <activity android:name=".Introduce"/>
         <service android:name="com.amap.api.location.APSService"></service>
     </application>
 

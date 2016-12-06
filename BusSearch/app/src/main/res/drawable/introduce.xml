@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<!--使用介绍动画
+作者：李烨
+时间：2016/12/6-->
+<animation-list
+    android:oneshot="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/p1"
+        android:duration="4000"/>
+    <item
+        android:drawable="@drawable/p1_route"
+        android:duration="3000"/>
+    <item
+        android:drawable="@drawable/p1_route_detail"
+        android:duration="3000"/>
+    <item
+        android:drawable="@drawable/p1_route_map"
+        android:duration="3000"/>
+
+    <item
+        android:drawable="@drawable/p2"
+        android:duration="3000"/>
+    <item
+        android:drawable="@drawable/p2_mark"
+        android:duration="3000"/>
+    <item
+        android:drawable="@drawable/p3"
+        android:duration="3000"/>
+</animation-list>
