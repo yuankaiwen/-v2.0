@@ -54,6 +54,7 @@ android:orientation="vertical">
                     android:text="关于我们"
                     android:textColor="#ff333333"
                     android:textSize="16.0sp"
+                    android:id="@+id/about_team"
                     />
             </TableRow>
 
@@ -78,6 +79,7 @@ android:orientation="vertical">
                     android:text="版本信息"
                     android:textColor="#ff333333"
                     android:textSize="16.0sp"
+                    android:id="@+id/type_news"
                     />
             </TableRow>
             <View
@@ -103,6 +105,7 @@ android:orientation="vertical">
                     android:text="检查更新"
                     android:textColor="#ff333333"
                     android:textSize="16.0sp"
+                    android:id="@+id/update"
                     />
             </TableRow>
 
@@ -127,6 +130,7 @@ android:orientation="vertical">
                     android:text="使用介绍"
                     android:textColor="#ff333333"
                     android:textSize="16.0sp"
+                    android:id="@+id/introduce"
                     />
             </TableRow>
             <View
