@@ -17,7 +17,7 @@
             android:id="@+id/g_return"
             android:src="@drawable/back"/>
     </LinearLayout>
-    <com.search.bus.bussearch.ASDAS
+    <com.search.bus.bussearch.ReTextView
         android:gravity="center"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

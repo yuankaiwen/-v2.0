@@ -40,9 +40,8 @@ public class MainActivity extends Activity {
                     transaction.replace(R.id.fl, mChaxun);
                     break;
                 case R.id.btn22:
-                    if (mZhoubian == null) {
                         mZhoubian = new Surround_Fragment();
-                    }
+
                     transaction.replace(R.id.fl, mZhoubian);
                     break;
                 case R.id.btn33:
