@@ -43,6 +43,8 @@ public class Setting_Fragment extends Fragment {
         typeNewsListener();
         upDateListener();
         //关于我们
+        about_usListener();
+        introduceListener();
 
 
         return view;
