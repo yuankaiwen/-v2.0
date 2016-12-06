@@ -7,16 +7,16 @@ import android.os.PersistableBundle;
 import android.widget.TextView;
 
 /**
- * 使用介绍
- * 作者：李烨
- * 时间：2016/12/6
+ * 使用介绍            解决问题
+ * 作者：李烨          修改者：李越
+ * 时间：2016/12/6     时间：2016.12.6
  */
 public class Introduce extends Activity{
     AnimationDrawable frameAnimation;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_introduce);
         //获取视图控件
         TextView txtView = (TextView)findViewById(R.id.animation);
