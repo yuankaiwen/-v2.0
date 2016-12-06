@@ -22,7 +22,7 @@ import android.widget.TextView;
 public class Setting_Fragment extends Fragment {
 
     private FragmentManager fm;
-    private TextView typenews;
+    private TextView typeews;
     private TextView update;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
