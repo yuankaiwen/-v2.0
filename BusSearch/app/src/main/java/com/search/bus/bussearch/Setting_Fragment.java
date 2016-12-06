@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,10 +22,8 @@ public class Setting_Fragment extends Fragment {
 
     private FragmentManager fm;
     private Context context;
-    private TextView typeNews;
-    private TextView upDate;
-    private  TextView about_us;
-    private  TextView introduce;
+    private TextView typeNews,upDate,about_us,introduce;
+    private ImageView imgView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.setting_fragment, container, false);
