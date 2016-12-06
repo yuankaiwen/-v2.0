@@ -54,7 +54,7 @@ android:orientation="vertical">
                     android:text="关于我们"
                     android:textColor="#ff333333"
                     android:textSize="16.0sp"
-                    android:id="@+id/about_team"
+                    android:id="@+id/about_us"
                     />
             </TableRow>
 
