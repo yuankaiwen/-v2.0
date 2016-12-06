@@ -181,7 +181,6 @@ public class Surround_Fragment extends Fragment implements LocationSource,
      * 在地图中初步添加点击事件以及添加覆盖物
      */
     private void setUpMap() {
-        addMarkersToMap();
         context=getActivity().getApplicationContext();
         //点击infowindow提示
         aMap.setOnInfoWindowClickListener(new AMap.OnInfoWindowClickListener() {
