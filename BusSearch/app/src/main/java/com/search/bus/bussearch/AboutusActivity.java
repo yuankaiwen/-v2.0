@@ -14,14 +14,15 @@ import android.widget.ImageView;
  */
 public class AboutusActivity extends Activity{
     private ImageView imgView;
-    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aboutus);
 
+        //获取组件ID
         imgView = (ImageView)findViewById(R.id.g_return);
-    //获取点击Listener
+
+        //获取点击Listener
         backListener();
 
     }
@@ -32,7 +33,7 @@ public class AboutusActivity extends Activity{
             @Override
             public void onClick(View view) {
                 Intent intent3 = new Intent();
-                intent3.setClass(context,Setting_Fragment.class);
+                intent3.setClass(AboutusActivity.this,MainActivity.class);
                 startActivity(intent3);
             }
         });
