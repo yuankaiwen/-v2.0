@@ -98,5 +98,21 @@ public class Setting_Fragment extends Fragment {
             }
         });
     }
+    /**
+     * 给使用介绍添加点击事件及跳转
+     * 作者：李烨
+     * 时间：2016/12/6
+     */
+    private void introduceListener(){
+        context=getActivity().getApplicationContext();
+        introduce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent();
+                intent2.setClass(context,Introduce.class);
+                startActivity(intent2);
+            }
+        });
+    }
 
 }
