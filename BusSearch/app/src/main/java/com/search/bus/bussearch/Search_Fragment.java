@@ -145,7 +145,7 @@ public class Search_Fragment extends Fragment  implements
     /**
      * 响应地理编码//
      */
-    public void getLatlon(final String name) {
+    public void getLatlon( String name) {
         showDialog();
 
         GeocodeQuery query = new GeocodeQuery(name, "石家庄");// 第一个参数表示地址，第二个参数表示查询城市，中文或者中文全拼，citycode、adcode，
@@ -187,6 +187,7 @@ public class Search_Fragment extends Fragment  implements
              */
             case R.id.geoButton:
                 getLatlon(name);
+
                 getLatlon(name1);
                 /*
                 * 将跳转页面延迟几秒进行使前两个函数能够调用完成
@@ -197,10 +198,11 @@ public class Search_Fragment extends Fragment  implements
                         Intent intent = new Intent();
                         intent.setClass(getActivity(),BusRouteActivity.class);
                         startActivity(intent);
+                        dismissDialog();
                         getActivity().overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     }
                 };
-                timer.schedule(task, 3000);
+                timer.schedule(task, 2500);
                 break;
             default:
                 break;
