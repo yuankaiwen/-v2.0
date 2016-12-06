@@ -5,7 +5,7 @@
      添加地图控件
      日期  2016.11.29 -->
 <!-- 修改者 汪仑
-     删除位置按钮
+     修改定位按钮
      日期  2016.12.5 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
@@ -46,6 +46,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:text="添加景点" />
+                <Button
+                    android:id="@+id/Location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="我的位置" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
