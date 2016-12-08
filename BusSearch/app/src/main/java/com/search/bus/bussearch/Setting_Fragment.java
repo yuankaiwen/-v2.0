@@ -52,16 +52,19 @@ public class Setting_Fragment extends Fragment {
         return view;
 
     }
-
+/*作者：李越
+*页面选项触摸变色，不触摸恢复原装
+* 2016.12.8
+* */
     private void setListener() {
         typeNews.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
-                    case MotionEvent.ACTION_DOWN:
+                    case MotionEvent.ACTION_DOWN://触摸，按下
                         typeNews.setBackgroundColor(Color.BLUE);
                         break;
-                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_UP://拿开
                         typeNews.setBackgroundColor(Color.WHITE);
                         break;
                 }
