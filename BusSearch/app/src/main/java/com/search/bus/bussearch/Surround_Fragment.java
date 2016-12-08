@@ -50,6 +50,9 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l;
     private Marker marker,marker1,marker1l,marker2l,marker3l;
     private Button btn1,btn2,btn3;
+    //天津景点覆盖物添加 -汪仑
+    private MarkerOptions markerOption1w;
+    private Marker marker1w;
     //夏晔 添加覆盖物
     private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x;
     private Marker marker1x,marker2x,marker3x,marker4x,marker5x;
@@ -236,6 +239,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     }
 
     private void wlAddHide(){
+        marker1w.hideInfoWindow();
     }
 
     /**
@@ -334,6 +338,16 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     }
 
     private void wlAddMarkers() {
+        //天津覆盖物添加 -汪仑
+        //天津之眼
+        markerOption1w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.160042,117.193405))
+                .title("天津之眼")
+                .snippet("天津的标志，是世界上唯一建在桥上的摩天轮")
+                .draggable(true);
+        marker1w = aMap.addMarker(markerOption1w);
+
     }
 
     private void xyAddMarkers() {
