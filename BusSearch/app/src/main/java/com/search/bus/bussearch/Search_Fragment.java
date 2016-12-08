@@ -12,10 +12,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -49,6 +51,7 @@ import java.util.TimerTask;
  */
 public class Search_Fragment extends Fragment  implements
         GeocodeSearch.OnGeocodeSearchListener,TextWatcher, View.OnClickListener, Inputtips.InputtipsListener, AMapLocationListener, LocationSource {
+    public static String city;
     private ProgressDialog progDialog = null;
     private GeocodeSearch geocoderSearch;
     private LatLonPoint a = new LatLonPoint(1,1);
@@ -61,19 +64,43 @@ public class Search_Fragment extends Fragment  implements
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
     private AMapLocationClientOption mLocationOption;
-    private String city = "我的位置";
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view1 = inflater.inflate(R.layout.search_fragment, container, false);
         mapView = (MapView)view1.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);// 此方法必须重写
+        /*
+        * 编写下拉城市
+        * */
+        List<String> list = new ArrayList<String>();
+        list.add("石家庄");
+        list.add("天津");
+        list.add("北京");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
+        Spinner sp = (Spinner)view1.findViewById(R.id.spacer);
+        sp.setAdapter(adapter);
+        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ArrayAdapter<String> adapter = (ArrayAdapter<String>) parent.getAdapter();
+                city = adapter.getItem(position);
+            }
+            //没有选中时的处理
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                city = "石家庄";
+            }
+        });
+
         et1 =(AutoCompleteTextView)view1.findViewById(R.id.Et_1);
         et2 =(AutoCompleteTextView)view1.findViewById(R.id.Et_2);
         et1.addTextChangedListener(this);
         et2.addTextChangedListener(this);
         Button geoButton = (Button)view1.findViewById(R.id.geoButton);
         Button bt1 =(Button)view1.findViewById(R.id.Bt_1);
+        sp=(Spinner)view1.findViewById(R.id.spacer);
         bt1.setOnClickListener(this);
         geoButton.setOnClickListener(this);
         init();
@@ -164,7 +191,7 @@ public class Search_Fragment extends Fragment  implements
     public void getLatlon( String name) {
         showDialog();
 
-        GeocodeQuery query = new GeocodeQuery(name, "石家庄");// 第一个参数表示地址，第二个参数表示查询城市，中文或者中文全拼，citycode、adcode，
+        GeocodeQuery query = new GeocodeQuery(name,city);// 第一个参数表示地址，第二个参数表示查询城市，中文或者中文全拼，citycode、adcode，
         geocoderSearch.getFromLocationNameAsyn(query);// 设置同步地理编码请求
     }
     @Override
@@ -219,7 +246,7 @@ public class Search_Fragment extends Fragment  implements
         if (mListener != null && amapLocation != null) {
             String name = et1.getText().toString();
             if (amapLocation != null
-                    && amapLocation.getErrorCode() == 0 && name.equals(city)) {
+                    && amapLocation.getErrorCode() == 0 && name.equals("我的位置")) {
                 mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
                 addressName.setLatitude(amapLocation.getLatitude());
                 addressName.setLongitude(amapLocation.getLongitude());
@@ -304,7 +331,7 @@ public class Search_Fragment extends Fragment  implements
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         String newText = s.toString().trim();
         if (!AMapUtil.IsEmptyOrNullString(newText)) {
-            InputtipsQuery inputquery = new InputtipsQuery(newText, "石家庄");
+            InputtipsQuery inputquery = new InputtipsQuery(newText, city);
             Inputtips inputTips = new Inputtips(getActivity(), inputquery);
             inputTips.setInputtipsListener(this);
             inputTips.requestInputtipsAsyn();
