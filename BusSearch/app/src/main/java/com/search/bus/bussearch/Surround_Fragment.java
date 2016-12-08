@@ -287,7 +287,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 .position(new LatLng(39.918058, 116.397026))
                 .title("故宫")
-                .snippet("详细信息")
+                .snippet("AAAAA级\n北京故宫是中国明清两代的皇家宫殿，旧称为紫禁城，位于北京中轴线的中心，是中国古代宫廷建筑之精华。")
                 .draggable(true);
         marker = aMap.addMarker(markerOption);
 
@@ -303,7 +303,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 .position(new LatLng(39.908692, 116.397477))
                 .title("天安门")
-                .snippet("详细信息")
+                .snippet("天安门广场，位于北京市中心\n天安门广场记载了中国人民不屈不挠的革命精神和大无畏的英雄气概")
                 .draggable(true);
         marker1 = aMap.addMarker(markerOption1);
         //----------------正式添加
