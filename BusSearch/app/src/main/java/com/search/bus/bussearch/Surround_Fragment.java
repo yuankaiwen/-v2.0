@@ -229,6 +229,10 @@ public class Surround_Fragment extends Fragment implements LocationSource,
 
     private void xyAddHide(){
         marker1x.hideInfoWindow();
+        marker2x.hideInfoWindow();
+        marker3x.hideInfoWindow();
+        marker4x.hideInfoWindow();
+        marker5x.hideInfoWindow();
     }
 
     private void wlAddHide(){
@@ -341,7 +345,40 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("国家AAAA级旅游景区\n占地23万平方米，是—座纪念性的古典坛庙园林。\n 它原是明清两代的社稷坛，与太庙（今劳动人民文化宫）一起沿袭周代以来“左祖右社”的礼制建造。")
                 .draggable(true);
         marker1x = aMap.addMarker(markerOption1x);
-        
+
+
+               markerOption2x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.92819, 116.388717))
+                .title("北海公园")
+                .snippet("国家AAAA级旅游景区\n城内景山西侧，在故宫的西北面，与中海、南海合称三海。\n 是中国现存最古老、最完整、最具综合性和代表性的皇家园林之一")
+                .draggable(true);
+        marker2x = aMap.addMarker(markerOption2x);
+
+
+        markerOption3x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.35619, 116.016727))
+                .title("八达岭长城")
+                .snippet("是中国古代伟大的防御工程万里长城的重要组成部分\n明长城的八达岭段被称作“玉关天堑”，为明代居庸关八景之一。\n 是举世闻名的旅游胜地。")
+                .draggable(true);
+        marker3x = aMap.addMarker(markerOption3x);
+
+        markerOption4x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.496439, 116.334665))
+                .title("北京野生动物园")
+                .snippet("是经原国家林业局批准，北京市政府立项、\n北京绿野晴川有限公司投资建设的集动物保护、\n野生动物驯养繁殖及科普教育为一体的大型自然生态公园。")
+                .draggable(true);
+        marker4x = aMap.addMarker(markerOption4x);
+
+        markerOption5x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.014992, 116.392515))
+                .title("北京奥林匹克公园")
+                .snippet("是包含体育赛事、会展中心、科教文化、休闲购物等多种功能在内的综合性市民公共活动中心。\n集中体现了“科技、绿色、人文”三大理念\n融合了办公、商业、酒店、文化、体育、会议、居住多种功能的新型城市区域")
+                .draggable(true);
+        marker5x = aMap.addMarker(markerOption5x);
     }
 
     /**
