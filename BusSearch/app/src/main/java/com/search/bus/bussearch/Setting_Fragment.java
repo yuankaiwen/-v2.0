@@ -62,7 +62,7 @@ public class Setting_Fragment extends Fragment {
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN://触摸，按下
-                        typeNews.setBackgroundColor(Color.BLUE);
+                        typeNews.setBackgroundColor(Color.parseColor("#009FCC"));
                         break;
                     case MotionEvent.ACTION_UP://拿开
                         typeNews.setBackgroundColor(Color.WHITE);
@@ -76,7 +76,7 @@ public class Setting_Fragment extends Fragment {
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                        upDate.setBackgroundColor(Color.BLUE);
+                        upDate.setBackgroundColor(Color.parseColor("#009FCC"));
                         break;
                     case MotionEvent.ACTION_UP:
                         upDate.setBackgroundColor(Color.WHITE);
@@ -90,7 +90,7 @@ public class Setting_Fragment extends Fragment {
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                        about_us.setBackgroundColor(Color.BLUE);
+                        about_us.setBackgroundColor(Color.parseColor("#009FCC"));
                         break;
                     case MotionEvent.ACTION_UP:
                         about_us.setBackgroundColor(Color.WHITE);
@@ -104,7 +104,7 @@ public class Setting_Fragment extends Fragment {
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                       introduce.setBackgroundColor(Color.BLUE);
+                       introduce.setBackgroundColor(Color.parseColor("#009FCC"));
                         break;
                     case MotionEvent.ACTION_UP:
                         introduce.setBackgroundColor(Color.WHITE);
