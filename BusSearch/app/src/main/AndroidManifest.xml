@@ -25,7 +25,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="16fa07151a27ef39b9001dfc63c51b01" />
+            android:value="1f03bcb9c33fa4b32b24e115ee0cfc48" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +36,7 @@
         <activity android:name=".BusRouteActivity"/>
         <activity android:name=".BusRouteDetailActivity"/>
         <activity android:name=".AboutusActivity"/>
+        <activity android:name=".Introduce"/>
         <service android:name="com.amap.api.location.APSService"></service>
     </application>
 
