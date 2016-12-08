@@ -225,6 +225,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     }
 
     private void xyAddHide(){
+
         marker1x.hideInfoWindow();
     }
 
