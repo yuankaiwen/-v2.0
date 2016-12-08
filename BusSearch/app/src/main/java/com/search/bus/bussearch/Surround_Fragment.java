@@ -49,6 +49,10 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private AMap aMap;
     private MarkerOptions markerOption,markerOption1;
     private Marker marker,marker1;
+    //夏晔 添加覆盖物
+    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x;
+    private Marker marker1x,marker2x,marker3x,marker4x,marker5x;
+
     private Button btn1,btn2,btn3;
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
@@ -221,6 +225,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     }
 
     private void xyAddHide(){
+        marker1x.hideInfoWindow();
     }
 
     private void wlAddHide(){
@@ -300,6 +305,14 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     }
 
     private void xyAddMarkers() {
+         //夏晔        添加北京景点覆盖物    2016/12/8
+         markerOption1x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.918058, 116.397026))
+                .title("中山公园")
+                .snippet("详细信息")
+                .draggable(true);
+        marker1x = aMap.addMarker(markerOption1x);
         
     }
 
