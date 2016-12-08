@@ -4,9 +4,11 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +17,15 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps2d.AMap;
+import com.amap.api.maps2d.LocationSource;
 import com.amap.api.maps2d.MapView;
+import com.amap.api.maps2d.model.BitmapDescriptorFactory;
+import com.amap.api.maps2d.model.MyLocationStyle;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.geocoder.GeocodeAddress;
@@ -39,7 +48,7 @@ import java.util.TimerTask;
  *                 编写获取输入地址坐标及跳转到路线页面
  */
 public class Search_Fragment extends Fragment  implements
-        GeocodeSearch.OnGeocodeSearchListener,TextWatcher, View.OnClickListener, Inputtips.InputtipsListener {
+        GeocodeSearch.OnGeocodeSearchListener,TextWatcher, View.OnClickListener, Inputtips.InputtipsListener, AMapLocationListener, LocationSource {
     private ProgressDialog progDialog = null;
     private GeocodeSearch geocoderSearch;
     private LatLonPoint a = new LatLonPoint(1,1);
@@ -49,6 +58,10 @@ public class Search_Fragment extends Fragment  implements
     private MapView mapView;
     private AutoCompleteTextView et1;
     private AutoCompleteTextView et2;
+    private LocationSource.OnLocationChangedListener mListener;
+    private AMapLocationClient mlocationClient;
+    private AMapLocationClientOption mLocationOption;
+    private String city = "我的位置";
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,8 +73,11 @@ public class Search_Fragment extends Fragment  implements
         et1.addTextChangedListener(this);
         et2.addTextChangedListener(this);
         Button geoButton = (Button)view1.findViewById(R.id.geoButton);
+        Button bt1 =(Button)view1.findViewById(R.id.Bt_1);
+        bt1.setOnClickListener(this);
         geoButton.setOnClickListener(this);
         init();
+        setLocation();
         return view1;
     }
     public void onGetInputtips(List<Tip> tipList, int rCode) {
@@ -171,17 +187,88 @@ public class Search_Fragment extends Fragment  implements
                     addressName1 = address.getLatLonPoint();
                 }
             } else {
-                ToastUtil.show(getActivity(), "对不起没有搜索到相关信息");
+
             }
         } else {
             ToastUtil.showerror(getActivity(), rCode);
         }
+    }
+
+    /**
+     * 设置定位属性
+     */
+    private void setLocation() {
+        // 自定义系统定位小蓝点
+        MyLocationStyle myLocationStyle = new MyLocationStyle();
+        myLocationStyle.myLocationIcon(BitmapDescriptorFactory
+                .fromResource(R.drawable.location_marker));// 设置小蓝点的图标
+        myLocationStyle.strokeColor(Color.BLACK);// 设置圆形的边框颜色
+        myLocationStyle.radiusFillColor(Color.argb(100, 0, 0, 180));// 设置圆形的填充颜色
+        // myLocationStyle.anchor(int,int)//设置小蓝点的锚点
+        myLocationStyle.strokeWidth(1.0f);// 设置圆形的边框粗细
+        aMap.setMyLocationStyle(myLocationStyle);
+        aMap.setLocationSource(this);// 设置定位监听
+        aMap.getUiSettings().setMyLocationButtonEnabled(true);// 设置默认定位按钮是否显示
+        aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
+        // aMap.setMyLocationType()
+    }
+    /**
+     * 定位成功后回调函数
+     */
+    public void onLocationChanged(AMapLocation amapLocation) {
+        if (mListener != null && amapLocation != null) {
+            String name = et1.getText().toString();
+            if (amapLocation != null
+                    && amapLocation.getErrorCode() == 0 && name.equals(city)) {
+                mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
+                addressName.setLatitude(amapLocation.getLatitude());
+                addressName.setLongitude(amapLocation.getLongitude());
+            } else {
+                String errText = "定位失败," + amapLocation.getErrorCode()+ ": " + amapLocation.getErrorInfo();
+                Log.e("AmapErr",errText);
+            }
+        }
+    }
+    /**
+     * 激活定位
+     */
+
+    public void activate(LocationSource.OnLocationChangedListener listener) {
+        mListener = listener;
+        if (mlocationClient == null) {
+            mlocationClient = new AMapLocationClient(getActivity());
+            mLocationOption = new AMapLocationClientOption();
+            //设置定位监听
+            mlocationClient.setLocationListener(this);
+            //设置为高精度定位模式
+            mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+            //设置定位参数
+            mlocationClient.setLocationOption(mLocationOption);
+            // 此方法为每隔固定时间会发起一次定位请求，为了减少电量消耗或网络流量消耗，
+            // 注意设置合适的定位时间的间隔（最小间隔支持为2000ms），并且在合适时间调用stopLocation()方法来取消定位请求
+            // 在定位结束后，在合适的生命周期调用onDestroy()方法
+            // 在单次定位情况下，定位无论成功与否，都无需调用stopLocation()方法移除请求，定位sdk内部会移除
+            mlocationClient.startLocation();
+        }
+    }
+
+    @Override
+    public void deactivate() {
+        mListener = null;
+        if (mlocationClient != null) {
+            mlocationClient.stopLocation();
+            mlocationClient.onDestroy();
+        }
+        mlocationClient = null;
     }
     @Override
     public void onClick(View v) {
         String name = et1.getText().toString();
         String name1 = et2.getText().toString();
         switch (v.getId()) {
+            case R.id.Bt_1:
+                et1.setText("我的位置");
+                break;
             /**
              * 响应地理编码按钮
              */
@@ -228,4 +315,5 @@ public class Search_Fragment extends Fragment  implements
     public void afterTextChanged(Editable s) {
 
     }
+
 }
