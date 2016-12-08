@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
                     transaction.replace(R.id.fl, mChaxun);
                     break;
                 case R.id.btn22:
-                        mZhoubian = new Surround_Fragment();
+                    mZhoubian = new Surround_Fragment();
                     btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search));
                     btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_surroundings_change));
                     btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_settings));
