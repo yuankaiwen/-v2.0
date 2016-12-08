@@ -212,10 +212,18 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         aMap.setOnMapClickListener(new AMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
+                xyAddHide();
+                wlAddHide();
                 marker.hideInfoWindow();
                 marker1.hideInfoWindow();
             }
         });
+    }
+
+    private void xyAddHide(){
+    }
+
+    private void wlAddHide(){
     }
 
     /**
@@ -260,7 +268,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private void addMarkersToMap() {
         xyAddMarkers();
         wlAddMarkers();
-        
+
+        //--------------------
         //标注覆盖物
         markerOption = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
