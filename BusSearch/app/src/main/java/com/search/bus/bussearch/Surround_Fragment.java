@@ -47,13 +47,13 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private FragmentManager fm;
     private MapView mapView;
     private AMap aMap;
-    private MarkerOptions markerOption,markerOption1;
-    private Marker marker,marker1;
+    private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l;
+    private Marker marker,marker1,marker1l,marker2l,marker3l;
+    private Button btn1,btn2,btn3;
     //夏晔 添加覆盖物
     private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x;
     private Marker marker1x,marker2x,marker3x,marker4x,marker5x;
 
-    private Button btn1,btn2,btn3;
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
@@ -220,12 +220,14 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 wlAddHide();
                 marker.hideInfoWindow();
                 marker1.hideInfoWindow();
+                marker1l.hideInfoWindow();
+                marker2l.hideInfoWindow();
+                marker3l.hideInfoWindow();
             }
         });
     }
 
     private void xyAddHide(){
-
         marker1x.hideInfoWindow();
     }
 
@@ -275,7 +277,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         xyAddMarkers();
         wlAddMarkers();
 
-        //--------------------
+        //--------------------示例添加
         //标注覆盖物
         markerOption = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
@@ -300,14 +302,39 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("详细信息")
                 .draggable(true);
         marker1 = aMap.addMarker(markerOption1);
+        //----------------正式添加
+        //------------------------------石家庄
+        markerOption1l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.722482, 114.768948))
+                .title("赵州桥")
+                .snippet("AAAA级景区\n又称安济桥，俗名大石桥")
+                .draggable(true);
+        marker1l = aMap.addMarker(markerOption1l);
+
+        markerOption2l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.74921, 114.784331))
+                .title("柏林禅寺")
+                .snippet("中国著名佛教禅寺，北方佛教的一座重镇，赵州祖庭所在地")
+                .draggable(true);
+        marker2l = aMap.addMarker(markerOption2l);
+
+        markerOption3l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.076899, 114.458284))
+                .title("水上公园")
+                .snippet("AAA级景区\n水上公园由三湖九岛构成，有国内外建筑艺术、园林艺术、雕塑艺术精品")
+                .draggable(true);
+        marker3l = aMap.addMarker(markerOption3l);
     }
 
     private void wlAddMarkers() {
     }
 
     private void xyAddMarkers() {
-         //夏晔        添加北京景点覆盖物    2016/12/8
-         markerOption1x = new MarkerOptions().icon(BitmapDescriptorFactory
+        //夏晔        添加北京景点覆盖物    2016/12/8
+        markerOption1x = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 .position(new LatLng(39.91073, 116.394351))
                 .title("中山公园")
