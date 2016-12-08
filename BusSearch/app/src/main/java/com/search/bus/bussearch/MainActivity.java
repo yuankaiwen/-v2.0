@@ -36,18 +36,26 @@ public class MainActivity extends Activity {
                     if (mChaxun == null) {
                         mChaxun = new Search_Fragment();
                     }
+                    btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search_change));
+                    btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_surroundings));
+                    btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_settings));
                     //3.设置页面
                     transaction.replace(R.id.fl, mChaxun);
                     break;
                 case R.id.btn22:
                         mZhoubian = new Surround_Fragment();
-
+                    btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search));
+                    btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_surroundings_change));
+                    btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_settings));
                     transaction.replace(R.id.fl, mZhoubian);
                     break;
                 case R.id.btn33:
                     if (mShezhi == null) {
                         mShezhi = new Setting_Fragment();
                     }
+                    btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search));
+                    btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_surroundings));
+                    btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_settings_change));
                     transaction.replace(R.id.fl, mShezhi);
                     break;
             }
