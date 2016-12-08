@@ -103,9 +103,6 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 setLocation(); //定位
             }
         });
-
-
-
     }
     /**
      * 作者：汪仑
@@ -127,6 +124,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
         // aMap.setMyLocationType()
     }
+    
     /**
      * 作者：汪仑
      * 2016.12.1
@@ -183,11 +181,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         }
         mlocationClient = null;
     }
-
-
-
-
-
+    
 
     /**
      * 作者：李越
@@ -257,25 +251,19 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             }
         });
     }
-
-
-
+    
     /**
      * 作者：李越
      * 2016.11.30
      * 在地图中添加覆盖物
      */
     private void addMarkersToMap() {
-        //文本覆盖物
-        TextOptions textOptions = new TextOptions().position(new LatLng(39.918058, 116.397026))
-                .text("故宫").fontColor(Color.WHITE)
-                .backgroundColor(Color.BLACK).fontSize(30).align(Text.ALIGN_CENTER_HORIZONTAL, Text.ALIGN_CENTER_VERTICAL)
-                .zIndex(1.f).typeface(Typeface.DEFAULT_BOLD)
-                ;
-        aMap.addText(textOptions);
+        xyAddMarkers();
+        wlAddMarkers();
+        
         //标注覆盖物
         markerOption = new MarkerOptions().icon(BitmapDescriptorFactory
-                .fromResource(R.drawable.bussearch_gps))
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 .position(new LatLng(39.918058, 116.397026))
                 .title("故宫")
                 .snippet("详细信息")
@@ -291,12 +279,19 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         aMap.addText(textOptions1);
         //标注覆盖物
         markerOption1 = new MarkerOptions().icon(BitmapDescriptorFactory
-                .fromResource(R.drawable.bussearch_gps))
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 .position(new LatLng(39.908692, 116.397477))
                 .title("天安门")
                 .snippet("详细信息")
                 .draggable(true);
         marker1 = aMap.addMarker(markerOption1);
+    }
+
+    private void wlAddMarkers() {
+    }
+
+    private void xyAddMarkers() {
+        
     }
 
     /**
