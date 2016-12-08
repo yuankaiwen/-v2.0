@@ -4,13 +4,18 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -21,6 +26,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps2d.AMap;
 import com.amap.api.maps2d.LocationSource;
 import com.amap.api.maps2d.MapView;
+import com.amap.api.maps2d.Projection;
 import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.Marker;
@@ -43,7 +49,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private AMap aMap;
     private MarkerOptions markerOption,markerOption1;
     private Marker marker,marker1;
-    private Button btn1,btn2;
+    private Button btn1,btn2,btn3;
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
@@ -55,6 +61,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         View view=inflater.inflate(R.layout.surround_fragment, container, false);
         btn1=(Button)view.findViewById(R.id.clearMap);//获取控件
         btn2=(Button)view.findViewById(R.id.resetMap);
+        btn3=(Button)view.findViewById(R.id.Location);
         setListener();
         mapView = (MapView)view.findViewById(R.id.map);//获取控件
         mapView.onCreate(savedInstanceState);// 此方法必须重写
@@ -62,13 +69,13 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             aMap = mapView.getMap();
             setUpMap();
         }
-        setLocation(); //定位
+
         return view;
     }
 
     /**
      * 作者：李越                修改者：汪仑
-     * 2016.12.1                 2016.12.1
+     * 2016.12.1                 2016.12.6
      * 对button添加点击事件      添加定位按钮点击事件
      */
     private void setListener() {
@@ -88,6 +95,12 @@ public class Surround_Fragment extends Fragment implements LocationSource,
 
                     addMarkersToMap();//添加覆盖物
                 }
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setLocation(); //定位
             }
         });
 
@@ -110,7 +123,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         myLocationStyle.strokeWidth(1.0f);// 设置圆形的边框粗细
         aMap.setMyLocationStyle(myLocationStyle);
         aMap.setLocationSource(this);// 设置定位监听
-        aMap.getUiSettings().setMyLocationButtonEnabled(true);// 设置默认定位按钮是否显示
+        aMap.getUiSettings().setMyLocationButtonEnabled(false);// 设置默认定位按钮是否显示
         aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
         // aMap.setMyLocationType()
     }
@@ -194,6 +207,9 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         aMap.setOnMarkerClickListener(new AMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
+                if (aMap != null) {
+                    jumpPoint(marker);
+                }
                 marker.showInfoWindow();
                 return true;
             }
@@ -207,6 +223,42 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             }
         });
     }
+
+    /**
+     * 作者：李越
+     * marker点击时跳动一下
+     * 2016.12.6
+     */
+    public void jumpPoint(final Marker marker) {
+        final Handler handler = new Handler();
+        final long start = SystemClock.uptimeMillis();
+        Projection proj = aMap.getProjection();
+        final LatLng markerLatlng = marker.getPosition();
+        Point markerPoint = proj.toScreenLocation(markerLatlng);
+        markerPoint.offset(0, -100);
+        final LatLng startLatLng = proj.fromScreenLocation(markerPoint);
+        final long duration = 1500;
+
+        final Interpolator interpolator = new BounceInterpolator();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                long elapsed = SystemClock.uptimeMillis() - start;
+                float t = interpolator.getInterpolation((float) elapsed
+                        / duration);
+                double lng = t * markerLatlng.longitude + (1 - t)
+                        * startLatLng.longitude;
+                double lat = t * markerLatlng.latitude + (1 - t)
+                        * startLatLng.latitude;
+                marker.setPosition(new LatLng(lat, lng));
+                if (t < 1.0) {
+                    handler.postDelayed(this, 16);
+                }
+            }
+        });
+    }
+
+
 
     /**
      * 作者：李越
