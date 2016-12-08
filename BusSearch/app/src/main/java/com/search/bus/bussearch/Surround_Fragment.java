@@ -338,7 +338,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 .position(new LatLng(39.91073, 116.394351))
                 .title("中山公园")
-                .snippet("国家AAAA级旅游景区，占地23万平方米，是—座纪念性的古典坛庙园林。[1]  它原是明清两代的社稷坛，与太庙（今劳动人民文化宫）一起沿袭周代以来“左祖右社”的礼制建造。")
+                .snippet("国家AAAA级旅游景区\n占地23万平方米，是—座纪念性的古典坛庙园林。\n 它原是明清两代的社稷坛，与太庙（今劳动人民文化宫）一起沿袭周代以来“左祖右社”的礼制建造。")
                 .draggable(true);
         marker1x = aMap.addMarker(markerOption1x);
         
