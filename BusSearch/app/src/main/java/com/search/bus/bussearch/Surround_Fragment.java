@@ -54,8 +54,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MarkerOptions markerOption1w;
     private Marker marker1w;
     //夏晔 添加覆盖物
-    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x;
-    private Marker marker1x,marker2x,marker3x,marker4x,marker5x;
+    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x;
+    private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x;
 
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
@@ -236,6 +236,10 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         marker3x.hideInfoWindow();
         marker4x.hideInfoWindow();
         marker5x.hideInfoWindow();
+        marker6x.hideInfoWindow();
+        marker7x.hideInfoWindow();
+        marker8x.hideInfoWindow();
+        marker9x.hideInfoWindow();
     }
 
     private void wlAddHide(){
@@ -393,6 +397,34 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("是包含体育赛事、会展中心、科教文化、休闲购物等多种功能在内的综合性市民公共活动中心。\n集中体现了“科技、绿色、人文”三大理念\n融合了办公、商业、酒店、文化、体育、会议、居住多种功能的新型城市区域")
                 .draggable(true);
         marker5x = aMap.addMarker(markerOption5x);
+        markerOption6x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.989042, 116.190236))
+                .title("香山公园")
+                .snippet("是一座具有山林特色的皇家园林\n香山公园有香山寺、洪光寺等著名旅游景点\n2001年被国家旅游局评为AAAA景区，2002年被评为首批北京市精品公园。")
+                .draggable(true);
+        marker6x = aMap.addMarker(markerOption6x);
+        markerOption7x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.984671, 116.493609))
+                .title("北京798艺术区")
+                .snippet("因当代艺术和798生活方式闻名于世。\n原为原国营798厂等电子工业的老厂区所在地\n")
+                .draggable(true);
+        marker7x = aMap.addMarker(markerOption7x);
+        markerOption8x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.936251, 116.416704))
+                .title("南锣鼓巷")
+                .snippet("南锣鼓巷是一条胡同\n它是北京最古老的街区之一，是我国唯一完整保存着元代胡同院落肌理、\n规模最大、品级最高、资源最丰富的棋盘式传统民居区，也是最赋有老北京风情的街巷。")
+                .draggable(true);
+        marker8x = aMap.addMarker(markerOption8x);
+        markerOption9x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.866719, 116.490519))
+                .title("欢乐谷")
+                .snippet("北京欢乐谷是国家4A级旅游景区\n北京欢乐谷设置了120余项体验项目\n获得过\"中国文化创意产业高成长企业百强\"\"首都旅游紫禁杯先进集体\"\"首都文明旅游景区\"等荣誉。")
+                .draggable(true);
+        marker9x = aMap.addMarker(markerOption9x);
     }
 
     /**
