@@ -396,7 +396,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         //塘沽
         markerOption6w = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
-                .position(new LatLng(38.023014,114.512093))
+                .position(new LatLng(39.04953,117.634836))
                 .title("塘沽")
                 .snippet("塘沽位于我国京津城市和环渤海城市带的交汇点，地处天津滨海新区的中心地带。 ")
                 .draggable(true);
@@ -423,7 +423,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         //水上公园
         markerOption9w = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
-                .position(new LatLng(38.076899,114.458284))
+                .position(new LatLng(39.088969,117.167804))
                 .title("水上公园")
                 .snippet("是天津市规模最大的综合性公园，津门十景之一，景名\"龙潭浮翠\" ")
                 .draggable(true);
@@ -432,7 +432,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         //海河
         markerOption10w = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
-                .position(new LatLng(38.048192,114.611592))
+                .position(new LatLng(39.083243,117.254757))
                 .title("海河")
                 .snippet("海河风景线，始于三岔口，止于大光明桥，横穿繁华的天津市区 ")
                 .draggable(true);
