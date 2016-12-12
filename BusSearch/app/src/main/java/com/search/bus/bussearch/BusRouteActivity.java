@@ -44,7 +44,7 @@ public class BusRouteActivity extends Activity implements OnMapClickListener,
 	private BusRouteResult mBusRouteResult;
 	private LatLonPoint mStartPoint = Search_Fragment.addressName;//起点，116.335891,39.942295
 	private LatLonPoint mEndPoint = Search_Fragment.addressName1;//终点，116.481288,39.995576
-	private String mCurrentCityName = "石家庄";
+	private String mCurrentCityName = Search_Fragment.city;
 	private final int ROUTE_TYPE_BUS = 1;
 	
 	private LinearLayout mBusResultLayout;

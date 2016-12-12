@@ -4,8 +4,10 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -37,6 +39,7 @@ public class Setting_Fragment extends Fragment {
         about_us = (TextView)view.findViewById(R.id.about_us);
         introduce = (TextView)view.findViewById(R.id.introduce);
 
+        setListener();
 
         //版本信息、检查更新
         typeNewsListener();
@@ -48,6 +51,68 @@ public class Setting_Fragment extends Fragment {
 
         return view;
 
+    }
+/*作者：李越
+*页面选项触摸变色，不触摸恢复原装
+* 2016.12.8
+* */
+    private void setListener() {
+        typeNews.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN://触摸，按下
+                        typeNews.setBackgroundColor(Color.parseColor("#009FCC"));
+                        break;
+                    case MotionEvent.ACTION_UP://拿开
+                        typeNews.setBackgroundColor(Color.WHITE);
+                        break;
+                }
+                return false;
+            }
+        });
+        upDate.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        upDate.setBackgroundColor(Color.parseColor("#009FCC"));
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        upDate.setBackgroundColor(Color.WHITE);
+                        break;
+                }
+                return false;
+            }
+        });
+        about_us.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        about_us.setBackgroundColor(Color.parseColor("#009FCC"));
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        about_us.setBackgroundColor(Color.WHITE);
+                        break;
+                }
+                return false;
+            }
+        });
+        introduce.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                       introduce.setBackgroundColor(Color.parseColor("#009FCC"));
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        introduce.setBackgroundColor(Color.WHITE);
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     /**

@@ -4,19 +4,30 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps2d.AMap;
+import com.amap.api.maps2d.LocationSource;
 import com.amap.api.maps2d.MapView;
+import com.amap.api.maps2d.model.BitmapDescriptorFactory;
+import com.amap.api.maps2d.model.MyLocationStyle;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.geocoder.GeocodeAddress;
@@ -39,7 +50,8 @@ import java.util.TimerTask;
  *                 编写获取输入地址坐标及跳转到路线页面
  */
 public class Search_Fragment extends Fragment  implements
-        GeocodeSearch.OnGeocodeSearchListener,TextWatcher, View.OnClickListener, Inputtips.InputtipsListener {
+        GeocodeSearch.OnGeocodeSearchListener,TextWatcher, View.OnClickListener, Inputtips.InputtipsListener, AMapLocationListener, LocationSource {
+    public static String city;
     private ProgressDialog progDialog = null;
     private GeocodeSearch geocoderSearch;
     private LatLonPoint a = new LatLonPoint(1,1);
@@ -49,19 +61,50 @@ public class Search_Fragment extends Fragment  implements
     private MapView mapView;
     private AutoCompleteTextView et1;
     private AutoCompleteTextView et2;
+    private LocationSource.OnLocationChangedListener mListener;
+    private AMapLocationClient mlocationClient;
+    private AMapLocationClientOption mLocationOption;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view1 = inflater.inflate(R.layout.search_fragment, container, false);
         mapView = (MapView)view1.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);// 此方法必须重写
+        /*
+        * 编写下拉城市
+        * */
+        List<String> list = new ArrayList<String>();
+        list.add("石家庄");
+        list.add("天津");
+        list.add("北京");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
+        Spinner sp = (Spinner)view1.findViewById(R.id.spacer);
+        sp.setAdapter(adapter);
+        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ArrayAdapter<String> adapter = (ArrayAdapter<String>) parent.getAdapter();
+                city = adapter.getItem(position);
+            }
+            //没有选中时的处理
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                city = "石家庄";
+            }
+        });
+
         et1 =(AutoCompleteTextView)view1.findViewById(R.id.Et_1);
         et2 =(AutoCompleteTextView)view1.findViewById(R.id.Et_2);
         et1.addTextChangedListener(this);
         et2.addTextChangedListener(this);
         Button geoButton = (Button)view1.findViewById(R.id.geoButton);
+        Button bt1 =(Button)view1.findViewById(R.id.Bt_1);
+        sp=(Spinner)view1.findViewById(R.id.spacer);
+        bt1.setOnClickListener(this);
         geoButton.setOnClickListener(this);
         init();
+        setLocation();
         return view1;
     }
     public void onGetInputtips(List<Tip> tipList, int rCode) {
@@ -148,7 +191,7 @@ public class Search_Fragment extends Fragment  implements
     public void getLatlon( String name) {
         showDialog();
 
-        GeocodeQuery query = new GeocodeQuery(name, "石家庄");// 第一个参数表示地址，第二个参数表示查询城市，中文或者中文全拼，citycode、adcode，
+        GeocodeQuery query = new GeocodeQuery(name,city);// 第一个参数表示地址，第二个参数表示查询城市，中文或者中文全拼，citycode、adcode，
         geocoderSearch.getFromLocationNameAsyn(query);// 设置同步地理编码请求
     }
     @Override
@@ -171,17 +214,88 @@ public class Search_Fragment extends Fragment  implements
                     addressName1 = address.getLatLonPoint();
                 }
             } else {
-                ToastUtil.show(getActivity(), "对不起没有搜索到相关信息");
+
             }
         } else {
             ToastUtil.showerror(getActivity(), rCode);
         }
+    }
+
+    /**
+     * 设置定位属性
+     */
+    private void setLocation() {
+        // 自定义系统定位小蓝点
+        MyLocationStyle myLocationStyle = new MyLocationStyle();
+        myLocationStyle.myLocationIcon(BitmapDescriptorFactory
+                .fromResource(R.drawable.location_marker));// 设置小蓝点的图标
+        myLocationStyle.strokeColor(Color.BLACK);// 设置圆形的边框颜色
+        myLocationStyle.radiusFillColor(Color.argb(100, 0, 0, 180));// 设置圆形的填充颜色
+        // myLocationStyle.anchor(int,int)//设置小蓝点的锚点
+        myLocationStyle.strokeWidth(1.0f);// 设置圆形的边框粗细
+        aMap.setMyLocationStyle(myLocationStyle);
+        aMap.setLocationSource(this);// 设置定位监听
+        aMap.getUiSettings().setMyLocationButtonEnabled(true);// 设置默认定位按钮是否显示
+        aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
+        // aMap.setMyLocationType()
+    }
+    /**
+     * 定位成功后回调函数
+     */
+    public void onLocationChanged(AMapLocation amapLocation) {
+        if (mListener != null && amapLocation != null) {
+            String name = et1.getText().toString();
+            if (amapLocation != null
+                    && amapLocation.getErrorCode() == 0 && name.equals("我的位置")) {
+                mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
+                addressName.setLatitude(amapLocation.getLatitude());
+                addressName.setLongitude(amapLocation.getLongitude());
+            } else {
+                String errText = "定位失败," + amapLocation.getErrorCode()+ ": " + amapLocation.getErrorInfo();
+                Log.e("AmapErr",errText);
+            }
+        }
+    }
+    /**
+     * 激活定位
+     */
+
+    public void activate(LocationSource.OnLocationChangedListener listener) {
+        mListener = listener;
+        if (mlocationClient == null) {
+            mlocationClient = new AMapLocationClient(getActivity());
+            mLocationOption = new AMapLocationClientOption();
+            //设置定位监听
+            mlocationClient.setLocationListener(this);
+            //设置为高精度定位模式
+            mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+            //设置定位参数
+            mlocationClient.setLocationOption(mLocationOption);
+            // 此方法为每隔固定时间会发起一次定位请求，为了减少电量消耗或网络流量消耗，
+            // 注意设置合适的定位时间的间隔（最小间隔支持为2000ms），并且在合适时间调用stopLocation()方法来取消定位请求
+            // 在定位结束后，在合适的生命周期调用onDestroy()方法
+            // 在单次定位情况下，定位无论成功与否，都无需调用stopLocation()方法移除请求，定位sdk内部会移除
+            mlocationClient.startLocation();
+        }
+    }
+
+    @Override
+    public void deactivate() {
+        mListener = null;
+        if (mlocationClient != null) {
+            mlocationClient.stopLocation();
+            mlocationClient.onDestroy();
+        }
+        mlocationClient = null;
     }
     @Override
     public void onClick(View v) {
         String name = et1.getText().toString();
         String name1 = et2.getText().toString();
         switch (v.getId()) {
+            case R.id.Bt_1:
+                et1.setText("我的位置");
+                break;
             /**
              * 响应地理编码按钮
              */
@@ -217,7 +331,7 @@ public class Search_Fragment extends Fragment  implements
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         String newText = s.toString().trim();
         if (!AMapUtil.IsEmptyOrNullString(newText)) {
-            InputtipsQuery inputquery = new InputtipsQuery(newText, "石家庄");
+            InputtipsQuery inputquery = new InputtipsQuery(newText, city);
             Inputtips inputTips = new Inputtips(getActivity(), inputquery);
             inputTips.setInputtipsListener(this);
             inputTips.requestInputtipsAsyn();
@@ -228,4 +342,5 @@ public class Search_Fragment extends Fragment  implements
     public void afterTextChanged(Editable s) {
 
     }
+
 }
