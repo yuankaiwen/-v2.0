@@ -3,7 +3,9 @@ package com.search.bus.bussearch;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,6 +20,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -61,9 +64,13 @@ public class Search_Fragment extends Fragment  implements
     private MapView mapView;
     private AutoCompleteTextView et1;
     private AutoCompleteTextView et2;
+    private TextView tv1;
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
     private AMapLocationClientOption mLocationOption;
+    private int b = 0;
+    private String Cname="xixi";
+    private String Cname1="22";
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -96,13 +103,21 @@ public class Search_Fragment extends Fragment  implements
 
         et1 =(AutoCompleteTextView)view1.findViewById(R.id.Et_1);
         et2 =(AutoCompleteTextView)view1.findViewById(R.id.Et_2);
+        tv1 = (TextView)view1.findViewById(R.id.Tv_1);
         et1.addTextChangedListener(this);
         et2.addTextChangedListener(this);
         Button geoButton = (Button)view1.findViewById(R.id.geoButton);
         Button bt1 =(Button)view1.findViewById(R.id.Bt_1);
-        sp=(Spinner)view1.findViewById(R.id.spacer);
+        Button bt2 =(Button)view1.findViewById(R.id.Bt_2);
+        bt2.setOnClickListener(this);
         bt1.setOnClickListener(this);
         geoButton.setOnClickListener(this);
+        //读取存储的起始位置
+        SharedPreferences preferences=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+        String name = preferences.getString(Cname, "11");
+        String name1 = preferences.getString(Cname1, "11");
+        tv1.setText(name+"---"+name1);
+
         init();
         setLocation();
         return view1;
@@ -300,8 +315,11 @@ public class Search_Fragment extends Fragment  implements
              * 响应地理编码按钮
              */
             case R.id.geoButton:
-                getLatlon(name1);
-                getLatlon(name);
+                if(b == 0){
+                    getLatlon(name1);
+                    getLatlon(name);
+                }
+                b = 0;
                 /*
                 * 将跳转页面延迟几秒进行使前两个函数能够调用完成
                 * */
@@ -317,9 +335,26 @@ public class Search_Fragment extends Fragment  implements
                 };
                 timer.schedule(task, 2000);
                 break;
+            /*
+            * 交换起始地点
+            * */
+            case R.id.Bt_2:
+                et1.setText(name1);
+                et2.setText(name);
+                b = 1;
+                a = addressName;
+                addressName = addressName1;
+                addressName1 = a;
+                break;
             default:
                 break;
         }
+        // 用SharedPreferences的方法存储数据
+        SharedPreferences preferences = getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putString(Cname, name);
+        editor.putString(Cname1,name1);
+        editor.commit();
     }
 
     @Override

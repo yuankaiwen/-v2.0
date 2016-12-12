@@ -80,11 +80,11 @@
             android:paddingBottom="5dp"
             android:gravity="right"
             android:layout_marginRight="20dp">
-            <ImageButton
+            <Button
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="#00000000"
-                android:src="@drawable/switch1"></ImageButton>
+                android:background="@drawable/switch1"
+                android:id="@+id/Bt_2"></Button>
 
         </LinearLayout>
     </LinearLayout>
@@ -113,12 +113,11 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_weight="1"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center|bottom">
+        android:layout_marginRight="20dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,8 +126,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="石家庄站----河北师范大学站"
-            android:textSize="16dp"/>
+            android:textSize="16dp"
+            android:id="@+id/Tv_1"/>
 
     </LinearLayout>
 
