@@ -61,8 +61,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MarkerOptions markerOption1ly;
     private Marker marker1ly;
     //苑凯文 添加覆盖物
-    private MarkerOptions markerOption1y;
-    private Marker marker1y;
+    private MarkerOptions markerOption1y,markerOption2y,markerOption3y,markerOption4y,markerOption5y,markerOption6y;
+    private Marker marker1y,marker2y,marker3y,marker4y,marker5y,marker6y;
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
@@ -264,7 +264,12 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     }
 
     private void  ykwAddHide(){
-
+        marker1y.hideInfoWindow();
+        marker2y.hideInfoWindow();
+        marker3y.hideInfoWindow();
+        marker4y.hideInfoWindow();
+        marker5y.hideInfoWindow();
+        marker6y.hideInfoWindow();
     }
 
     private void xyAddHide(){
@@ -589,6 +594,57 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     }
 
     private void ykwAddMarkers() {
+        //廊坊景点覆盖物添加--苑凯文
+
+        //天下第一城
+        markerOption1y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.717214,116.90666))
+                .title("天下第一城")
+                .snippet("AAAA级景区\n规模宏大、具有浓郁的中式风格的仿皇城建筑园林")
+                .draggable(true);
+        marker1y = aMap.addMarker(markerOption1y);
+        //茗汤温泉度假村
+        markerOption2y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.144336,116.389861))
+                .title("茗汤温泉度假村")
+                .snippet("AAAA级景区\n地理位置优越，交通便利，是一个集休闲、养生、自然、健康于一体的温泉度假村")
+                .draggable(true);
+        marker2y = aMap.addMarker(markerOption2y);
+        //廊坊市文化艺术中心
+        markerOption3y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.554674,116.720418))
+                .title("廊坊市文化艺术中心")
+                .snippet("AAAA级景区\n总体规划和设计体现了当今广场艺术的精华与厚重的文化底蕴")
+                .draggable(true);
+        marker3y = aMap.addMarker(markerOption3y);
+        //廊坊自然公园
+        markerOption4y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.540118,116.639671))
+                .title("廊坊自然公园")
+                .snippet("AAAA级景区\n廊坊市自然公园是市内唯一的自然景观园林，以其野趣天成、人式巧凿的迷人景观吸引八方来客，成为人们假日休闲、陶冶情致的好去处")
+                .draggable(true);
+        marker4y = aMap.addMarker(markerOption4y);
+        //廊坊国际会展中心
+        markerOption5y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.567774,116.757741))
+                .title("廊坊国际会展中心")
+                .snippet("廊坊国际会展中心是廊坊市的标志性建筑")
+                .draggable(true);
+        marker5y = aMap.addMarker(markerOption5y);
+        //李少春纪念馆
+        markerOption6y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.114071,116.38855))
+                .title("李少春纪念馆")
+                .snippet("李少春纪念馆是一个集“名人纪念，艺术研究，旅游休闲”等为主要功能的文化设施")
+                .draggable(true);
+        marker6y = aMap.addMarker(markerOption6y);
+
     }
 
     private void wlAddMarkers() {
