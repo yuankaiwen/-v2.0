@@ -36,9 +36,9 @@ import com.amap.api.maps2d.model.Text;
 import com.amap.api.maps2d.model.TextOptions;
 
 /**
- * 作者 夏晔         修改者：李越     修改者：汪仑
- *  2016/11/29.      2016.11.29       2016.12.1
- *  编写             添加地图控件     添加定位功能
+ * 作者 夏晔         修改者：李越     修改者：汪仑          修改者：李烨
+ *  2016/11/29.      2016.11.29       2016.12.1             2016/12/13
+ *  编写             添加地图控件     添加定位功能           添加地图组件
  */
 public class Surround_Fragment extends Fragment implements LocationSource,
         AMapLocationListener {
@@ -58,8 +58,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x,markerOption18x,markerOption19x,markerOption20x;
     private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x,marker18x,marker19x,marker20x;
     //李烨 添加覆盖物
-    private MarkerOptions markerOption1ly;
-    private Marker marker1ly;
+    private MarkerOptions markerOption1ly,markerOption2ly,markerOption3ly,markerOption4ly,markerOption5ly,markerOption6ly,markerOption7ly,markerOption8ly,markerOption9ly,markerOption10ly ,markerOption11ly ,markerOption12ly ,markerOption13ly ,markerOption14ly ,markerOption15ly;
+    private Marker marker1ly,marker2ly,marker3ly,marker4ly,marker5ly,marker6ly,marker7ly,marker8ly,marker9ly,marker10ly,marker11ly,marker12ly,marker13ly,marker14ly,marker15ly;
     //苑凯文 添加覆盖物
     private MarkerOptions markerOption1y;
     private Marker marker1y;
@@ -260,7 +260,21 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     }
 
     private void  liyeAddHide(){
-
+        marker1ly.hideInfoWindow();
+        marker2ly.hideInfoWindow();
+        marker3ly.hideInfoWindow();
+        marker4ly.hideInfoWindow();
+        marker5ly.hideInfoWindow();
+        marker6ly.hideInfoWindow();
+        marker7ly.hideInfoWindow();
+        marker8ly.hideInfoWindow();
+        marker9ly.hideInfoWindow();
+        marker10ly.hideInfoWindow();
+        marker11ly.hideInfoWindow();
+        marker12ly.hideInfoWindow();
+        marker13ly.hideInfoWindow();
+        marker14ly.hideInfoWindow();
+        marker15ly.hideInfoWindow();
     }
 
     private void  ykwAddHide(){
@@ -586,6 +600,81 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     }
 
     private void liyeAddMarkers() {
+        //----------------正式添加
+        //------------------------------唐山
+
+        //------------------南湖公园
+        markerOption1ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.606541, 118.172901))
+                .title("南湖公园")
+                .snippet("生态自然好风光\n原开滦矿区，规模大于西湖，是2016世园会举办地")
+                .draggable(true);
+        marker1ly = aMap.addMarker(markerOption1ly);
+        //------------------景忠山
+        markerOption1ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.189198, 118.202964))
+                .title("景忠山")
+                .snippet("天下名山\n灵山秀色")
+                .draggable(true);
+        marker1ly = aMap.addMarker(markerOption1ly);
+        //------------------月坨岛
+        markerOption1ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.115097, 118.849045))
+                .title("月坨岛")
+                .snippet("著名景点\n大海沙滩，美景美食")
+                .draggable(true);
+        marker1ly = aMap.addMarker(markerOption1ly);
+        //------------------清东陵
+        markerOption1ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.189822, 117.665421))
+                .title("清东陵")
+                .snippet("慈溪老佛爷陵寝")
+                .draggable(true);
+        marker1ly = aMap.addMarker(markerOption1ly);
+        //------------------唐山抗震纪念碑（馆）
+        markerOption1ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.624422,118.182648))
+                .title("唐山抗震纪念碑（馆）")
+                .snippet("唐山大地震的悲壮记录在案\n警醒世人")
+                .draggable(true);
+        marker1ly = aMap.addMarker(markerOption1ly);
+        //------------------滦州古城
+        markerOption1ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.722482, 118.76387))
+                .title("滦州古城")
+                .snippet("景色迤逦，畅游古今")
+                .draggable(true);
+        marker1ly = aMap.addMarker(markerOption1ly);
+        //------------------李大钊纪念馆
+        markerOption1ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.722482, 114.768948))
+                .title("李大钊纪念馆")
+                .snippet("红色经典一代英烈")
+                .draggable(true);
+        marker1ly = aMap.addMarker(markerOption1ly);
+        //------------------菩提岛
+        markerOption1ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.424142, 118.889151))
+                .title("菩提岛")
+                .snippet("自然风光畅享美景")
+                .draggable(true);
+        marker1ly = aMap.addMarker(markerOption1ly);
+        //------------------乐亭浅水湾
+        markerOption1ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.159463, 118.961315))
+                .title("乐亭浅水湾")
+                .snippet("宜人美景方便游玩")
+                .draggable(true);
+
     }
 
     private void ykwAddMarkers() {
