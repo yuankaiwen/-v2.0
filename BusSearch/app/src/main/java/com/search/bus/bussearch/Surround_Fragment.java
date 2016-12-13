@@ -58,8 +58,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MarkerOptions markerOption11w,markerOption12w,markerOption13w,markerOption14w,markerOption15w,markerOption16w,markerOption17w,markerOption18w,markerOption19w,markerOption20w;
     private Marker marker11w,marker12w,marker13w,marker14w,marker15w,marker16w,marker17w,marker18w,marker19w,marker20w;
     //夏晔 添加覆盖物
-    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x,markerOption18x,markerOption19x,markerOption20x;
-    private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x,marker18x,marker19x,marker20x;
+    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x,markerOption18x,markerOption19x,markerOption20x,markerOption21x,markerOption22x,markerOption23x,markerOption24x,markerOption25x,markerOption26x,markerOption27x,markerOption28x,markerOption29x,markerOption30x,markerOption31x,markerOption32x,markerOption33x,markerOption34x,markerOption35x,markerOption36x;
+    private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x,marker18x,marker19x,marker20x,marker21x,marker22x,marker23x,marker24x,marker25x,marker26x,marker27x,marker28x,marker29x,marker30x,marker31x,marker32x,marker33x,marker34x,marker35x,marker36x,marker37x;
     //李烨 添加覆盖物
     private MarkerOptions markerOption1ly,markerOption2ly,markerOption3ly,markerOption4ly,markerOption5ly,markerOption6ly,markerOption7ly,markerOption8ly,markerOption9ly,markerOption10ly ,markerOption11ly ,markerOption12ly ,markerOption13ly ,markerOption14ly ,markerOption15ly;
     private Marker marker1ly,marker2ly,marker3ly,marker4ly,marker5ly,marker6ly,marker7ly,marker8ly,marker9ly,marker10ly,marker11ly,marker12ly,marker13ly,marker14ly,marker15ly;
@@ -315,6 +315,11 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         marker18x.hideInfoWindow();
         marker19x.hideInfoWindow();
         marker20x.hideInfoWindow();
+        marker21x.hideInfoWindow();
+        marker22x.hideInfoWindow();
+        marker23x.hideInfoWindow();
+        marker24x.hideInfoWindow();
+        marker25x.hideInfoWindow();
     }
 
     private void wlAddHide(){
@@ -1123,6 +1128,62 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("大观园，是《红楼梦》中贾府为元春省亲而修建的别墅”\n于北京西城区南菜园护城河畔建造大观园作为87版电视剧拍摄基地。摄制完成后，景区对外开放。\n")
                 .draggable(true);
         marker20x = aMap.addMarker(markerOption20x);
+        markerOption21x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.995841,117.93483))
+                .title("承德避暑山庄")
+                .snippet("AAAAA级景区 ”\n承德市双桥区丽正门大街\n")
+                .draggable(true);
+        marker21x = aMap.addMarker(markerOption21x);
+        markerOption22x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(41.012552,117.933457))
+                .title("普陀宗乘之庙")
+                .snippet("AAAAA级景区 ”\n承德市双桥区避暑山庄北部\n")
+                .draggable(true);
+        marker22x = aMap.addMarker(markerOption22x);
+        markerOption23x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(42.320385,117.494816))
+                .title(" 木兰围场")
+                .snippet("AAAA级景区 ”\n承德市围场满族蒙古族自治县（简称围场县）西北部，靠近河北省与内蒙古自治\n")
+                .draggable(true);
+        marker23x = aMap.addMarker(markerOption23x);
+        markerOption24x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.701687,117.232844))
+                .title(" 金山岭长城")
+                .snippet("AAAA级景区  ”\n承德市滦平县巴克什营镇\n")
+                .draggable(true);
+        marker24x = aMap.addMarker(markerOption24x);
+        markerOption25x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(42.478991,117.275919))
+                .title("  塞罕坝国家森林公园")
+                .snippet("AAAA级景区  ”\n承德市围场满族蒙古族自治县北部\n")
+                .draggable(true);
+        marker25x = aMap.addMarker(markerOption24x);
+        markerOption26x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(41.016568,117.952429))
+                .title("普宁寺")
+                .snippet("AAAAA级景区  ”\n承德市双桥区普宁路1号（避暑山庄北部）n")
+                .draggable(true);
+        marker26x = aMap.addMarker(markerOption26x);
+        markerOption27x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.599707,117.487364   ))
+                .title(" 雾灵山")
+                .snippet("承德市兴隆县北部15公里处”\n）n")
+                .draggable(true);
+        marker27x = aMap.addMarker(markerOption27x);
+        markerOption28x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.990727,117.983028   ))
+                .title(" 磬锤峰国家森林公园")
+                .snippet("承德市双桥区普乐北路东侧”\n棒槌山是承德的标志\n")
+                .draggable(true);
+        marker28x = aMap.addMarker(markerOption28x);
     }
 
     /**
