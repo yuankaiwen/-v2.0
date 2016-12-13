@@ -47,15 +47,16 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private FragmentManager fm;
     private MapView mapView;
     private AMap aMap;
-    private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l;
-    private Marker marker,marker1,marker1l,marker2l,marker3l;
+    //覆盖物添加 李越
+    private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l,markerOption4l,markerOption5l,markerOption6l,markerOption7l,markerOption8l,markerOption9l,markerOption10l,markerOption11l,markerOption12l,markerOption13l,markerOption14l,markerOption15l,markerOption16l,markerOption17l,markerOption18l,markerOption19l,markerOption20l,markerOption21l,markerOption22l,markerOption23l,markerOption24l;
+    private Marker marker,marker1,marker1l,marker2l,marker3l,marker4l,marker5l,marker6l,marker7l,marker8l,marker9l,marker10l,marker11l,marker12l,marker13l,marker14l,marker15l,marker16l,marker17l,marker18l,marker19l,marker20l,marker21l,marker22l,marker23l,marker24l;
     private Button btn1,btn2,btn3;
     //天津景点覆盖物添加 -汪仑
-    private MarkerOptions markerOption1w;
-    private Marker marker1w;
+    private MarkerOptions markerOption1w,markerOption2w,markerOption3w,markerOption4w,markerOption5w,markerOption6w,markerOption7w,markerOption8w,markerOption9w,markerOption10w;
+    private Marker marker1w,marker2w,marker3w,marker4w,marker5w,marker6w,marker7w,marker8w,marker9w,marker10w;
     //夏晔 添加覆盖物
-    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x;
-    private Marker marker1x,marker2x,marker3x,marker4x,marker5x;
+    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x,markerOption18x,markerOption19x,markerOption20x;
+    private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x,marker18x,marker19x,marker20x;
 
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
@@ -226,6 +227,27 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 marker1l.hideInfoWindow();
                 marker2l.hideInfoWindow();
                 marker3l.hideInfoWindow();
+                marker4l.hideInfoWindow();
+                marker5l.hideInfoWindow();
+                marker6l.hideInfoWindow();
+                marker7l.hideInfoWindow();
+                marker8l.hideInfoWindow();
+                marker9l.hideInfoWindow();
+                marker10l.hideInfoWindow();
+                marker11l.hideInfoWindow();
+                marker12l.hideInfoWindow();
+                marker13l.hideInfoWindow();
+                marker14l.hideInfoWindow();
+                marker15l.hideInfoWindow();
+                marker16l.hideInfoWindow();
+                marker17l.hideInfoWindow();
+                marker18l.hideInfoWindow();
+                marker19l.hideInfoWindow();
+                marker20l.hideInfoWindow();
+                marker21l.hideInfoWindow();
+                marker22l.hideInfoWindow();
+                marker23l.hideInfoWindow();
+                marker24l.hideInfoWindow();
             }
         });
     }
@@ -236,10 +258,34 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         marker3x.hideInfoWindow();
         marker4x.hideInfoWindow();
         marker5x.hideInfoWindow();
+        marker6x.hideInfoWindow();
+        marker7x.hideInfoWindow();
+        marker8x.hideInfoWindow();
+        marker9x.hideInfoWindow();
+        marker11x.hideInfoWindow();
+        marker12x.hideInfoWindow();
+        marker13x.hideInfoWindow();
+        marker14x.hideInfoWindow();
+        marker15x.hideInfoWindow();
+        marker16x.hideInfoWindow();
+        marker10x.hideInfoWindow();
+        marker17x.hideInfoWindow();
+        marker18x.hideInfoWindow();
+        marker19x.hideInfoWindow();
+        marker20x.hideInfoWindow();
     }
 
     private void wlAddHide(){
         marker1w.hideInfoWindow();
+        marker2w.hideInfoWindow();
+        marker3w.hideInfoWindow();
+        marker4w.hideInfoWindow();
+        marker5w.hideInfoWindow();
+        marker6w.hideInfoWindow();
+        marker7w.hideInfoWindow();
+        marker8w.hideInfoWindow();
+        marker9w.hideInfoWindow();
+        marker10w.hideInfoWindow();
     }
 
     /**
@@ -335,6 +381,191 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("AAA级景区\n水上公园由三湖九岛构成，有国内外建筑艺术、园林艺术、雕塑艺术精品")
                 .draggable(true);
         marker3l = aMap.addMarker(markerOption3l);
+
+        markerOption4l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.148035, 114.579226))
+                .title("荣国府与宁荣街")
+                .snippet("AAAA级景区\n一座按照经典巨著《红楼梦》的描述原样建起的院落式建筑群。")
+                .draggable(true);
+        marker4l = aMap.addMarker(markerOption4l);
+
+        markerOption5l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.244905, 113.760108))
+                .title("天桂山风景区")
+                .snippet("AAAA级景区\n天桂山风景区地处太行山中段，最高峰海拔1054米，景区面积60平方公里,素有“北方桂林”之称。")
+                .draggable(true);
+        marker5l = aMap.addMarker(markerOption5l);
+
+        markerOption6l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.534249, 114.117199))
+                .title("嶂石岩")
+                .snippet("AAAA级景区\n以独特的嶂石岩地貌为主的自然风景区，景区内的山岭均为壮观的红色峭壁，竖直的岩壁和石柱十分壮观。")
+                .draggable(true);
+        marker6l = aMap.addMarker(markerOption6l);
+
+        markerOption7l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.515955, 113.52495))
+                .title("黑山大峡谷")
+                .snippet("AAAA级景区\n一处以山川峡谷等自然景观为主的风景区，来此观赏山川景色、登山锻炼十分不错，山里空气清新环境优美，是石家庄周边游玩的好去处。")
+                .draggable(true);
+        marker7l = aMap.addMarker(markerOption7l);
+
+        //文本覆盖物
+        TextOptions textOptions8l = new TextOptions().position(new LatLng(38.270381, 113.748037))
+                .text("佛光山").fontColor(Color.WHITE)
+                .backgroundColor(Color.BLACK).fontSize(30).align(Text.ALIGN_CENTER_HORIZONTAL, Text.ALIGN_CENTER_VERTICAL)
+                .zIndex(1.f).typeface(Typeface.DEFAULT_BOLD)
+                ;
+        aMap.addText(textOptions8l);
+
+        markerOption8l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.270381, 113.748037))
+                .title("佛光山")
+                .snippet("AAAA级景区\n佛光山景区是国家级风景名胜区西柏坡—天桂山景区的一个分景区，属禅林圣地。")
+                .draggable(true);
+        marker8l = aMap.addMarker(markerOption8l);
+
+        //文本覆盖物
+        TextOptions textOptions9l = new TextOptions().position(new LatLng(38.147663, 114.586235))
+                .text("赵云庙").fontColor(Color.WHITE)
+                .backgroundColor(Color.BLACK).fontSize(30).align(Text.ALIGN_CENTER_HORIZONTAL, Text.ALIGN_CENTER_VERTICAL)
+                .zIndex(1.f).typeface(Typeface.DEFAULT_BOLD)
+                ;
+        aMap.addText(textOptions9l);
+
+        markerOption9l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.147663, 114.586235))
+                .title("赵云庙")
+                .snippet("AA级景区\n古来冲阵扶危主，只有常山赵子龙。赵云的英烈之名，让赵云庙成为了游客的必游之地。")
+                .draggable(true);
+        marker9l = aMap.addMarker(markerOption9l);
+
+        markerOption10l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.145273, 114.586684))
+                .title("隆兴寺")
+                .snippet("AAAA级景区\n隆兴寺历史悠久，受过多位帝王尊崇，地位极高，可以前来拜佛祈福。年代久远的古建筑和众多珍贵的文物珍宝都可以在此见到。")
+                .draggable(true);
+        marker10l = aMap.addMarker(markerOption10l);
+
+        markerOption11l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.088451, 114.276964))
+                .title("抱犊寨")
+                .snippet("AAAA级景区\n抱犊寨周围山势开阔、树木众多，是爬山观景的好去处。山顶有罗汉寺、长城、韩信祠等人文古迹，可以拜佛访古。")
+                .draggable(true);
+        marker11l = aMap.addMarker(markerOption11l);
+
+        markerOption12l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.339815, 113.94112))
+                .title("西柏坡中共中央旧址")
+                .snippet("AAAAA级景区\n瞻仰开国领导人的生活、工作旧址，学习西柏坡时期的革命精神。参观西柏坡纪念馆，了解全国解放、共和国建立的历史进程。")
+                .draggable(true);
+        marker12l = aMap.addMarker(markerOption12l);
+
+        markerOption13l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.041335, 114.610888))
+                .title("天山海世界")
+                .snippet("AAAA级景区\n国内最大的室内水上娱乐中心，是夏天时避暑玩水的好地方。")
+                .draggable(true);
+        marker13l = aMap.addMarker(markerOption13l);
+
+        markerOption14l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.646414, 113.921309))
+                .title("灵寿水泉溪自然风景区")
+                .snippet("AAAA级景区\n一处以山川、峡谷、洞穴和溪水为主的自然风景区。")
+                .draggable(true);
+        marker14l = aMap.addMarker(markerOption14l);
+
+        markerOption15l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.738479, 113.793177))
+                .title("驼梁风景区")
+                .snippet("AAAA级景区\n因为山顶形状很像驼峰而得名，是河北省内著名的山峰。")
+                .draggable(true);
+        marker15l = aMap.addMarker(markerOption15l);
+
+        markerOption16l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.198163, 113.750898))
+                .title("沕沕水生态风景区")
+                .snippet("AAAA级景区\n景区内山势清秀，有众多的瀑布、深潭和泉水，还有茂密的树木，景色幽然清新。")
+                .draggable(true);
+        marker16l = aMap.addMarker(markerOption16l);
+
+        markerOption17l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.249608, 113.981541))
+                .title("白鹿温泉")
+                .snippet("AAAA级景区\n来到这里可以享受温泉、体验SPA按摩等服务、游玩众多的水上娱乐项目等")
+                .draggable(true);
+        marker17l = aMap.addMarker(markerOption17l);
+
+        markerOption18l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.011353, 114.55467))
+                .title("空中花园")
+                .snippet("AAAA级景区\n景区是将七座高楼的第六、七、八、九层用透明玻璃材质在空中联通起来，打通成为一座面积三万多平米的空中区域，离地16米左右，是一处真正意义的空中花园")
+                .draggable(true);
+        marker18l = aMap.addMarker(markerOption18l);
+
+        markerOption19l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.225858, 114.155492))
+                .title("东方巨龟苑")
+                .snippet("AAAA级景区\n这里既有美丽的园林风光，也有众多的娱乐项目，是石家庄周边观光娱乐的好去处。")
+                .draggable(true);
+        marker19l = aMap.addMarker(markerOption19l);
+
+        markerOption20l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.728075, 113.859892))
+                .title("五岳寨风景区")
+                .snippet("AAAA级景区\n因为景区内的五座主峰形似中国的五岳而得名")
+                .draggable(true);
+        marker20l = aMap.addMarker(markerOption20l);
+
+        markerOption21l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.119413, 113.833359))
+                .title("仙台山")
+                .snippet("AAA级景区\n仙台山是一处以秀丽的自然风光为主，兼有人文景观的综合风景区。")
+                .draggable(true);
+        marker21l = aMap.addMarker(markerOption21l);
+
+        markerOption22l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.526823, 114.090814))
+                .title("藤龙山风景区")
+                .snippet("AAAA级景区\n一处集地质景观、森林生态、人文历史景观于一体的高品位原生态自然风景区。")
+                .draggable(true);
+        marker22l = aMap.addMarker(markerOption22l);
+
+        markerOption23l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.541582, 114.156286))
+                .title("秋山风景区")
+                .snippet("AAAA级景区\n是一片以山岭风光为主的自然风景区，也是石家庄市周末郊游的好出去。")
+                .draggable(true);
+        marker23l = aMap.addMarker(markerOption23l);
+
+        markerOption24l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.132324, 114.571665))
+                .title("广惠寺华塔")
+                .snippet("AAA级景区\n广惠寺华塔，又名多宝塔。")
+                .draggable(true);
+        marker24l = aMap.addMarker(markerOption24l);
+        //--------------------------------------石家庄景点添加完毕
     }
 
     private void wlAddMarkers() {
@@ -347,6 +578,87 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("天津的标志，是世界上唯一建在桥上的摩天轮")
                 .draggable(true);
         marker1w = aMap.addMarker(markerOption1w);
+
+        //意式风情街
+        markerOption2w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.135703,117.199933))
+                .title("意式风情街")
+                .snippet("以体现浓郁的意大利风情为宗旨，将风情区建设成为集旅游、商贸、休闲、娱乐和文博为一体的综合性多功能区")
+                .draggable(true);
+        marker2w = aMap.addMarker(markerOption2w);
+
+        //古文化街
+        markerOption3w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.143865,117.192214))
+                .title("古文化街")
+                .snippet("系商业步行街。现在属津门十景之一。")
+                .draggable(true);
+        marker3w = aMap.addMarker(markerOption3w);
+
+        //盘山
+        markerOption4w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.093249,117.279729))
+                .title("盘山")
+                .snippet("是自然山水与名胜古迹并著、佛教寺院与皇家园林共称的旅游胜地 ")
+                .draggable(true);
+        marker4w = aMap.addMarker(markerOption4w);
+
+        //南市食品街
+        markerOption5w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.132927,117.183941))
+                .title("南市食品街")
+                .snippet("南市食品街是一座中西合璧、南北风味突出的多元化餐饮中心 ")
+                .draggable(true);
+        marker5w = aMap.addMarker(markerOption5w);
+
+        //塘沽
+        markerOption6w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.04953,117.634836))
+                .title("塘沽")
+                .snippet("塘沽位于我国京津城市和环渤海城市带的交汇点，地处天津滨海新区的中心地带。 ")
+                .draggable(true);
+        marker6w = aMap.addMarker(markerOption6w);
+
+        //世纪钟广场
+        markerOption7w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.133543,117.205555))
+                .title("世纪钟广场")
+                .snippet("古典与现代浑然一体，寓意时空延续，时不我待。盘芯及钟指针采用花档镂空制作，显得古朴典雅。 ")
+                .draggable(true);
+        marker7w = aMap.addMarker(markerOption7w);
+
+        //海河外滩公园
+        markerOption8w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.015144,117.664201))
+                .title("海河外滩公园")
+                .snippet("古典与现代浑然一体，寓意时空延续，时不我待。盘芯及钟指针采用花档镂空制作，显得古朴典雅。 ")
+                .draggable(true);
+        marker8w = aMap.addMarker(markerOption8w);
+
+        //水上公园
+        markerOption9w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.088969,117.167804))
+                .title("水上公园")
+                .snippet("是天津市规模最大的综合性公园，津门十景之一，景名\"龙潭浮翠\" ")
+                .draggable(true);
+        marker9w = aMap.addMarker(markerOption9w);
+
+        //海河
+        markerOption10w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.083243,117.254757))
+                .title("海河")
+                .snippet("海河风景线，始于三岔口，止于大光明桥，横穿繁华的天津市区 ")
+                .draggable(true);
+        marker10w = aMap.addMarker(markerOption10w);
 
     }
 
@@ -393,6 +705,111 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("是包含体育赛事、会展中心、科教文化、休闲购物等多种功能在内的综合性市民公共活动中心。\n集中体现了“科技、绿色、人文”三大理念\n融合了办公、商业、酒店、文化、体育、会议、居住多种功能的新型城市区域")
                 .draggable(true);
         marker5x = aMap.addMarker(markerOption5x);
+        markerOption6x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.989042, 116.190236))
+                .title("香山公园")
+                .snippet("是一座具有山林特色的皇家园林\n香山公园有香山寺、洪光寺等著名旅游景点\n2001年被国家旅游局评为AAAA景区，2002年被评为首批北京市精品公园。")
+                .draggable(true);
+        marker6x = aMap.addMarker(markerOption6x);
+        markerOption7x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.984671, 116.493609))
+                .title("北京798艺术区")
+                .snippet("因当代艺术和798生活方式闻名于世。\n原为原国营798厂等电子工业的老厂区所在地\n")
+                .draggable(true);
+        marker7x = aMap.addMarker(markerOption7x);
+        markerOption8x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.936251, 116.416704))
+                .title("南锣鼓巷")
+                .snippet("南锣鼓巷是一条胡同\n它是北京最古老的街区之一，是我国唯一完整保存着元代胡同院落肌理、\n规模最大、品级最高、资源最丰富的棋盘式传统民居区，也是最赋有老北京风情的街巷。")
+                .draggable(true);
+        marker8x = aMap.addMarker(markerOption8x);
+        markerOption9x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.866719, 116.490519))
+                .title("欢乐谷")
+                .snippet("北京欢乐谷是国家4A级旅游景区\n北京欢乐谷设置了120余项体验项目\n获得过\"中国文化创意产业高成长企业百强\"\"首都旅游紫禁杯先进集体\"\"首都文明旅游景区\"等荣誉。")
+                .draggable(true);
+        marker9x = aMap.addMarker(markerOption9x);
+        markerOption10x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.866719, 116.490519))
+                .title("青龙湖公园")
+                .snippet("是距京城最近的“一盘清水”\n园内山清水秀，林木茂盛，湖面宽阔，生态环境十分优美\n")
+                .draggable(true);
+        marker10x = aMap.addMarker(markerOption10x);
+        markerOption11x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.005205,116.305059))
+                .title("圆明园")
+                .snippet("圆明园又称圆明三园，是清代一座大型皇家宫苑”\n被法国作家维克多·雨果称誉为“理想与艺术的典范\n")
+                .draggable(true);
+        marker11x = aMap.addMarker(markerOption11x);
+        markerOption12x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.184584, 116.364454))
+                .title("中国航空博物馆")
+                .snippet("中国航空博物馆是中国第一座对外开放的大型航空博物馆”\n也是亚洲规模最大、跻身世界前5位的航空博物馆\n")
+                .draggable(true);
+        marker12x = aMap.addMarker(markerOption12x);
+        markerOption13x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.250648, 116.220258))
+                .title("北京十三陵风景区")
+                .snippet("明十三陵是中国明朝皇帝的墓葬群，坐落在北京西北郊昌平区境内的燕山山麓的天寿山。”\n十三陵被北京旅游世界之最评选委员会评为“是世界上保存完整埋葬皇帝最多的墓葬群。\n")
+                .draggable(true);
+        marker13x = aMap.addMarker(markerOption13x);
+        markerOption14x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.775765, 116.467794))
+                .title("南海子公园")
+                .snippet("北京南海子郊野公园是北京四大郊野公园之一”\n也是北京市最大的湿地公园，全部建成后总面积超过11平方公里\n")
+                .draggable(true);
+        marker14x = aMap.addMarker(markerOption14x);
+        markerOption15x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.795024,115.946287))
+                .title("北京石花洞国家地质公园")
+                .snippet("与闻名中外的桂林芦笛岩、福建玉华洞、杭州瑶琳洞并称中国四大岩溶洞穴。”\n\n")
+                .draggable(true);
+        marker15x = aMap.addMarker(markerOption15x);
+        markerOption16x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.874378,116.190389))
+                .title("北京园博园")
+                .snippet("北京园博园为第九届中国国际园林博览会的举办地”\n与卢沟桥遥相呼应，历史文化氛围浓郁，地形多变，山水相依，颇具特色。\n")
+                .draggable(true);
+        marker16x = aMap.addMarker(markerOption16x);
+        markerOption17x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.992844,116.27416))
+                .title("颐和园")
+                .snippet("颐和园，中国清朝时期皇家园林”\n2009年，颐和园入选中国世界纪录协会中国现存最大的皇家园林。\n")
+                .draggable(true);
+        marker17x = aMap.addMarker(markerOption17x);
+        markerOption18x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.942192,116.336473))
+                .title("北京动物园")
+                .snippet("是中国最大的动物园之一，也是一所世界知名的动物园”\n\n")
+                .draggable(true);
+        marker18x = aMap.addMarker(markerOption18x);
+        markerOption19x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.952852,116.414579))
+                .title("地坛公园")
+                .snippet("地坛公园又称方泽坛，是古都北京五坛中的第二大坛”\n1984年被评为北京市文物保护单位\n")
+                .draggable(true);
+        marker19x = aMap.addMarker(markerOption19x);
+        markerOption20x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.870953,116.356557))
+                .title("大观园")
+                .snippet("大观园，是《红楼梦》中贾府为元春省亲而修建的别墅”\n于北京西城区南菜园护城河畔建造大观园作为87版电视剧拍摄基地。摄制完成后，景区对外开放。\n")
+                .draggable(true);
+        marker20x = aMap.addMarker(markerOption20x);
     }
 
     /**
