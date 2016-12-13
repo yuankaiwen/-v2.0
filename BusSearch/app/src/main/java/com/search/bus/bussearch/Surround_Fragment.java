@@ -55,8 +55,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MarkerOptions markerOption1w,markerOption2w,markerOption3w,markerOption4w,markerOption5w,markerOption6w,markerOption7w,markerOption8w,markerOption9w,markerOption10w;
     private Marker marker1w,marker2w,marker3w,marker4w,marker5w,marker6w,marker7w,marker8w,marker9w,marker10w;
     //夏晔 添加覆盖物
-    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x;
-    private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x;
+    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x;
+    private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x;
 
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
@@ -262,6 +262,14 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         marker7x.hideInfoWindow();
         marker8x.hideInfoWindow();
         marker9x.hideInfoWindow();
+        marker11x.hideInfoWindow();
+        marker12x.hideInfoWindow();
+        marker13x.hideInfoWindow();
+        marker14x.hideInfoWindow();
+        marker15x.hideInfoWindow();
+        marker16x.hideInfoWindow();
+        marker10x.hideInfoWindow();
+        marker17x.hideInfoWindow();
     }
 
     private void wlAddHide(){
@@ -722,6 +730,62 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("北京欢乐谷是国家4A级旅游景区\n北京欢乐谷设置了120余项体验项目\n获得过\"中国文化创意产业高成长企业百强\"\"首都旅游紫禁杯先进集体\"\"首都文明旅游景区\"等荣誉。")
                 .draggable(true);
         marker9x = aMap.addMarker(markerOption9x);
+        markerOption10x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.866719, 116.490519))
+                .title("青龙湖公园")
+                .snippet("是距京城最近的“一盘清水”\n园内山清水秀，林木茂盛，湖面宽阔，生态环境十分优美\n")
+                .draggable(true);
+        marker10x = aMap.addMarker(markerOption10x);
+        markerOption11x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.005205,116.305059))
+                .title("圆明园")
+                .snippet("圆明园又称圆明三园，是清代一座大型皇家宫苑”\n被法国作家维克多·雨果称誉为“理想与艺术的典范\n")
+                .draggable(true);
+        marker11x = aMap.addMarker(markerOption11x);
+        markerOption12x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.184584, 116.364454))
+                .title("中国航空博物馆")
+                .snippet("中国航空博物馆是中国第一座对外开放的大型航空博物馆”\n也是亚洲规模最大、跻身世界前5位的航空博物馆\n")
+                .draggable(true);
+        marker12x = aMap.addMarker(markerOption12x);
+        markerOption13x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.250648, 116.220258))
+                .title("北京十三陵风景区")
+                .snippet("明十三陵是中国明朝皇帝的墓葬群，坐落在北京西北郊昌平区境内的燕山山麓的天寿山。”\n十三陵被北京旅游世界之最评选委员会评为“是世界上保存完整埋葬皇帝最多的墓葬群。\n")
+                .draggable(true);
+        marker13x = aMap.addMarker(markerOption13x);
+        markerOption14x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.775765, 116.467794))
+                .title("南海子公园")
+                .snippet("北京南海子郊野公园是北京四大郊野公园之一”\n也是北京市最大的湿地公园，全部建成后总面积超过11平方公里\n")
+                .draggable(true);
+        marker14x = aMap.addMarker(markerOption14x);
+        markerOption15x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.795024,115.946287))
+                .title("北京石花洞国家地质公园")
+                .snippet("与闻名中外的桂林芦笛岩、福建玉华洞、杭州瑶琳洞并称中国四大岩溶洞穴。”\n\n")
+                .draggable(true);
+        marker15x = aMap.addMarker(markerOption15x);
+        markerOption16x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.874378,116.190389))
+                .title("北京园博园")
+                .snippet("北京园博园为第九届中国国际园林博览会的举办地”\n与卢沟桥遥相呼应，历史文化氛围浓郁，地形多变，山水相依，颇具特色。\n")
+                .draggable(true);
+        marker16x = aMap.addMarker(markerOption16x);
+        markerOption17x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.992844,116.27416))
+                .title("颐和园")
+                .snippet("颐和园，中国清朝时期皇家园林”\n2009年，颐和园入选中国世界纪录协会中国现存最大的皇家园林。\n")
+                .draggable(true);
+        marker17x = aMap.addMarker(markerOption17x);
     }
 
     /**

@@ -117,6 +117,16 @@ public class Search_Fragment extends Fragment  implements
         String name = preferences.getString(Cname, "11");
         String name1 = preferences.getString(Cname1, "11");
         tv1.setText(name+"---"+name1);
+        tv1.setOnClickListener(new View.OnClickListener() {
+            SharedPreferences preferences=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+            String name = preferences.getString(Cname, "11");
+            String name1 = preferences.getString(Cname1, "11");
+            @Override
+            public void onClick(View v) {
+                et1.setText(name);
+                et2.setText(name1);
+            }
+        });
 
         init();
         setLocation();
@@ -222,7 +232,7 @@ public class Search_Fragment extends Fragment  implements
             if (result != null && result.getGeocodeAddressList() != null
                     && result.getGeocodeAddressList().size() > 0) {
                 GeocodeAddress address = result.getGeocodeAddressList().get(0);
-                if(addressName.getLatitude() == a.getLatitude()) {
+                if(addressName.getLatitude() == 1) {
                     addressName = address.getLatLonPoint();
                 }
                 else {
