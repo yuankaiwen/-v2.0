@@ -6,7 +6,10 @@ import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
-
+/*作者：李越
+*程序启动时显示的图片
+* 2016.12.13
+ */
 public class LoadActivity extends Activity {
     private static final int LOAD_DISPLAY_TIME = 1500;
     @Override

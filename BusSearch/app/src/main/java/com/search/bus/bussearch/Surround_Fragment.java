@@ -55,9 +55,14 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MarkerOptions markerOption1w,markerOption2w,markerOption3w,markerOption4w,markerOption5w,markerOption6w,markerOption7w,markerOption8w,markerOption9w,markerOption10w;
     private Marker marker1w,marker2w,marker3w,marker4w,marker5w,marker6w,marker7w,marker8w,marker9w,marker10w;
     //夏晔 添加覆盖物
-    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x;
-    private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x;
-
+    private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x,markerOption18x,markerOption19x,markerOption20x;
+    private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x,marker18x,marker19x,marker20x;
+    //李烨 添加覆盖物
+    private MarkerOptions markerOption1ly;
+    private Marker marker1ly;
+    //苑凯文 添加覆盖物
+    private MarkerOptions markerOption1y;
+    private Marker marker1y;
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
@@ -222,6 +227,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             public void onMapClick(LatLng latLng) {
                 xyAddHide();
                 wlAddHide();
+                ykwAddHide();
+                liyeAddHide();
                 marker.hideInfoWindow();
                 marker1.hideInfoWindow();
                 marker1l.hideInfoWindow();
@@ -252,6 +259,14 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         });
     }
 
+    private void  liyeAddHide(){
+
+    }
+
+    private void  ykwAddHide(){
+
+    }
+
     private void xyAddHide(){
         marker1x.hideInfoWindow();
         marker2x.hideInfoWindow();
@@ -270,6 +285,9 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         marker16x.hideInfoWindow();
         marker10x.hideInfoWindow();
         marker17x.hideInfoWindow();
+        marker18x.hideInfoWindow();
+        marker19x.hideInfoWindow();
+        marker20x.hideInfoWindow();
     }
 
     private void wlAddHide(){
@@ -327,6 +345,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private void addMarkersToMap() {
         xyAddMarkers();
         wlAddMarkers();
+        ykwAddMarkers();
+        liyeAddMarkers();
 
         //--------------------示例添加
         //标注覆盖物
@@ -565,6 +585,12 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         //--------------------------------------石家庄景点添加完毕
     }
 
+    private void liyeAddMarkers() {
+    }
+
+    private void ykwAddMarkers() {
+    }
+
     private void wlAddMarkers() {
         //天津覆盖物添加 -汪仑
         //天津之眼
@@ -786,6 +812,27 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("颐和园，中国清朝时期皇家园林”\n2009年，颐和园入选中国世界纪录协会中国现存最大的皇家园林。\n")
                 .draggable(true);
         marker17x = aMap.addMarker(markerOption17x);
+        markerOption18x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.942192,116.336473))
+                .title("北京动物园")
+                .snippet("是中国最大的动物园之一，也是一所世界知名的动物园”\n\n")
+                .draggable(true);
+        marker18x = aMap.addMarker(markerOption18x);
+        markerOption19x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.952852,116.414579))
+                .title("地坛公园")
+                .snippet("地坛公园又称方泽坛，是古都北京五坛中的第二大坛”\n1984年被评为北京市文物保护单位\n")
+                .draggable(true);
+        marker19x = aMap.addMarker(markerOption19x);
+        markerOption20x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.870953,116.356557))
+                .title("大观园")
+                .snippet("大观园，是《红楼梦》中贾府为元春省亲而修建的别墅”\n于北京西城区南菜园护城河畔建造大观园作为87版电视剧拍摄基地。摄制完成后，景区对外开放。\n")
+                .draggable(true);
+        marker20x = aMap.addMarker(markerOption20x);
     }
 
     /**
