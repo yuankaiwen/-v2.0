@@ -48,8 +48,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MapView mapView;
     private AMap aMap;
     //覆盖物添加 李越
-    private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l,markerOption4l,markerOption5l,markerOption6l,markerOption7l,markerOption8l,markerOption9l,markerOption10l,markerOption11l,markerOption12l,markerOption13l,markerOption14l,markerOption15l,markerOption16l,markerOption17l,markerOption18l,markerOption19l,markerOption20l,markerOption21l,markerOption22l,markerOption23l,markerOption24l;
-    private Marker marker,marker1,marker1l,marker2l,marker3l,marker4l,marker5l,marker6l,marker7l,marker8l,marker9l,marker10l,marker11l,marker12l,marker13l,marker14l,marker15l,marker16l,marker17l,marker18l,marker19l,marker20l,marker21l,marker22l,marker23l,marker24l;
+    private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l,markerOption4l,markerOption5l,markerOption6l,markerOption7l,markerOption8l,markerOption9l,markerOption10l,markerOption11l,markerOption12l,markerOption13l,markerOption14l,markerOption15l,markerOption16l,markerOption17l,markerOption18l,markerOption19l,markerOption20l,markerOption21l,markerOption22l,markerOption23l,markerOption24l,markerOption25l,markerOption26l,markerOption27l,markerOption28l,markerOption29l;
+    private Marker marker,marker1,marker1l,marker2l,marker3l,marker4l,marker5l,marker6l,marker7l,marker8l,marker9l,marker10l,marker11l,marker12l,marker13l,marker14l,marker15l,marker16l,marker17l,marker18l,marker19l,marker20l,marker21l,marker22l,marker23l,marker24l,marker25l,marker26l,marker27l,marker28l,marker29l;
     private Button btn1,btn2,btn3;
     //天津景点覆盖物添加 -汪仑
     private MarkerOptions markerOption1w,markerOption2w,markerOption3w,markerOption4w,markerOption5w,markerOption6w,markerOption7w,markerOption8w,markerOption9w,markerOption10w;
@@ -258,6 +258,11 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 marker22l.hideInfoWindow();
                 marker23l.hideInfoWindow();
                 marker24l.hideInfoWindow();
+                marker25l.hideInfoWindow();
+                marker26l.hideInfoWindow();
+                marker27l.hideInfoWindow();
+                marker28l.hideInfoWindow();
+                marker29l.hideInfoWindow();
             }
         });
     }
@@ -596,6 +601,48 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .draggable(true);
         marker24l = aMap.addMarker(markerOption24l);
         //--------------------------------------石家庄景点添加完毕
+        //---------------------------------------添加衡水覆盖物
+        markerOption25l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.609552, 115.610267))
+                .title("衡水湖")
+                .snippet("AAAA级景区\n这里有宽广的湖水、茂密的芦苇荡，还有荷塘、湖心岛等。游客来此可以乘船游湖，拍摄荷花和芦苇，还可以漫步湖心小岛，观赏各种动物，是河北当地周末放松游玩的好去处。")
+                .draggable(true);
+        marker25l = aMap.addMarker(markerOption25l);
+
+        markerOption26l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.038148, 115.980909))
+                .title("武强年画博物馆")
+                .snippet("AAAA级景区\n全国第一家以年画为主题的专题博物馆。这里展示了著名的武强年画的历史发展、流派和特色等，有众多的年画实物展示，是了解年画文化的好去处")
+                .draggable(true);
+        marker26l = aMap.addMarker(markerOption26l);
+
+        markerOption27l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.717142, 115.64107))
+                .title("宝云寺")
+                .snippet("AA级景区\n碑石记载始建于隋，其实早在南北朝时，此处已有寺庙。相传在其鼎盛之时，寺域广占三十亩，殿堂多有近百座，“樵楼钟声惊千里，成年累月拥香客”。")
+                .draggable(true);
+        marker27l = aMap.addMarker(markerOption27l);
+
+        markerOption28l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.559513, 115.573345))
+                .title("灵秀山庄")
+                .snippet("AA级景区\n整个山庄分三个景区。前部为玄门、慧目街、购物区、游船码头；中部为悬空岛、紫薇山、长城、迷宫、镇海塔；后部为北岛度假村、旅社等。 千年古刹“竹林寺”为景区主体建筑之一，为古冀州古城的四大禅寺之一。")
+                .draggable(true);
+        marker28l = aMap.addMarker(markerOption28l);
+
+        markerOption29l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.742214, 115.70929))
+                .title("衡水二中")
+                .snippet("河北省示范性学校")
+                .draggable(true);
+        marker29l = aMap.addMarker(markerOption29l);
+        //----------------------------------------衡水覆盖物添加完毕
+
     }
 
     private void liyeAddMarkers() {
