@@ -36,9 +36,9 @@ import com.amap.api.maps2d.model.Text;
 import com.amap.api.maps2d.model.TextOptions;
 
 /**
- * 作者 夏晔         修改者：李越     修改者：汪仑          修改者：李烨
- *  2016/11/29.      2016.11.29       2016.12.1             2016/12/13
- *  编写             添加地图控件     添加定位功能           添加地图组件
+ * 作者 夏晔         修改者：李越     修改者：汪仑
+ *  2016/11/29.      2016.11.29       2016.12.1
+ *  编写             添加地图控件     添加定位功能
  */
 public class Surround_Fragment extends Fragment implements LocationSource,
         AMapLocationListener {
