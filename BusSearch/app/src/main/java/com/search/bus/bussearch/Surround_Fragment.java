@@ -48,8 +48,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MapView mapView;
     private AMap aMap;
     //覆盖物添加 李越
-    private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l,markerOption4l,markerOption5l,markerOption6l,markerOption7l,markerOption8l,markerOption9l,markerOption10l,markerOption11l,markerOption12l,markerOption13l;
-    private Marker marker,marker1,marker1l,marker2l,marker3l,marker4l,marker5l,marker6l,marker7l,marker8l,marker9l,marker10l,marker11l,marker12l,marker13l;
+    private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l,markerOption4l,markerOption5l,markerOption6l,markerOption7l,markerOption8l,markerOption9l,markerOption10l,markerOption11l,markerOption12l,markerOption13l,markerOption14l,markerOption15l,markerOption16l,markerOption17l,markerOption18l,markerOption19l,markerOption20l,markerOption21l,markerOption22l,markerOption23l,markerOption24l;
+    private Marker marker,marker1,marker1l,marker2l,marker3l,marker4l,marker5l,marker6l,marker7l,marker8l,marker9l,marker10l,marker11l,marker12l,marker13l,marker14l,marker15l,marker16l,marker17l,marker18l,marker19l,marker20l,marker21l,marker22l,marker23l,marker24l;
     private Button btn1,btn2,btn3;
     //天津景点覆盖物添加 -汪仑
     private MarkerOptions markerOption1w,markerOption2w,markerOption3w,markerOption4w,markerOption5w,markerOption6w,markerOption7w,markerOption8w,markerOption9w,markerOption10w;
@@ -237,6 +237,17 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 marker11l.hideInfoWindow();
                 marker12l.hideInfoWindow();
                 marker13l.hideInfoWindow();
+                marker14l.hideInfoWindow();
+                marker15l.hideInfoWindow();
+                marker16l.hideInfoWindow();
+                marker17l.hideInfoWindow();
+                marker18l.hideInfoWindow();
+                marker19l.hideInfoWindow();
+                marker20l.hideInfoWindow();
+                marker21l.hideInfoWindow();
+                marker22l.hideInfoWindow();
+                marker23l.hideInfoWindow();
+                marker24l.hideInfoWindow();
             }
         });
     }
@@ -463,6 +474,95 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("AAAA级景区\n国内最大的室内水上娱乐中心，是夏天时避暑玩水的好地方。")
                 .draggable(true);
         marker13l = aMap.addMarker(markerOption13l);
+
+        markerOption14l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.646414, 113.921309))
+                .title("灵寿水泉溪自然风景区")
+                .snippet("AAAA级景区\n一处以山川、峡谷、洞穴和溪水为主的自然风景区。")
+                .draggable(true);
+        marker14l = aMap.addMarker(markerOption14l);
+
+        markerOption15l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.738479, 113.793177))
+                .title("驼梁风景区")
+                .snippet("AAAA级景区\n因为山顶形状很像驼峰而得名，是河北省内著名的山峰。")
+                .draggable(true);
+        marker15l = aMap.addMarker(markerOption15l);
+
+        markerOption16l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.198163, 113.750898))
+                .title("沕沕水生态风景区")
+                .snippet("AAAA级景区\n景区内山势清秀，有众多的瀑布、深潭和泉水，还有茂密的树木，景色幽然清新。")
+                .draggable(true);
+        marker16l = aMap.addMarker(markerOption16l);
+
+        markerOption17l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.249608, 113.981541))
+                .title("白鹿温泉")
+                .snippet("AAAA级景区\n来到这里可以享受温泉、体验SPA按摩等服务、游玩众多的水上娱乐项目等")
+                .draggable(true);
+        marker17l = aMap.addMarker(markerOption17l);
+
+        markerOption18l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.011353, 114.55467))
+                .title("空中花园")
+                .snippet("AAAA级景区\n景区是将七座高楼的第六、七、八、九层用透明玻璃材质在空中联通起来，打通成为一座面积三万多平米的空中区域，离地16米左右，是一处真正意义的空中花园")
+                .draggable(true);
+        marker18l = aMap.addMarker(markerOption18l);
+
+        markerOption19l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.225858, 114.155492))
+                .title("东方巨龟苑")
+                .snippet("AAAA级景区\n这里既有美丽的园林风光，也有众多的娱乐项目，是石家庄周边观光娱乐的好去处。")
+                .draggable(true);
+        marker19l = aMap.addMarker(markerOption19l);
+
+        markerOption20l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.728075, 113.859892))
+                .title("五岳寨风景区")
+                .snippet("AAAA级景区\n因为景区内的五座主峰形似中国的五岳而得名")
+                .draggable(true);
+        marker20l = aMap.addMarker(markerOption20l);
+
+        markerOption21l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.119413, 113.833359))
+                .title("仙台山")
+                .snippet("AAA级景区\n仙台山是一处以秀丽的自然风光为主，兼有人文景观的综合风景区。")
+                .draggable(true);
+        marker21l = aMap.addMarker(markerOption21l);
+
+        markerOption22l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.526823, 114.090814))
+                .title("藤龙山风景区")
+                .snippet("AAAA级景区\n一处集地质景观、森林生态、人文历史景观于一体的高品位原生态自然风景区。")
+                .draggable(true);
+        marker22l = aMap.addMarker(markerOption22l);
+
+        markerOption23l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.541582, 114.156286))
+                .title("秋山风景区")
+                .snippet("AAAA级景区\n是一片以山岭风光为主的自然风景区，也是石家庄市周末郊游的好出去。")
+                .draggable(true);
+        marker23l = aMap.addMarker(markerOption23l);
+
+        markerOption24l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.132324, 114.571665))
+                .title("广惠寺华塔")
+                .snippet("AAA级景区\n广惠寺华塔，又名多宝塔。")
+                .draggable(true);
+        marker24l = aMap.addMarker(markerOption24l);
+        //--------------------------------------石家庄景点添加完毕
     }
 
     private void wlAddMarkers() {
