@@ -47,13 +47,16 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private FragmentManager fm;
     private MapView mapView;
     private AMap aMap;
-    private MarkerOptions markerOption,markerOption1;
-    private Marker marker,marker1;
+    private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l;
+    private Marker marker,marker1,marker1l,marker2l,marker3l;
+    private Button btn1,btn2,btn3;
+    //天津景点覆盖物添加 -汪仑
+    private MarkerOptions markerOption1w;
+    private Marker marker1w;
     //夏晔 添加覆盖物
     private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x;
     private Marker marker1x,marker2x,marker3x,marker4x,marker5x;
 
-    private Button btn1,btn2,btn3;
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
@@ -220,15 +223,23 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 wlAddHide();
                 marker.hideInfoWindow();
                 marker1.hideInfoWindow();
+                marker1l.hideInfoWindow();
+                marker2l.hideInfoWindow();
+                marker3l.hideInfoWindow();
             }
         });
     }
 
     private void xyAddHide(){
         marker1x.hideInfoWindow();
+        marker2x.hideInfoWindow();
+        marker3x.hideInfoWindow();
+        marker4x.hideInfoWindow();
+        marker5x.hideInfoWindow();
     }
 
     private void wlAddHide(){
+        marker1w.hideInfoWindow();
     }
 
     /**
@@ -274,13 +285,13 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         xyAddMarkers();
         wlAddMarkers();
 
-        //--------------------
+        //--------------------示例添加
         //标注覆盖物
         markerOption = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 .position(new LatLng(39.918058, 116.397026))
                 .title("故宫")
-                .snippet("详细信息")
+                .snippet("AAAAA级\n北京故宫是中国明清两代的皇家宫殿，旧称为紫禁城，位于北京中轴线的中心，是中国古代宫廷建筑之精华。")
                 .draggable(true);
         marker = aMap.addMarker(markerOption);
 
@@ -296,24 +307,92 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 .position(new LatLng(39.908692, 116.397477))
                 .title("天安门")
-                .snippet("详细信息")
+                .snippet("天安门广场，位于北京市中心\n天安门广场记载了中国人民不屈不挠的革命精神和大无畏的英雄气概")
                 .draggable(true);
         marker1 = aMap.addMarker(markerOption1);
+        //----------------正式添加
+        //------------------------------石家庄
+        markerOption1l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.722482, 114.768948))
+                .title("赵州桥")
+                .snippet("AAAA级景区\n又称安济桥，俗名大石桥")
+                .draggable(true);
+        marker1l = aMap.addMarker(markerOption1l);
+
+        markerOption2l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.74921, 114.784331))
+                .title("柏林禅寺")
+                .snippet("中国著名佛教禅寺，北方佛教的一座重镇，赵州祖庭所在地")
+                .draggable(true);
+        marker2l = aMap.addMarker(markerOption2l);
+
+        markerOption3l = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.076899, 114.458284))
+                .title("水上公园")
+                .snippet("AAA级景区\n水上公园由三湖九岛构成，有国内外建筑艺术、园林艺术、雕塑艺术精品")
+                .draggable(true);
+        marker3l = aMap.addMarker(markerOption3l);
     }
 
     private void wlAddMarkers() {
+        //天津覆盖物添加 -汪仑
+        //天津之眼
+        markerOption1w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.160042,117.193405))
+                .title("天津之眼")
+                .snippet("天津的标志，是世界上唯一建在桥上的摩天轮")
+                .draggable(true);
+        marker1w = aMap.addMarker(markerOption1w);
+
     }
 
     private void xyAddMarkers() {
-         //夏晔        添加北京景点覆盖物    2016/12/8
-         markerOption1x = new MarkerOptions().icon(BitmapDescriptorFactory
+        //夏晔        添加北京景点覆盖物    2016/12/8
+        markerOption1x = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
-                .position(new LatLng(39.918058, 116.397026))
+                .position(new LatLng(39.91073, 116.394351))
                 .title("中山公园")
-                .snippet("详细信息")
+                .snippet("国家AAAA级旅游景区\n占地23万平方米，是—座纪念性的古典坛庙园林。\n 它原是明清两代的社稷坛，与太庙（今劳动人民文化宫）一起沿袭周代以来“左祖右社”的礼制建造。")
                 .draggable(true);
         marker1x = aMap.addMarker(markerOption1x);
-        
+
+
+               markerOption2x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.92819, 116.388717))
+                .title("北海公园")
+                .snippet("国家AAAA级旅游景区\n城内景山西侧，在故宫的西北面，与中海、南海合称三海。\n 是中国现存最古老、最完整、最具综合性和代表性的皇家园林之一")
+                .draggable(true);
+        marker2x = aMap.addMarker(markerOption2x);
+
+
+        markerOption3x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.35619, 116.016727))
+                .title("八达岭长城")
+                .snippet("是中国古代伟大的防御工程万里长城的重要组成部分\n明长城的八达岭段被称作“玉关天堑”，为明代居庸关八景之一。\n 是举世闻名的旅游胜地。")
+                .draggable(true);
+        marker3x = aMap.addMarker(markerOption3x);
+
+        markerOption4x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.496439, 116.334665))
+                .title("北京野生动物园")
+                .snippet("是经原国家林业局批准，北京市政府立项、\n北京绿野晴川有限公司投资建设的集动物保护、\n野生动物驯养繁殖及科普教育为一体的大型自然生态公园。")
+                .draggable(true);
+        marker4x = aMap.addMarker(markerOption4x);
+
+        markerOption5x = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(40.014992, 116.392515))
+                .title("北京奥林匹克公园")
+                .snippet("是包含体育赛事、会展中心、科教文化、休闲购物等多种功能在内的综合性市民公共活动中心。\n集中体现了“科技、绿色、人文”三大理念\n融合了办公、商业、酒店、文化、体育、会议、居住多种功能的新型城市区域")
+                .draggable(true);
+        marker5x = aMap.addMarker(markerOption5x);
     }
 
     /**
