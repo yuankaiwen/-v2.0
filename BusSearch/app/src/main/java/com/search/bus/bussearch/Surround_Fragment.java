@@ -54,7 +54,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     //天津景点覆盖物添加 -汪仑
     private MarkerOptions markerOption1w,markerOption2w,markerOption3w,markerOption4w,markerOption5w,markerOption6w,markerOption7w,markerOption8w,markerOption9w,markerOption10w;
     private Marker marker1w,marker2w,marker3w,marker4w,marker5w,marker6w,marker7w,marker8w,marker9w,marker10w;
-    //保定覆盖物调价 -汪仑
+    //保定覆盖物添加 -汪仑
     private MarkerOptions markerOption11w,markerOption12w,markerOption13w,markerOption14w,markerOption15w,markerOption16w,markerOption17w,markerOption18w,markerOption19w,markerOption20w;
     private Marker marker11w,marker12w,marker13w,marker14w,marker15w,marker16w,marker17w,marker18w,marker19w,marker20w;
     //夏晔 添加覆盖物
