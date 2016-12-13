@@ -54,6 +54,9 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     //天津景点覆盖物添加 -汪仑
     private MarkerOptions markerOption1w,markerOption2w,markerOption3w,markerOption4w,markerOption5w,markerOption6w,markerOption7w,markerOption8w,markerOption9w,markerOption10w;
     private Marker marker1w,marker2w,marker3w,marker4w,marker5w,marker6w,marker7w,marker8w,marker9w,marker10w;
+    //保定覆盖物调价 -汪仑
+    private MarkerOptions markerOption11w,markerOption12w,markerOption13w,markerOption14w,markerOption15w,markerOption16w,markerOption17w,markerOption18w,markerOption19w,markerOption20w;
+    private Marker marker11w,marker12w,marker13w,marker14w,marker15w,marker16w,marker17w,marker18w,marker19w,marker20w;
     //夏晔 添加覆盖物
     private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x,markerOption18x,markerOption19x,markerOption20x;
     private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x,marker18x,marker19x,marker20x;
@@ -301,6 +304,16 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         marker8w.hideInfoWindow();
         marker9w.hideInfoWindow();
         marker10w.hideInfoWindow();
+        marker11w.hideInfoWindow();
+        marker12w.hideInfoWindow();
+        marker13w.hideInfoWindow();
+        marker14w.hideInfoWindow();
+        marker15w.hideInfoWindow();
+        marker16w.hideInfoWindow();
+        marker17w.hideInfoWindow();
+        marker18w.hideInfoWindow();
+        marker19w.hideInfoWindow();
+        marker20w.hideInfoWindow();
     }
 
     /**
@@ -682,6 +695,91 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("海河风景线，始于三岔口，止于大光明桥，横穿繁华的天津市区 ")
                 .draggable(true);
         marker10w = aMap.addMarker(markerOption10w);
+
+
+    //保定覆盖物添加
+        // 白石山世界地质公园
+        markerOption11w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.230279,114.682518))
+                .title(" 白石山世界地质公园")
+                .snippet("一处以壮观的峰林地貌为主的自然风景区，也是保定市最著名的景区之一。 ")
+                .draggable(true);
+        marker11w = aMap.addMarker(markerOption11w);
+        // 白洋淀
+        markerOption12w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.942554,115.988563))
+                .title(" 白洋淀")
+                .snippet("白洋淀位于河北省中部，距离北京市区和天津市区的车程均约140公里，是京津地区周末短途旅游的理想去处。 ")
+                .draggable(true);
+        marker12w = aMap.addMarker(markerOption12w);
+        // 野三坡
+        markerOption13w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.668405,115.385583))
+                .title(" 野三坡")
+                .snippet("野三坡景区位于河北保定涞水县，在北京城区西侧约100公里处，是京郊欣赏自然风光、避暑游玩的胜地 ")
+                .draggable(true);
+        marker13w = aMap.addMarker(markerOption13w);
+        // 古莲花池
+        markerOption14w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.857501,115.49814))
+                .title(" 古莲花池")
+                .snippet("古莲花池，是保定古城八景之一，称“涟漪夏艳”，为我国北方古代园林明珠。 ")
+                .draggable(true);
+        marker14w = aMap.addMarker(markerOption14w);
+        // 狼牙山
+        markerOption15w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.131318,115.178706))
+                .title(" 狼牙山")
+                .snippet("狼牙山景区位于保定市易县西部的太行山东麓，距县城45公里，这里山峰险峻陡峭，因为形状好像尖利的狼牙而得名。 ")
+                .draggable(true);
+        marker15w = aMap.addMarker(markerOption15w);
+        //清西陵
+        markerOption16w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(39.372423,115.362775))
+                .title(" 清西陵")
+                .snippet("清西陵位于河北保定易县，距离北京约140公里，是清朝雍正、嘉庆、道光、光绪四位皇帝及多位后妃、阿哥、王公的陵寝所在地。 ")
+                .draggable(true);
+        marker16w = aMap.addMarker(markerOption16w);
+        //冉庄地道战遗址
+        markerOption17w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.672388,115.372046))
+                .title("冉庄地道战遗址")
+                .snippet("冉庄地道战遗址，位于河北省保定市西南30公里处清苑县境内，是抗日战争时期中国共产党领导下的华北抗日主战场上一处极为重要的战争遗址。 ")
+                .draggable(true);
+        marker17w = aMap.addMarker(markerOption17w);
+        //满城汉墓
+        markerOption18w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.947902,115.301577))
+                .title("满城汉墓")
+                .snippet("满城汉墓位于保定市满城县县城西侧，是西汉时中山靖王刘胜及其妻子窦绾之墓，两座墓室规模很大 ")
+                .draggable(true);
+        marker18w = aMap.addMarker(markerOption18w);
+        //天生桥风景区
+        markerOption19w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.87376,113.879292))
+                .title("天生桥风景区")
+                .snippet("天生桥风景区是一个国家森林公园。位于河北省保定市阜平县东下关乡朱家营村。 ")
+                .draggable(true);
+        marker19w = aMap.addMarker(markerOption19w);
+        // 虎山风景区
+        markerOption20w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.934227,114.56183))
+                .title(" 虎山风景区")
+                .snippet("虎山风景区位于保定市曲阳县北侧，因为山顶有一块形状像猛虎的石头而得名。 ")
+                .draggable(true);
+        marker20w = aMap.addMarker(markerOption20w);
+
+
 
     }
 
