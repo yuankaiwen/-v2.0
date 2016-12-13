@@ -57,7 +57,12 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     //夏晔 添加覆盖物
     private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x,markerOption18x,markerOption19x,markerOption20x;
     private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x,marker18x,marker19x,marker20x;
-
+    //李烨 添加覆盖物
+    private MarkerOptions markerOption1ly;
+    private Marker marker1ly;
+    //苑凯文 添加覆盖物
+    private MarkerOptions markerOption1y;
+    private Marker marker1y;
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
@@ -222,6 +227,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             public void onMapClick(LatLng latLng) {
                 xyAddHide();
                 wlAddHide();
+                ykwAddHide();
+                liyeAddHide();
                 marker.hideInfoWindow();
                 marker1.hideInfoWindow();
                 marker1l.hideInfoWindow();
@@ -250,6 +257,14 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 marker24l.hideInfoWindow();
             }
         });
+    }
+
+    private void  liyeAddHide(){
+
+    }
+
+    private void  ykwAddHide(){
+
     }
 
     private void xyAddHide(){
@@ -330,6 +345,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private void addMarkersToMap() {
         xyAddMarkers();
         wlAddMarkers();
+        ykwAddMarkers();
+        liyeAddMarkers();
 
         //--------------------示例添加
         //标注覆盖物
@@ -566,6 +583,12 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .draggable(true);
         marker24l = aMap.addMarker(markerOption24l);
         //--------------------------------------石家庄景点添加完毕
+    }
+
+    private void liyeAddMarkers() {
+    }
+
+    private void ykwAddMarkers() {
     }
 
     private void wlAddMarkers() {
