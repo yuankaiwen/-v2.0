@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.animation.Animation;
 import android.widget.TextView;
 
 /**
@@ -24,7 +25,11 @@ public class Introduce extends Activity{
         txtView.setBackgroundResource(R.drawable.introduce);
         /******************动画的启动****************************/
         //获得动画对象
-        final AnimationDrawable animation = (AnimationDrawable) txtView.getBackground();
+        final    AnimationDrawable animation = (AnimationDrawable) txtView.getBackground();
+
+        //给animation添加监听事件
+
+
         //开始动画
        animation.start();
         /*********************动画关闭***************************/
