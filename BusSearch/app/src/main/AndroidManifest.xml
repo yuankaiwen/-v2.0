@@ -26,10 +26,11 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="16fa07151a27ef39b9001dfc63c51b01" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".LoadActivity"
+            android:configChanges="orientation|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
