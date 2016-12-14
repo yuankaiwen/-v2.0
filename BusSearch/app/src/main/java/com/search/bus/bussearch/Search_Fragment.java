@@ -127,7 +127,7 @@ public class Search_Fragment extends Fragment  implements
         }
         else{
             if (name1.equals("我的位置")){
-                tv1.setText(name+"---"+addressname);
+                tv1.setText(name+"---"+name2);
             }
             else{
                 tv1.setText(name+"---"+name1);
