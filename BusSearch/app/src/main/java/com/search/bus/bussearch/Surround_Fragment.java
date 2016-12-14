@@ -64,8 +64,8 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private MarkerOptions markerOption1ly;
     private Marker marker1ly;
     //苑凯文 添加覆盖物
-    private MarkerOptions markerOption1y,markerOption2y,markerOption3y,markerOption4y,markerOption5y,markerOption6y;
-    private Marker marker1y,marker2y,marker3y,marker4y,marker5y,marker6y;
+    private MarkerOptions markerOption1y,markerOption2y,markerOption3y,markerOption4y,markerOption5y,markerOption6y,markerOption7y,markerOption8y,markerOption9y,markerOption10y,markerOption11y,markerOption12y,markerOption13y,markerOption14y,markerOption15y,markerOption16y;
+    private Marker marker1y,marker2y,marker3y,marker4y,marker5y,marker6y,marker7y,marker8y,marker9y,marker10y,marker11y,marker12y,marker13y,marker14y,marker15y,marker16y;
     //添加定位组件
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
@@ -278,6 +278,16 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         marker4y.hideInfoWindow();
         marker5y.hideInfoWindow();
         marker6y.hideInfoWindow();
+        marker7y.hideInfoWindow();
+        marker8y.hideInfoWindow();
+        marker9y.hideInfoWindow();
+        marker10y.hideInfoWindow();
+        marker11y.hideInfoWindow();
+        marker12y.hideInfoWindow();
+        marker13y.hideInfoWindow();
+        marker14y.hideInfoWindow();
+        marker15y.hideInfoWindow();
+        marker16y.hideInfoWindow();
     }
 
     private void xyAddHide(){
@@ -705,6 +715,95 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .draggable(true);
         marker6y = aMap.addMarker(markerOption6y);
 
+        //邯郸景点覆盖物
+        //广府古城
+        markerOption7y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.701069,114.73033))
+                .title("广府古城")
+                .snippet("AAAA级景区\n古城四周环绕池水，有芦苇荡、荷塘等，可以拍摄水上城墙的美丽景色")
+                .draggable(true);
+        marker7y = aMap.addMarker(markerOption7y);
+        //响堂山石窟
+        markerOption8y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.464699,114.18343))
+                .title("响堂山石窟")
+                .snippet("AAAA级景区\n参观历史悠久的精美石窟，感受历史的沧桑和佛教艺术的魅力")
+                .draggable(true);
+        marker8y = aMap.addMarker(markerOption8y);
+        //京娘湖
+        markerOption9y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.896028,113.947049))
+                .title("京娘湖")
+                .snippet("AAAA级景区\n赤红崖壁环绕着碧绿湖水，景色壮美奇幻，十分适合摄影")
+                .draggable(true);
+        marker9y = aMap.addMarker(markerOption9y);
+        //娲皇宫
+        markerOption10y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.64079,113.616375))
+                .title("娲皇宫")
+                .snippet("AAAA级景区\n国内最早、规模最大的祭祀女娲的古建筑群")
+                .draggable(true);
+        marker10y = aMap.addMarker(markerOption10y);
+        //丛台公园
+        markerOption11y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.615581,114.490794))
+                .title("丛台公园")
+                .snippet("AAAA级景区\n以历史上著名的赵国丛台为基础建设的一座公园，也是邯郸当地市民放松娱乐的好去处")
+                .draggable(true);
+        marker11y = aMap.addMarker(markerOption11y);
+        //太行五指山
+        markerOption12y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.52268,113.663852))
+                .title("太行五指山")
+                .snippet("AAAA级景区\n大自然巧夺天工形成一座仰卧大佛的形状，惟妙惟肖，弥漫着悠远宁静，佛瑞吉祥的信息")
+                .draggable(true);
+        marker12y = aMap.addMarker(markerOption12y);
+        //赵苑公园
+        markerOption12y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.624317,114.472808))
+                .title("赵苑公园")
+                .snippet("AAAA级景区\n邯郸市面积最大的公园")
+                .draggable(true);
+        marker12y = aMap.addMarker(markerOption12y);
+        //古武当山
+        markerOption13y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.950466,113.951857))
+                .title("古武当山")
+                .snippet("AAAA级景区\n一座道教历史名山")
+                .draggable(true);
+        marker13y = aMap.addMarker(markerOption13y);
+        //兰陵王墓
+        markerOption14y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.319516,114.352193))
+                .title("兰陵王墓")
+                .snippet("AAA级景区\n北齐神武帝高欢之孙高肃之墓,墓冢高大，周围建有透花围墙，墓地建有碑亭")
+                .draggable(true);
+        marker14y = aMap.addMarker(markerOption14y);
+        //东山文化博艺园
+        markerOption15y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.709129,114.245879))
+                .title("东山文化博艺园")
+                .snippet("AAAA级景区\n一座集文化旅游、度假休闲、餐饮娱乐为一体的新型文化博艺园")
+                .draggable(true);
+        marker15y = aMap.addMarker(markerOption15y);
+        //邯郸市博物馆
+        markerOption16y = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(36.613663,114.494886))
+                .title("邯郸市博物馆")
+                .snippet("是集中展示邯郸历史文化的殿堂")
+                .draggable(true);
+        marker16y = aMap.addMarker(markerOption16y);
     }
 
     private void wlAddMarkers() {
