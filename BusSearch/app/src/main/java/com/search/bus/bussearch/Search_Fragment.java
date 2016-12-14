@@ -330,7 +330,7 @@ public class Search_Fragment extends Fragment  implements
                     getLatlon(name1);
                     getLatlon(name);
                 }
-                b = 0;
+
                 showDialog();
                 /*
                 * 将跳转页面延迟几秒进行使前两个函数能够调用完成
@@ -338,6 +338,7 @@ public class Search_Fragment extends Fragment  implements
                 Timer timer=new Timer();
                 TimerTask task=new TimerTask(){
                     public void run(){
+                        b = 0;
                         Intent intent = new Intent();
                         intent.setClass(getActivity(),BusRouteActivity.class);
                         startActivity(intent);
