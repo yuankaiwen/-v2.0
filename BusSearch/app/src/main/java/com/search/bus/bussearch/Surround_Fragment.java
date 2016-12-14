@@ -60,9 +60,12 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     //夏晔 添加覆盖物
     private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x,markerOption18x,markerOption19x,markerOption20x,markerOption21x,markerOption22x,markerOption23x,markerOption24x,markerOption25x,markerOption26x,markerOption27x,markerOption28x,markerOption29x,markerOption30x,markerOption31x,markerOption32x,markerOption33x,markerOption34x,markerOption35x,markerOption36x;
     private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x,marker18x,marker19x,marker20x,marker21x,marker22x,marker23x,marker24x,marker25x,marker26x,marker27x,marker28x,marker29x,marker30x,marker31x,marker32x,marker33x,marker34x,marker35x,marker36x,marker37x;
-    //李烨 添加覆盖物
+    //李烨 添加覆盖物 唐山
     private MarkerOptions markerOption1ly,markerOption2ly,markerOption3ly,markerOption4ly,markerOption5ly,markerOption6ly,markerOption7ly,markerOption8ly,markerOption9ly,markerOption10ly ,markerOption11ly ,markerOption12ly ,markerOption13ly ,markerOption14ly ,markerOption15ly;
     private Marker marker1ly,marker2ly,marker3ly,marker4ly,marker5ly,marker6ly,marker7ly,marker8ly,marker9ly,marker10ly,marker11ly,marker12ly,marker13ly,marker14ly,marker15ly;
+    //李烨 添加覆盖物 邢台
+    private MarkerOptions markerOption16ly, markerOption17ly, markerOption18ly, markerOption19ly, markerOption20ly, markerOption21ly, markerOption22ly;
+    private Marker marker16ly,marker17ly,marker18ly,marker19ly,marker20ly,marker21ly,marker22ly;
     //苑凯文 添加覆盖物
     private MarkerOptions markerOption1y,markerOption2y,markerOption3y,markerOption4y,markerOption5y,markerOption6y;
     private Marker marker1y,marker2y,marker3y,marker4y,marker5y,marker6y;
@@ -283,6 +286,14 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         marker13ly.hideInfoWindow();
         marker14ly.hideInfoWindow();
         marker15ly.hideInfoWindow();
+        marker16ly.hideInfoWindow();
+        marker17ly.hideInfoWindow();
+        marker18ly.hideInfoWindow();
+        marker19ly.hideInfoWindow();
+        marker20ly.hideInfoWindow();
+        marker21ly.hideInfoWindow();
+        marker22ly.hideInfoWindow();
+
     }
 
     private void  ykwAddHide(){
@@ -745,6 +756,115 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("宜人美景方便游玩")
                 .draggable(true);
         marker9ly = aMap.addMarker(markerOption9ly);
+
+        //----------------正式添加
+        //------------------------------邢台
+
+        //------------------云梦山
+        markerOption10ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.327534, 113.929313))
+                .title("云梦山")
+                .snippet("AAAA级\n四面山势峭拔，赤壁翠崖，头顶一片圆天，神秘莫测，故称“壶天仙境”。云梦山被誉为“北方的九寨沟")
+                .draggable(true);
+        marker10ly = aMap.addMarker(markerOption10ly);
+        //------------------
+        markerOption11ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.088163, 113.786049))
+                .title("天河山")
+                .snippet("天河山位于晋冀交界的太行山深处，距邢台市65公里,交通便利")
+                .draggable(true);
+        marker11ly = aMap.addMarker(markerOption11ly);
+        //------------------
+        markerOption12ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.311132, 114.27311))
+                .title("扁鹊庙")
+                .snippet("扁鹊庙又名鹊山庙，鹊王庙，始建于汉朝。位于内邱县城西21.8公里处")
+                .draggable(true);
+        marker12ly = aMap.addMarker(markerOption12ly);
+        //------------------
+        markerOption13ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.466588, 114.439062))
+                .title("崆山白云洞")
+                .snippet("崆山白云洞位于河北省邢台市临城县境内，东距县城6公里")
+                .draggable(true);
+        marker13ly = aMap.addMarker(markerOption13ly);
+        //------------------
+        markerOption14ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.186205, 113.861401))
+                .title("九龙峡")
+                .snippet("九龙峡被誉为“燕赵一景”，人间仙境,享有“太行自然风光明珠”")
+                .draggable(true);
+        marker14ly = aMap.addMarker(markerOption14ly);
+        //------------------
+        markerOption15ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.104419, 114.256258))
+                .title("天梯山")
+                .snippet("天梯山风景区集奇山、丽水、古洞、金泉、抗金遗址于一体，突出一个“险”字，以险取胜别具秀美特点。")
+                .draggable(true);
+        marker15ly = aMap.addMarker(markerOption15ly);
+        //------------------
+        markerOption16ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.16419, 113.919597))
+                .title("前南峪生态观光园")
+                .snippet("南峪生态观光园系全国百家农业旅游示范点之一，前南峪生态观光园位于邢台县西部浆水")
+                .draggable(true);
+        marker16ly = aMap.addMarker(markerOption16ly);
+        //------------------
+        markerOption17ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.137955, 113.865497))
+                .title("邢台大峡谷")
+                .snippet("邢台大峡谷，又称峡谷群、太行奇峡群，素来被地质学家们称为“世界奇峡”")
+                .draggable(true);
+        marker17ly = aMap.addMarker(markerOption17ly);
+        //------------------
+        markerOption18ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.533494, 114.713354))
+                .title("汉牡丹园")
+                .snippet("柏乡县汉牡丹园于2015年9月25日至11月10日举办第二届菊花展。绘集万株精品，艺菊造型")
+                .draggable(true);
+        marker18ly = aMap.addMarker(markerOption18ly);
+        //------------------
+        markerOption19ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.103669, 114.579555))
+                .title("百泉湾温泉")
+                .snippet("百泉湾温泉取自地下2800米的深层岩溶水，水温高达60℃，日出水量3000多立方米")
+                .draggable(true);
+        marker19ly = aMap.addMarker(markerOption19ly);
+        //------------------
+        markerOption20ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.455742,114.393128))
+                .title("岐山湖")
+                .snippet("景区以其八平方公里的浩大水域，及其布有亭、台、楼、榭、古建群的数千米的长廊")
+                .draggable(true);
+        marker20ly = aMap.addMarker(markerOption20ly);
+        //------------------
+        markerOption21ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.020316,113.796778))
+                .title("邢台紫金山")
+                .snippet("景区面积28平方公里，植被覆盖率达97%，负氧离子高出一般工作环境200多倍")
+                .draggable(true);
+        marker21ly = aMap.addMarker(markerOption21ly);
+        //------------------
+        markerOption22ly = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.137888, 113.82583))
+                .title("太行奇峡群")
+                .snippet("八百里太行山脉寻觅，绝无仅有，二十亿年地质遗踪，一览无疑邢台太行奇峡群――")
+                .draggable(true);
+        marker22ly = aMap.addMarker(markerOption22ly);
+
     }
 
     private void ykwAddMarkers() {
