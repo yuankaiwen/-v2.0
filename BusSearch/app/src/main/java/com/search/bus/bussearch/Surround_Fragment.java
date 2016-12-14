@@ -57,6 +57,9 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     //保定覆盖物添加 -汪仑
     private MarkerOptions markerOption11w,markerOption12w,markerOption13w,markerOption14w,markerOption15w,markerOption16w,markerOption17w,markerOption18w,markerOption19w,markerOption20w;
     private Marker marker11w,marker12w,marker13w,marker14w,marker15w,marker16w,marker17w,marker18w,marker19w,marker20w;
+    //沧州覆盖物天机  -汪仑
+    private MarkerOptions markerOption21w,markerOption22w,markerOption23w,markerOption24w,markerOption25w,markerOption26w,markerOption27w,markerOption28w,markerOption29w,markerOption30w;
+    private Marker marker21w,marker22w,marker23w,marker24w,marker25w,marker26w,marker27w,marker28w,marker29w,marker30w;
     //夏晔 添加覆盖物
     private MarkerOptions markerOption1x,markerOption2x,markerOption3x,markerOption4x,markerOption5x,markerOption6x,markerOption7x,markerOption8x,markerOption9x,markerOption10x,markerOption11x,markerOption12x,markerOption13x,markerOption14x,markerOption15x,markerOption16x,markerOption17x,markerOption18x,markerOption19x,markerOption20x,markerOption21x,markerOption22x,markerOption23x,markerOption24x,markerOption25x,markerOption26x,markerOption27x,markerOption28x,markerOption29x,markerOption30x,markerOption31x,markerOption32x,markerOption33x,markerOption34x,markerOption35x,markerOption36x;
     private Marker marker1x,marker2x,marker3x,marker4x,marker5x,marker6x,marker7x,marker8x,marker9x,marker10x,marker11x,marker12x,marker13x,marker14x,marker15x,marker16x,marker17x,marker18x,marker19x,marker20x,marker21x,marker22x,marker23x,marker24x,marker25x,marker26x,marker27x,marker28x,marker29x,marker30x,marker31x,marker32x,marker33x,marker34x,marker35x,marker36x,marker37x;
@@ -343,6 +346,13 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         marker18w.hideInfoWindow();
         marker19w.hideInfoWindow();
         marker20w.hideInfoWindow();
+        marker21w.hideInfoWindow();
+        marker22w.hideInfoWindow();
+        marker23w.hideInfoWindow();
+        marker24w.hideInfoWindow();
+        marker25w.hideInfoWindow();
+        marker26w.hideInfoWindow();
+        marker27w.hideInfoWindow();
     }
 
     /**
@@ -975,6 +985,64 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("虎山风景区位于保定市曲阳县北侧，因为山顶有一块形状像猛虎的石头而得名。 ")
                 .draggable(true);
         marker20w = aMap.addMarker(markerOption20w);
+
+    //沧州覆盖物添加
+        // 吴桥杂技大世界
+        markerOption21w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.641815,116.385174))
+                .title("吴桥杂技大世界 ")
+                .snippet("吴桥县位于河北省东南部，是我国杂技发祥地之一，被国内外杂技界公认为中国杂技之乡 ")
+                .draggable(true);
+        marker21w = aMap.addMarker(markerOption21w);
+        // 东光铁佛寺
+        markerOption22w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.875895,116.53841))
+                .title("东光铁佛寺 ")
+                .snippet("东光铁佛寺是著名的名胜古迹，素以沧州狮子景州塔，东光县的铁菩萨闻名遐迩 ")
+                .draggable(true);
+        marker22w = aMap.addMarker(markerOption22w);
+        // 千童祠
+        markerOption23w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(37.852903,117.139681))
+                .title("千童祠  ")
+                .snippet("千童祠,位于沧州市东南盐山县千童镇,北距盐山县城25公里。千童祠内有东渡堂、泰山堂、友谊堂,记载着秦代方士徐福勇率童男童女、百工巧匠成功东渡及对日本列岛的影响 ")
+                .draggable(true);
+        marker23w = aMap.addMarker(markerOption23w);
+        // 沧州铁狮子
+        markerOption24w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.210819,117.017863))
+                .title("沧州铁狮子 ")
+                .snippet("铁狮子坐落在沧州市东南20公里沧州旧城开元寺前，东关村西0.5公里处。是全国重点文物保护单位。也是我国现存年代最早规模较大的铸铁艺术品之一 ")
+                .draggable(true);
+        marker24w = aMap.addMarker(markerOption24w);
+        // 纪晓岚文化园
+        markerOption25w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.281089,116.548449))
+                .title(" 纪晓岚文化园")
+                .snippet("纪晓岚文化园位于纪晓岚故里河北省沧州市沧县崔尔庄。纪晓岚是中国一代文宗。名昀，字晓岚，一字春帆，晚号石云，道号观弈道人。 ")
+                .draggable(true);
+        marker25w = aMap.addMarker(markerOption25w);
+        //盘古古庙
+        markerOption26w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.526336,116.800503))
+                .title(" 盘古古庙 ")
+                .snippet("盘古遗址就在今沧州市所属的青县境内。青县城南6公里有村曰“大盘古”，村西有座盘古庙。大盘古位于黑龙港河（古黄河故道）西岸，其南有小盘古村 ")
+                .draggable(true);
+        marker26w = aMap.addMarker(markerOption26w);
+        //军屯惨案纪念碑
+        markerOption27w = new MarkerOptions().icon(BitmapDescriptorFactory
+                .defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .position(new LatLng(38.181932,116.395276))
+                .title("军屯惨案纪念碑 ")
+                .snippet("军屯惨案纪念碑座落于泊头市营子镇东北3公里的军屯村。为纪念日寇侵华期间制造的“军屯惨案”中遇害的一百多名死难者，0营子镇军屯村支部、军屯村委会于公元1999年建立。")
+                .draggable(true);
+        marker27w = aMap.addMarker(markerOption27w);
 
 
 
