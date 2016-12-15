@@ -1,4 +1,4 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.search;
 
 public class ChString {
 	public static final String Kilometer = "\u516c\u91cc";// "公里";

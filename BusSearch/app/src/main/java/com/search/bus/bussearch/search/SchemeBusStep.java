@@ -1,4 +1,4 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.search;
 
 import com.amap.api.services.route.BusStep;
 

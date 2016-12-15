@@ -1,4 +1,4 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.setting;
 
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.animation.Animation;
 import android.widget.TextView;
+
+import com.search.bus.bussearch.R;
 
 /**
  * 使用介绍            解决问题

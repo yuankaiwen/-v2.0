@@ -1,4 +1,4 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.setting;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.search.bus.bussearch.R;
 
 /**                         作者：李烨                           作者：李烨
  * 作者 夏晔                版本信息、检查更新的编写            关于我们跳转、点击

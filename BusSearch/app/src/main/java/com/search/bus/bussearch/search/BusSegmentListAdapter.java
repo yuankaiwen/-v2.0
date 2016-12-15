@@ -1,4 +1,4 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.search;
 
 import android.content.Context;
 import android.view.View;
@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.amap.api.services.busline.BusStationItem;
 import com.amap.api.services.route.BusStep;
 import com.amap.api.services.route.RailwayStationItem;
+import com.search.bus.bussearch.R;
 
 import java.util.ArrayList;
 import java.util.List;
