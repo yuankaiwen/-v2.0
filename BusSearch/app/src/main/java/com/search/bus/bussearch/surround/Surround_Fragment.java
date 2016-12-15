@@ -51,7 +51,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     //覆盖物添加 李越                                      石家庄覆盖物                                                                                                                                                                                                                                                                                                                                                                                                                                                 衡水覆盖物添加                                                                  张家口覆盖物添加
     private MarkerOptions markerOption,markerOption1,markerOption1l,markerOption2l,markerOption3l,markerOption4l,markerOption5l,markerOption6l,markerOption7l,markerOption8l,markerOption9l,markerOption10l,markerOption11l,markerOption12l,markerOption13l,markerOption14l,markerOption15l,markerOption16l,markerOption17l,markerOption18l,markerOption19l,markerOption20l,markerOption21l,markerOption22l,markerOption23l,markerOption24l,markerOption25l,markerOption26l,markerOption27l,markerOption28l,markerOption29l,markerOption30l,markerOption31l,markerOption32l,markerOption33l,markerOption34l,markerOption35l,markerOption36l,markerOption37l,markerOption38l,markerOption39l,markerOption40l,markerOption41l;
     private Marker marker,marker1,marker1l,marker2l,marker3l,marker4l,marker5l,marker6l,marker7l,marker8l,marker9l,marker10l,marker11l,marker12l,marker13l,marker14l,marker15l,marker16l,marker17l,marker18l,marker19l,marker20l,marker21l,marker22l,marker23l,marker24l,marker25l,marker26l,marker27l,marker28l,marker29l,marker30l,marker31l,marker32l,marker33l,marker34l,marker35l,marker36l,marker37l,marker38l,marker39l,marker40l,marker41l;
-    private Button btn1,btn2,btn3;
+    private Button btn1,btn2;
     //天津景点覆盖物添加 -汪仑
     private MarkerOptions markerOption1w,markerOption2w,markerOption3w,markerOption4w,markerOption5w,markerOption6w,markerOption7w,markerOption8w,markerOption9w,markerOption10w;
     private Marker marker1w,marker2w,marker3w,marker4w,marker5w,marker6w,marker7w,marker8w,marker9w,marker10w;
@@ -84,7 +84,6 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         View view=inflater.inflate(R.layout.surround_fragment, container, false);
         btn1=(Button)view.findViewById(R.id.clearMap);//获取控件
         btn2=(Button)view.findViewById(R.id.resetMap);
-        btn3=(Button)view.findViewById(R.id.Location);
         setListener();
         mapView = (MapView)view.findViewById(R.id.map);//获取控件
         mapView.onCreate(savedInstanceState);// 此方法必须重写
@@ -92,7 +91,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             aMap = mapView.getMap();
             setUpMap();
         }
-
+        setLocation(); //定位
         return view;
     }
 
@@ -120,12 +119,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 }
             }
         });
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setLocation(); //定位
-            }
-        });
+
     }
     /**
      * 作者：汪仑
@@ -143,7 +137,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         myLocationStyle.strokeWidth(1.0f);// 设置圆形的边框粗细
         aMap.setMyLocationStyle(myLocationStyle);
         aMap.setLocationSource(this);// 设置定位监听
-        aMap.getUiSettings().setMyLocationButtonEnabled(false);// 设置默认定位按钮是否显示
+        aMap.getUiSettings().setMyLocationButtonEnabled(true);// 设置默认定位按钮是否显示
         aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
         // aMap.setMyLocationType()
     }
