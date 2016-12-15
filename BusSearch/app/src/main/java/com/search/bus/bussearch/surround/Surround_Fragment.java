@@ -469,13 +469,6 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .draggable(true);
         marker = aMap.addMarker(markerOption);
 
-        //文本覆盖物
-        TextOptions textOptions1 = new TextOptions().position(new LatLng(39.908692, 116.397477))
-                .text("天安门").fontColor(Color.WHITE)
-                .backgroundColor(Color.BLACK).fontSize(30).align(Text.ALIGN_CENTER_HORIZONTAL, Text.ALIGN_CENTER_VERTICAL)
-                .zIndex(1.f).typeface(Typeface.DEFAULT_BOLD)
-                ;
-        aMap.addText(textOptions1);
         //标注覆盖物
         markerOption1 = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
@@ -542,14 +535,6 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .draggable(true);
         marker7l = aMap.addMarker(markerOption7l);
 
-        //文本覆盖物
-        TextOptions textOptions8l = new TextOptions().position(new LatLng(38.270381, 113.748037))
-                .text("佛光山").fontColor(Color.WHITE)
-                .backgroundColor(Color.BLACK).fontSize(30).align(Text.ALIGN_CENTER_HORIZONTAL, Text.ALIGN_CENTER_VERTICAL)
-                .zIndex(1.f).typeface(Typeface.DEFAULT_BOLD)
-                ;
-        aMap.addText(textOptions8l);
-
         markerOption8l = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 .position(new LatLng(38.270381, 113.748037))
@@ -557,14 +542,6 @@ public class Surround_Fragment extends Fragment implements LocationSource,
                 .snippet("AAAA级景区\n佛光山景区是国家级风景名胜区西柏坡—天桂山景区的一个分景区，属禅林圣地。")
                 .draggable(true);
         marker8l = aMap.addMarker(markerOption8l);
-
-        //文本覆盖物
-        TextOptions textOptions9l = new TextOptions().position(new LatLng(38.147663, 114.586235))
-                .text("赵云庙").fontColor(Color.WHITE)
-                .backgroundColor(Color.BLACK).fontSize(30).align(Text.ALIGN_CENTER_HORIZONTAL, Text.ALIGN_CENTER_VERTICAL)
-                .zIndex(1.f).typeface(Typeface.DEFAULT_BOLD)
-                ;
-        aMap.addText(textOptions9l);
 
         markerOption9l = new MarkerOptions().icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED))
