@@ -1,4 +1,4 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.search;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -28,6 +28,9 @@ import com.amap.api.services.route.RouteSearch;
 import com.amap.api.services.route.RouteSearch.BusRouteQuery;
 import com.amap.api.services.route.RouteSearch.OnRouteSearchListener;
 import com.amap.api.services.route.WalkRouteResult;
+import com.search.bus.bussearch.R;
+import com.search.bus.bussearch.load.ToastUtil;
+
 /**
  * 作者 苑凯文
  * 2016/11/29.

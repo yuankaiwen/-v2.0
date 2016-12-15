@@ -1,4 +1,4 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.search;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,6 +19,8 @@ import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.Marker;
 import com.amap.api.services.route.BusPath;
 import com.amap.api.services.route.BusRouteResult;
+import com.search.bus.bussearch.R;
+
 /**
  * 作者 苑凯文
  * 2016/11/29.
