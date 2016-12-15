@@ -59,6 +59,7 @@ public class Search_Fragment extends Fragment  implements
     private ProgressDialog progDialog = null;
     private GeocodeSearch geocoderSearch;
     private LatLonPoint a = new LatLonPoint(1,1);
+    private LatLonPoint x = new LatLonPoint(1,1);
     public static LatLonPoint addressName = new LatLonPoint(1,1);
     public static LatLonPoint addressName1 = new LatLonPoint(0,0);
     private String addressname;
@@ -252,7 +253,7 @@ public class Search_Fragment extends Fragment  implements
      * 响应地理编码//
      */
     public void getLatlon( String name) {
-        showDialog();
+
 
         GeocodeQuery query = new GeocodeQuery(name,city);// 第一个参数表示地址，第二个参数表示查询城市，中文或者中文全拼，citycode、adcode，
         geocoderSearch.getFromLocationNameAsyn(query);// 设置同步地理编码请求
@@ -290,11 +291,12 @@ public class Search_Fragment extends Fragment  implements
         if (rCode == AMapException.CODE_AMAP_SUCCESS) {
             if (result != null && result.getGeocodeAddressList() != null
                     && result.getGeocodeAddressList().size() > 0) {
-                GeocodeAddress address = result.getGeocodeAddressList().get(0);
-                if(addressName.getLatitude() == 1) {
+                if(addressName.getLatitude() == x.getLatitude()){
+                    GeocodeAddress address = result.getGeocodeAddressList().get(0);
                     addressName = address.getLatLonPoint();
                 }
-                else {
+                if(addressName.getLatitude() != x.getLatitude()){
+                    GeocodeAddress address = result.getGeocodeAddressList().get(0);
                     addressName1 = address.getLatLonPoint();
                 }
             } else {
@@ -378,7 +380,7 @@ public class Search_Fragment extends Fragment  implements
     @Override
     public void onClick(View v) {
         String name = et1.getText().toString();
-        String name1 = et2.getText().toString();
+        final String name1 = et2.getText().toString();
         switch (v.getId()) {
             case R.id.Bt_1:
                 et1.setText("我的位置");
@@ -388,9 +390,14 @@ public class Search_Fragment extends Fragment  implements
              */
             case R.id.geoButton:
                 if(b == 0){
-                    getLatlon(name1);
-                    getLatlon(name);
+                    addressName.setLongitude(x.getLongitude());
+                    addressName.setLatitude(x.getLatitude());
+                    String Name = et1.getText().toString();
+                    String Name1 = et2.getText().toString();
+                    getLatlon(Name1);
+                    getLatlon(Name);
                 }
+                b = 0;
 
                 showDialog();
                 /*
@@ -399,7 +406,6 @@ public class Search_Fragment extends Fragment  implements
                 Timer timer=new Timer();
                 TimerTask task=new TimerTask(){
                     public void run(){
-                        b = 0;
                         Intent intent = new Intent();
                         intent.setClass(getActivity(),BusRouteActivity.class);
                         startActivity(intent);
