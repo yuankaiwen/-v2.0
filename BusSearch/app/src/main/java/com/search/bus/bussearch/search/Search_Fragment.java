@@ -1,7 +1,6 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.search;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +17,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -37,10 +35,13 @@ import com.amap.api.services.geocoder.GeocodeAddress;
 import com.amap.api.services.geocoder.GeocodeQuery;
 import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
+import com.amap.api.services.geocoder.RegeocodeQuery;
 import com.amap.api.services.geocoder.RegeocodeResult;
 import com.amap.api.services.help.Inputtips;
 import com.amap.api.services.help.InputtipsQuery;
 import com.amap.api.services.help.Tip;
+import com.search.bus.bussearch.R;
+import com.search.bus.bussearch.load.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +61,7 @@ public class Search_Fragment extends Fragment  implements
     private LatLonPoint a = new LatLonPoint(1,1);
     public static LatLonPoint addressName = new LatLonPoint(1,1);
     public static LatLonPoint addressName1 = new LatLonPoint(0,0);
+    private String addressname;
     private AMap aMap;
     private MapView mapView;
     private AutoCompleteTextView et1;
@@ -71,6 +73,7 @@ public class Search_Fragment extends Fragment  implements
     private int b = 0;
     private String Cname="xixi";
     private String Cname1="22";
+    private String Cname2="11";
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -117,15 +120,38 @@ public class Search_Fragment extends Fragment  implements
         SharedPreferences preferences=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
         String name = preferences.getString(Cname, "11");
         String name1 = preferences.getString(Cname1, "11");
-        tv1.setText(name+"---"+name1);
+        String name2 = preferences.getString(Cname2, "11");
+        if (name.equals("我的位置")){
+            tv1.setText(name2+"---"+name1);
+        }
+        else{
+            if (name1.equals("我的位置")){
+                tv1.setText(name+"---"+name2);
+            }
+            else{
+                tv1.setText(name+"---"+name1);
+            }
+        }
         tv1.setOnClickListener(new View.OnClickListener() {
             SharedPreferences preferences=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
             String name = preferences.getString(Cname, "11");
             String name1 = preferences.getString(Cname1, "11");
             @Override
             public void onClick(View v) {
-                et1.setText(name);
-                et2.setText(name1);
+                if (name.equals("我的位置")){
+                    getAddress(addressName);
+                    et1.setText(addressname);
+                }
+                else{
+                    et1.setText(name);
+                }
+                if (name1.equals("我的位置")){
+                    getAddress(addressName1);
+                    et2.setText(addressname);
+                }
+                else{
+                    et2.setText(name1);
+                }
             }
         });
 
@@ -220,8 +246,29 @@ public class Search_Fragment extends Fragment  implements
         GeocodeQuery query = new GeocodeQuery(name,city);// 第一个参数表示地址，第二个参数表示查询城市，中文或者中文全拼，citycode、adcode，
         geocoderSearch.getFromLocationNameAsyn(query);// 设置同步地理编码请求
     }
+    /**
+     * 响应逆地理编码
+     */
+    public void getAddress(final LatLonPoint latLonPoint) {
+        RegeocodeQuery query = new RegeocodeQuery(latLonPoint, 200,
+                GeocodeSearch.AMAP);// 第一个参数表示一个Latlng，第二参数表示范围多少米，第三个参数表示是火系坐标系还是GPS原生坐标系
+        geocoderSearch.getFromLocationAsyn(query);// 设置异步逆地理编码请求
+    }
+    /**
+     * 逆地理编码回调
+     */
     @Override
-    public void onRegeocodeSearched(RegeocodeResult regeocodeResult, int i) {
+    public void onRegeocodeSearched(RegeocodeResult result, int rCode) {
+        if (rCode == AMapException.CODE_AMAP_SUCCESS) {
+            if (result != null && result.getRegeocodeAddress() != null
+                    && result.getRegeocodeAddress().getFormatAddress() != null) {
+                addressname = result.getRegeocodeAddress().getFormatAddress()
+                        + "附近";
+            } else {
+            }
+        } else {
+            ToastUtil.showerror(getActivity(), rCode);
+        }
 
     }
     /**
@@ -272,10 +319,13 @@ public class Search_Fragment extends Fragment  implements
         if (mListener != null && amapLocation != null) {
             String name = et1.getText().toString();
             if (amapLocation != null
-                    && amapLocation.getErrorCode() == 0 && name.equals("我的位置")) {
+                    && amapLocation.getErrorCode() == 0) {
                 mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
-                addressName.setLatitude(amapLocation.getLatitude());
-                addressName.setLongitude(amapLocation.getLongitude());
+                if (name.equals("我的位置")){
+                    getAddress(addressName);
+                    addressName.setLatitude(amapLocation.getLatitude());
+                    addressName.setLongitude(amapLocation.getLongitude());
+                }
             } else {
                 String errText = "定位失败," + amapLocation.getErrorCode()+ ": " + amapLocation.getErrorInfo();
                 Log.e("AmapErr",errText);
@@ -367,6 +417,9 @@ public class Search_Fragment extends Fragment  implements
         SharedPreferences.Editor editor=preferences.edit();
         editor.putString(Cname, name);
         editor.putString(Cname1,name1);
+        if (name.equals("我的位置")){
+            editor.putString(Cname2,addressname);
+        }
         editor.commit();
     }
 

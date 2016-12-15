@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.search;
 
 import android.text.Html;
 import android.text.Spanned;
@@ -13,6 +13,7 @@ import com.amap.api.services.route.BusPath;
 import com.amap.api.services.route.BusStep;
 import com.amap.api.services.route.RouteBusLineItem;
 import com.amap.api.services.route.RouteRailwayItem;
+import com.search.bus.bussearch.R;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;

@@ -1,11 +1,13 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.setting;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.search.bus.bussearch.MainActivity;
+import com.search.bus.bussearch.R;
 
 /**
  *作者 夏晔                                     作者：李烨

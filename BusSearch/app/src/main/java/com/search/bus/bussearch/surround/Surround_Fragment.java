@@ -1,4 +1,4 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.surround;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -34,6 +34,7 @@ import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.MyLocationStyle;
 import com.amap.api.maps2d.model.Text;
 import com.amap.api.maps2d.model.TextOptions;
+import com.search.bus.bussearch.R;
 
 /**
  * 作者 夏晔         修改者：李越     修改者：汪仑

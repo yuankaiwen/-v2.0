@@ -1,4 +1,4 @@
-package com.search.bus.bussearch;
+package com.search.bus.bussearch.search;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,6 +14,7 @@ import com.amap.api.maps2d.model.Marker;
 import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.Polyline;
 import com.amap.api.maps2d.model.PolylineOptions;
+import com.search.bus.bussearch.R;
 
 import java.util.ArrayList;
 import java.util.List;
