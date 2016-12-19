@@ -12,11 +12,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/g_return"
-            android:src="@drawable/back"/>
+
     </LinearLayout>
     <com.search.bus.bussearch.load.ReTextView
         android:gravity="center"

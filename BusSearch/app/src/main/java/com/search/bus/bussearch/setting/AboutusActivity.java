@@ -21,23 +21,6 @@ public class AboutusActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aboutus);
 
-        //获取组件ID
-        imgView = (ImageView)findViewById(R.id.g_return);
-
-        //获取点击Listener
-        backListener();
-
     }
 
-    //我们的简介页面返回按钮的点击事件
-    private void backListener(){
-        imgView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3 = new Intent();
-                intent3.setClass(AboutusActivity.this,MainActivity.class);
-                startActivity(intent3);
-            }
-        });
-    }
 }
