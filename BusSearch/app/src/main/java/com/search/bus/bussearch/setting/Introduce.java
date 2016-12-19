@@ -29,7 +29,7 @@ public class Introduce extends Activity{
         //获取视图控件
         TextView txtView = (TextView)findViewById(R.id.animation);
 
-        ImageView imgView = (ImageView)findViewById(R.id.Iback);
+        imgView = (ImageView)findViewById(R.id.Iback);
         //为视图控件加载视图动画资源
         txtView.setBackgroundResource(R.drawable.introduce);
         /******************动画的启动****************************/
