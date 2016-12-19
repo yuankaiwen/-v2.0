@@ -3,6 +3,7 @@ package com.search.bus.bussearch;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.search.bus.bussearch.search.Search_Fragment;
+import com.search.bus.bussearch.setting.Setting_Fragment;
+import com.search.bus.bussearch.surround.Surround_Fragment;
 /*
 作者 夏晔
 更新 fragment跳转
@@ -90,6 +95,11 @@ public class MainActivity extends Activity {
         setListener();
         //3.设置默认的页面（fragment页面）
         setDefaultPage();
+        Intent intent=getIntent();
+        int Fid=intent.getIntExtra("Fid",-1);
+        if(Fid==1||Fid==2){
+            setChangePage();
+        }
     }
 
     //获取界面控件
@@ -124,5 +134,25 @@ public class MainActivity extends Activity {
         transaction.commit();
         btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search_change));
         text1.setTextColor(Color.parseColor("#009FCC"));
+    }
+
+    /*作者：李越
+    *实现界面跳转之后的回退
+    * 2016.12.19
+     */
+    private void setChangePage() {
+        //1.获取一个FragmentManager对象
+        FragmentManager fm = getFragmentManager();
+        //2.获取FragmentTransaction对象
+        FragmentTransaction transaction = fm.beginTransaction();
+        mShezhi = new Setting_Fragment();
+        //3.设置页面
+        transaction.replace(R.id.fl, mShezhi);
+        //4.执行更改
+        transaction.commit();
+        btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_settings_change));
+        text3.setTextColor(Color.parseColor("#009FCC"));
+        btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search));
+        text1.setTextColor(Color.parseColor("#898989"));
     }
 }

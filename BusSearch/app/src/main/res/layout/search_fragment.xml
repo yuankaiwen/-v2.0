@@ -6,7 +6,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/beijing4">
+    android:background="@drawable/beijing12">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,12 +77,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:paddingBottom="5dp"
+            android:paddingBottom="10dp"
             android:gravity="right"
             android:layout_marginRight="20dp">
             <Button
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:background="@drawable/switch1"
                 android:id="@+id/Bt_2"></Button>
 
@@ -106,7 +106,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:id="@+id/geoButton"
-        android:background="@drawable/bussearch_search1"
+        android:background="@drawable/bus2"
         android:layout_marginTop="50dp"
 
         />
@@ -117,7 +117,8 @@
         android:orientation="vertical"
         android:layout_weight="1"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="20dp"
+        android:gravity="center|bottom">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
