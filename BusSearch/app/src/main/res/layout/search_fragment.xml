@@ -106,7 +106,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:id="@+id/geoButton"
-        android:background="@drawable/bussearch_search1"
+        android:background="@drawable/bus2"
         android:layout_marginTop="50dp"
 
         />

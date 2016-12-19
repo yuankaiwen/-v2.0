@@ -13,7 +13,7 @@ xmlns:tools="http://schemas.android.com/tools"
 
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-
+    android:background="@drawable/beijing12"
     tools:context="com.search.bus.bussearch.MainActivity"
 android:orientation="vertical">
 
@@ -47,7 +47,7 @@ android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
+                    android:layout_height="55dp"
                     android:drawableLeft="@drawable/women1"
                     android:drawableRight="@drawable/jiji"
                     android:drawablePadding="10.0dip"
@@ -56,6 +56,7 @@ android:orientation="vertical">
                     android:textColor="#ff333333"
                     android:textSize="16.0sp"
                     android:id="@+id/about_us"
+
                     />
             </TableRow>
 
@@ -72,7 +73,7 @@ android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
+                    android:layout_height="55dp"
                     android:drawableLeft="@drawable/banben1"
                     android:drawableRight="@drawable/jiji"
                     android:drawablePadding="10.0dip"
@@ -98,7 +99,7 @@ android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
+                    android:layout_height="55dp"
                     android:drawableLeft="@drawable/gengxin1"
                     android:drawableRight="@drawable/jiji"
                     android:drawablePadding="10.0dip"
@@ -123,7 +124,7 @@ android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
+                    android:layout_height="55dp"
                     android:drawableLeft="@drawable/shuoming1"
                     android:drawableRight="@drawable/jiji"
                     android:drawablePadding="10.0dip"
