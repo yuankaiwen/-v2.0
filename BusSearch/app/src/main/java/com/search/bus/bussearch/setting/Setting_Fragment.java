@@ -67,7 +67,7 @@ public class Setting_Fragment extends Fragment {
                         typeNews.setBackgroundColor(Color.parseColor("#009FCC"));
                         break;
                     case MotionEvent.ACTION_UP://拿开
-                        typeNews.setBackgroundColor(Color.WHITE);
+                        typeNews.setBackgroundResource(R.drawable.beijing12);
                         break;
                 }
                 return false;
@@ -81,7 +81,7 @@ public class Setting_Fragment extends Fragment {
                         upDate.setBackgroundColor(Color.parseColor("#009FCC"));
                         break;
                     case MotionEvent.ACTION_UP:
-                        upDate.setBackgroundColor(Color.WHITE);
+                        upDate.setBackgroundResource(R.drawable.beijing12);
                         break;
                 }
                 return false;
@@ -95,7 +95,7 @@ public class Setting_Fragment extends Fragment {
                         about_us.setBackgroundColor(Color.parseColor("#009FCC"));
                         break;
                     case MotionEvent.ACTION_UP:
-                        about_us.setBackgroundColor(Color.WHITE);
+                        about_us.setBackgroundResource(R.drawable.beijing12);
                         break;
                 }
                 return false;
@@ -109,7 +109,7 @@ public class Setting_Fragment extends Fragment {
                        introduce.setBackgroundColor(Color.parseColor("#009FCC"));
                         break;
                     case MotionEvent.ACTION_UP:
-                        introduce.setBackgroundColor(Color.WHITE);
+                        introduce.setBackgroundResource(R.drawable.beijing12);
                         break;
                 }
                 return false;
