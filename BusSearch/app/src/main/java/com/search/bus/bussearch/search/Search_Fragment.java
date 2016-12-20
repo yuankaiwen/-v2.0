@@ -148,18 +148,19 @@ public class Search_Fragment extends Fragment  implements
             SharedPreferences preferences=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
             String name = preferences.getString(Cname, "11");
             String name1 = preferences.getString(Cname1, "11");
+            String name2 = preferences.getString(Cname2, "11");
             @Override
             public void onClick(View v) {
                 if (name.equals("我的位置")){
                     getAddress(addressName);
-                    et1.setText(addressname);
+                    et1.setText(name2);
                 }
                 else{
                     et1.setText(name);
                 }
                 if (name1.equals("我的位置")){
                     getAddress(addressName1);
-                    et2.setText(addressname);
+                    et2.setText(name2);
                 }
                 else{
                     et2.setText(name1);
@@ -380,7 +381,7 @@ public class Search_Fragment extends Fragment  implements
     @Override
     public void onClick(View v) {
         String name = et1.getText().toString();
-        final String name1 = et2.getText().toString();
+        String name1 = et2.getText().toString();
         switch (v.getId()) {
             case R.id.Bt_1:
                 et1.setText("我的位置");
