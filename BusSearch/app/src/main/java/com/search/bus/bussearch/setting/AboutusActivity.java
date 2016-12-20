@@ -26,7 +26,6 @@ public class AboutusActivity extends Activity{
 
         //获取点击Listener
         backListener();
-
     }
 
     //我们的简介页面返回按钮的点击事件
@@ -36,6 +35,7 @@ public class AboutusActivity extends Activity{
             public void onClick(View view) {
                 Intent intent3 = new Intent();
                 intent3.setClass(AboutusActivity.this,MainActivity.class);
+                intent3.putExtra("Fid",1);
                 startActivity(intent3);
             }
         });
