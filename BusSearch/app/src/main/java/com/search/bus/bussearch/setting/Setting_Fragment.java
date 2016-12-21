@@ -129,7 +129,7 @@ public class Setting_Fragment extends Fragment {
         typeNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"版本 V1.0.0",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,R.string.app_version,Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -145,7 +145,7 @@ public class Setting_Fragment extends Fragment {
         upDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"已是最新版本",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,R.string.check_version,Toast.LENGTH_SHORT).show();
             }
         });
     }
