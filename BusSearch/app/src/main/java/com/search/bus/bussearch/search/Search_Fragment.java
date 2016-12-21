@@ -333,9 +333,9 @@ public class Search_Fragment extends Fragment  implements
         if (mListener != null && amapLocation != null) {
             String name = et1.getText().toString();
             if (amapLocation != null
-                    && amapLocation.getErrorCode() == 0) {
+                    && amapLocation.getErrorCode() == 0){
                 mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
-                if (name.equals("我的位置")){
+                if(name.equals("我的位置")){
                     getAddress(addressName);
                     addressName.setLatitude(amapLocation.getLatitude());
                     addressName.setLongitude(amapLocation.getLongitude());
@@ -391,12 +391,17 @@ public class Search_Fragment extends Fragment  implements
              */
             case R.id.geoButton:
                 if(b == 0){
-                    addressName.setLongitude(x.getLongitude());
-                    addressName.setLatitude(x.getLatitude());
                     String Name = et1.getText().toString();
                     String Name1 = et2.getText().toString();
-                    getLatlon(Name1);
-                    getLatlon(Name);
+                    if(Name.equals("我的位置")){
+                        getLatlon(Name1);
+                    }
+                    else{
+                        addressName.setLongitude(x.getLongitude());
+                        addressName.setLatitude(x.getLatitude());
+                        getLatlon(Name);
+                        getLatlon(Name1);
+                    }
                 }
                 b = 0;
 
