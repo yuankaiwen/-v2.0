@@ -46,9 +46,9 @@ public class MainActivity extends Activity {
                     if (mChaxun == null) {
                         mChaxun = new Search_Fragment();
                     }
-                    btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search_change));
-                    btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_surroundings));
-                    btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_settings));
+                    btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crcx2));
+                    btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crzb1));
+                    btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crsz1));
                     text1.setTextColor(Color.parseColor("#009FCC"));
                     text2.setTextColor(Color.parseColor("#898989"));
                     text3.setTextColor(Color.parseColor("#898989"));
@@ -58,9 +58,9 @@ public class MainActivity extends Activity {
                     break;
                 case R.id.btn22:
                     mZhoubian = new Surround_Fragment();
-                    btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search));
-                    btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_surroundings_change));
-                    btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_settings));
+                    btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crcx1));
+                    btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crzb2));
+                    btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crsz1));
                     text1.setTextColor(Color.parseColor("#898989"));
                     text2.setTextColor(Color.parseColor("#009FCC"));
                     text3.setTextColor(Color.parseColor("#898989"));
@@ -70,9 +70,9 @@ public class MainActivity extends Activity {
                     if (mShezhi == null) {
                         mShezhi = new Setting_Fragment();
                     }
-                    btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search));
-                    btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_surroundings));
-                    btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_settings_change));
+                    btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crcx1));
+                    btn2.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crzb1));
+                    btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crsz2));
                     text1.setTextColor(Color.parseColor("#898989"));
                     text2.setTextColor(Color.parseColor("#898989"));
                     text3.setTextColor(Color.parseColor("#009FCC"));
@@ -132,7 +132,7 @@ public class MainActivity extends Activity {
         transaction.replace(R.id.fl, mChaxun);
         //4.执行更改
         transaction.commit();
-        btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search_change));
+        btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crcx2));
         text1.setTextColor(Color.parseColor("#009FCC"));
     }
 
@@ -150,9 +150,9 @@ public class MainActivity extends Activity {
         transaction.replace(R.id.fl, mShezhi);
         //4.执行更改
         transaction.commit();
-        btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_settings_change));
+        btn3.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crsz2));
         text3.setTextColor(Color.parseColor("#009FCC"));
-        btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.fragment_search));
+        btn1.setBackgroundDrawable(getResources().getDrawable(R.drawable.tb_crcx1));
         text1.setTextColor(Color.parseColor("#898989"));
     }
 }

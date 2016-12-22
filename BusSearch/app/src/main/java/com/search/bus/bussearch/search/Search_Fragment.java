@@ -99,7 +99,7 @@ public class Search_Fragment extends Fragment  implements
         list.add("承德");
         list.add("唐山");
         list.add("天津");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         Spinner sp = (Spinner)view1.findViewById(R.id.spacer);
         sp.setAdapter(adapter);
