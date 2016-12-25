@@ -211,7 +211,7 @@ public class Surround_Fragment extends Fragment implements LocationSource,
         aMap.setOnInfoWindowClickListener(new AMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-                Toast.makeText(context,"你点击了"+marker.getTitle(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,marker.getTitle(),Toast.LENGTH_SHORT).show();
             }
         });
         //点击标注覆盖物显示infowindow

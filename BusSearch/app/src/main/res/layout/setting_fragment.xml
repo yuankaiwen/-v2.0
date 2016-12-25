@@ -13,7 +13,7 @@ xmlns:tools="http://schemas.android.com/tools"
 
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-    android:background="@drawable/beijing12"
+    android:background="@drawable/cr6"
     tools:context="com.search.bus.bussearch.MainActivity"
 android:orientation="vertical">
 

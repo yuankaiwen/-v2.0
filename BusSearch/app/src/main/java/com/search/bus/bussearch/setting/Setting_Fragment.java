@@ -41,7 +41,7 @@ public class Setting_Fragment extends Fragment {
         about_us = (TextView)view.findViewById(R.id.about_us);
         introduce = (TextView)view.findViewById(R.id.introduce);
 
-        setListener();
+        //setListener();
 
         //版本信息、检查更新
         typeNewsListener();
@@ -58,6 +58,7 @@ public class Setting_Fragment extends Fragment {
 *页面选项触摸变色，不触摸恢复原装
 * 2016.12.8
 * */
+    /*
     private void setListener() {
         typeNews.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -116,6 +117,7 @@ public class Setting_Fragment extends Fragment {
             }
         });
     }
+    */
 
     /**
      * 给版本信息添加点击事件
