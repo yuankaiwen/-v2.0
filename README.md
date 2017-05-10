@@ -7,9 +7,9 @@
 ## 实训小组成员信息
 | Member    |   角色  | redmine主页 | github主页 |
 | :-------- |    :--: |
-| 苑凯文| UI设计，开发工程师| http://www.hostedredmine.com/users/57055 | https://github.com/yuankaiwen |
-| 夏晔| UI设计，开发工程师| http://www.hostedredmine.com/users/56859 | https://github.com/xiaye1 |
-| 温阳      | UI设计、测试工程师   | http://www.hostedredmine.com/users/56848 | https://github.com/wenyang321 |      
+| 苑凯文| UI设计，开发工程师| 
+| 夏晔| UI设计，开发工程师|
+| 温阳      | UI设计、测试工程师   |  
 
 
 ## app简介
