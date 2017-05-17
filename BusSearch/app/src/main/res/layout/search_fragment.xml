@@ -13,11 +13,17 @@
         android:orientation="vertical"
         >
 
-        <Spinner
-            android:layout_width="wrap_content"
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="260dp"
+            android:layout_marginTop="0dp"
+            android:id="@+id/Et_5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spacer"
-            />
+            android:hint="请输入城市"
+            android:background="@drawable/shape_white_frame"
+            android:textCursorDrawable="@null"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -104,14 +110,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal">
-    <Button
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/geoButton"
-        android:background="@drawable/tb1"
-        android:layout_marginTop="50dp"
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/geoButton"
+            android:background="@drawable/tb1"
+            android:layout_marginTop="50dp"
 
-        />
+            />
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/geoButton1"
+            android:background="@drawable/tb1"
+            android:layout_marginTop="50dp"
+            />
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/geoButton2"
+            android:background="@drawable/tb1"
+            android:layout_marginTop="50dp"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
