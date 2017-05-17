@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
     private Search_Fragment mChaxun;
     private Surround_Fragment mZhoubian;
     private Setting_Fragment mShezhi;
+
     View.OnClickListener Listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
