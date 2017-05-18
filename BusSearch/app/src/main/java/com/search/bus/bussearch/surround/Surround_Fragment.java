@@ -2,6 +2,7 @@ package com.search.bus.bussearch.surround;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -10,12 +11,16 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.Interpolator;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -34,15 +39,30 @@ import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.maps2d.model.MyLocationStyle;
 import com.amap.api.maps2d.model.Text;
 import com.amap.api.maps2d.model.TextOptions;
+import com.amap.api.maps2d.overlay.PoiOverlay;
+import com.amap.api.services.core.AMapException;
+import com.amap.api.services.core.PoiItem;
+import com.amap.api.services.core.SuggestionCity;
+import com.amap.api.services.help.Inputtips;
+import com.amap.api.services.help.InputtipsQuery;
+import com.amap.api.services.help.Tip;
+import com.amap.api.services.poisearch.PoiResult;
+import com.amap.api.services.poisearch.PoiSearch;
 import com.search.bus.bussearch.R;
+import com.search.bus.bussearch.load.ToastUtil;
+import com.search.bus.bussearch.search.AMapUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * 作者 夏晔         修改者：李越     修改者：汪仑
- *  2016/11/29.      2016.11.29       2016.12.1
- *  编写             添加地图控件     添加定位功能
+ * 作者 夏晔         修改者：李越     修改者：汪仑    修改者：苑凯文
+ *  2016/11/29.      2016.11.29       2016.12.1       2017.5.17
+ *  编写             添加地图控件     添加定位功能    添加地点搜索功能
  */
 public class Surround_Fragment extends Fragment implements LocationSource,
-        AMapLocationListener {
+        AMapLocationListener,AMap.OnMarkerClickListener, TextWatcher,
+        PoiSearch.OnPoiSearchListener, View.OnClickListener, Inputtips.InputtipsListener{
 
     private Context context;
     private FragmentManager fm;
@@ -77,6 +97,14 @@ public class Surround_Fragment extends Fragment implements LocationSource,
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
     private AMapLocationClientOption mLocationOption;
+    //添加地点搜索组件
+    private AutoCompleteTextView searchText;// 输入搜索关键字
+    private String keyWord = "";// 要输入的poi搜索关键字
+    private ProgressDialog progDialog = null;// 搜索时进度条
+    private PoiResult poiResult; // poi返回的结果
+    private PoiSearch.Query query;// Poi查询条件类
+    private PoiSearch poiSearch;// POI搜索
+    private int currentPage = 0;// 当前页面，从0开始计数
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -92,9 +120,167 @@ public class Surround_Fragment extends Fragment implements LocationSource,
             setUpMap();
         }
         setLocation(); //定位
+        Button searButton = (Button)view.findViewById(R.id.searchButton);
+        searButton.setOnClickListener(this);
+        searchText = (AutoCompleteTextView)view.findViewById(R.id.keyWord);
+        searchText.addTextChangedListener(this);// 添加文本输入框监听事件
         return view;
     }
+    /**
+     * 点击搜索按钮
+     */
+    public void searchButton() {
+        keyWord = AMapUtil.checkEditText(searchText);
+        if ("".equals(keyWord)) {
+            ToastUtil.show(getActivity(), "请输入搜索关键字");
+            return;
+        } else {
+            doSearchQuery();
+        }
+    }
 
+
+    /**
+     * 开始进行poi搜索
+     */
+    protected void doSearchQuery() {
+
+        currentPage = 0;
+        query = new PoiSearch.Query(keyWord, "", "");// 第一个参数表示搜索字符串，第二个参数表示poi搜索类型，第三个参数表示poi搜索区域（空字符串代表全国）
+        query.setPageSize(10);// 设置每页最多返回多少条poiitem
+        query.setPageNum(currentPage);// 设置查第一页
+        query.setCityLimit(true);
+
+        poiSearch = new PoiSearch(getActivity(), query);
+        poiSearch.setOnPoiSearchListener(this);
+        poiSearch.searchPOIAsyn();
+    }
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        marker.showInfoWindow();
+        return false;
+    }
+    /**
+     * poi没有搜索到数据，返回一些推荐城市的信息
+     */
+    private void showSuggestCity(List<SuggestionCity> cities) {
+        String infomation = "推荐城市\n";
+        for (int i = 0; i < cities.size(); i++) {
+            infomation += "城市名称:" + cities.get(i).getCityName() + "城市区号:"
+                    + cities.get(i).getCityCode() + "城市编码:"
+                    + cities.get(i).getAdCode() + "\n";
+        }
+        ToastUtil.show(getActivity(), infomation);
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count,
+                                  int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        String newText = s.toString().trim();
+        if (!AMapUtil.IsEmptyOrNullString(newText)) {
+            InputtipsQuery inputquery = new InputtipsQuery(newText, "");
+            Inputtips inputTips = new Inputtips(getActivity(), inputquery);
+            inputTips.setInputtipsListener(this);
+            inputTips.requestInputtipsAsyn();
+        }
+    }
+
+
+    /**
+     * POI信息查询回调方法
+     */
+    @Override
+    public void onPoiSearched(PoiResult result, int rCode) {
+        if (rCode == AMapException.CODE_AMAP_SUCCESS) {
+            if (result != null && result.getQuery() != null) {// 搜索poi的结果
+                if (result.getQuery().equals(query)) {// 是否是同一条
+                    poiResult = result;
+                    // 取得搜索到的poiitems有多少页
+                    List<PoiItem> poiItems = poiResult.getPois();// 取得第一页的poiitem数据，页数从数字0开始
+                    List<SuggestionCity> suggestionCities = poiResult
+                            .getSearchSuggestionCitys();// 当搜索不到poiitem数据时，会返回含有搜索关键字的城市信息
+
+                    if (poiItems != null && poiItems.size() > 0) {
+                        aMap.clear();// 清理之前的图标
+                        PoiOverlay poiOverlay = new PoiOverlay(aMap, poiItems);
+                        poiOverlay.removeFromMap();
+                        poiOverlay.addToMap();
+                        poiOverlay.zoomToSpan();
+                    } else if (suggestionCities != null
+                            && suggestionCities.size() > 0) {
+                        showSuggestCity(suggestionCities);
+                    } else {
+                        ToastUtil.show(getActivity(),
+                                R.string.no_result);
+                    }
+                }
+            } else {
+                ToastUtil.show(getActivity(),
+                        R.string.no_result);
+            }
+        } else {
+            ToastUtil.showerror(getActivity(), rCode);
+        }
+
+    }
+
+    @Override
+    public void onPoiItemSearched(PoiItem item, int rCode) {
+        // TODO Auto-generated method stub
+
+    }
+
+    /**
+     * Button点击事件回调方法
+     */
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            /**
+             * 点击搜索按钮
+             */
+            case R.id.searchButton:
+                searchButton();
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
+    @Override
+    public void onGetInputtips(List<Tip> tipList, int rCode) {
+        if (rCode == AMapException.CODE_AMAP_SUCCESS) {// 正确返回
+            List<String> listString = new ArrayList<String>();
+            for (int i = 0; i < tipList.size(); i++) {
+                listString.add(tipList.get(i).getName());
+            }
+            ArrayAdapter<String> aAdapter = new ArrayAdapter<String>(
+                    getActivity(),
+                    R.layout.route_inputs, listString);
+            searchText.setAdapter(aAdapter);
+            aAdapter.notifyDataSetChanged();
+        } else {
+            ToastUtil.showerror(getActivity(), rCode);
+        }
+
+    }
+
+    public View getInfoContents(Marker marker) {
+        return null;
+    }
     /**
      * 作者：李越                修改者：汪仑
      * 2016.12.1                 2016.12.6
