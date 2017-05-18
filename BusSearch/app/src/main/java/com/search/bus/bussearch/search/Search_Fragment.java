@@ -83,7 +83,7 @@ public class Search_Fragment extends Fragment  implements
         mapView.onCreate(savedInstanceState);// 此方法必须重写
         /*
         * 编写下拉城市
-        * */
+
         List<String> list = new ArrayList<String>();
         list.add("石家庄");
         list.add("天津");
@@ -115,7 +115,7 @@ public class Search_Fragment extends Fragment  implements
                 city = "石家庄";
             }
         });
-
+        */
         et1 =(AutoCompleteTextView)view1.findViewById(R.id.Et_1);
         et2 =(AutoCompleteTextView)view1.findViewById(R.id.Et_2);
         tv1 = (TextView)view1.findViewById(R.id.Tv_1);
