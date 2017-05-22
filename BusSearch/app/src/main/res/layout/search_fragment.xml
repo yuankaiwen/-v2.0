@@ -6,7 +6,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cr5">
+    android:background="@drawable/cr1">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:id="@+id/geoButton1"
-            android:background="@drawable/tb1"
+            android:background="@drawable/tb2"
             android:layout_marginTop="50dp"
             />
         <Button
@@ -131,7 +131,7 @@
             android:layout_height="80dp"
             android:layout_marginLeft="20dp"
             android:id="@+id/geoButton2"
-            android:background="@drawable/tb1"
+            android:background="@drawable/tb3"
             android:layout_marginTop="50dp"
             />
     </LinearLayout>

@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -67,6 +68,7 @@ public class Search_Fragment extends Fragment  implements
     private MapView mapView;
     private AutoCompleteTextView et1;
     private AutoCompleteTextView et2;
+    private EditText et5;
     private TextView tv1;
     private LocationSource.OnLocationChangedListener mListener;
     private AMapLocationClient mlocationClient;
@@ -116,6 +118,7 @@ public class Search_Fragment extends Fragment  implements
             }
         });
         */
+        et5 =(EditText)view1.findViewById(R.id.Et_5);
         et1 =(AutoCompleteTextView)view1.findViewById(R.id.Et_1);
         et2 =(AutoCompleteTextView)view1.findViewById(R.id.Et_2);
         tv1 = (TextView)view1.findViewById(R.id.Tv_1);
@@ -382,6 +385,7 @@ public class Search_Fragment extends Fragment  implements
     public void onClick(View v) {
         String name = et1.getText().toString();
         String name1 = et2.getText().toString();
+        city = et5.getText().toString();
         switch (v.getId()) {
             case R.id.Bt_1:
                 et1.setText("我的位置");
