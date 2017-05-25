@@ -125,11 +125,13 @@ public class Search_Fragment extends Fragment  implements
         et1.addTextChangedListener(this);
         et2.addTextChangedListener(this);
         Button geoButton = (Button)view1.findViewById(R.id.geoButton);
+        Button geoButton1 = (Button)view1.findViewById(R.id.geoButton1);
         Button bt1 =(Button)view1.findViewById(R.id.Bt_1);
         Button bt2 =(Button)view1.findViewById(R.id.Bt_2);
         bt2.setOnClickListener(this);
         bt1.setOnClickListener(this);
         geoButton.setOnClickListener(this);
+        geoButton1.setOnClickListener(this);
 
         //读取存储的起始位置
         SharedPreferences preferences=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
@@ -392,6 +394,7 @@ public class Search_Fragment extends Fragment  implements
                 break;
             /**
              * 响应地理编码按钮
+             * 执行公交查询
              */
             case R.id.geoButton:
                 if(b == 0){
@@ -411,7 +414,7 @@ public class Search_Fragment extends Fragment  implements
 
                 showDialog();
                 /*
-                * 将跳转页面延迟几秒进行使前两个函数能够调用完成
+                * 将跳转页面延迟几秒进行
                 * */
                 Timer timer=new Timer();
                 TimerTask task=new TimerTask(){
@@ -424,6 +427,41 @@ public class Search_Fragment extends Fragment  implements
                     }
                 };
                 timer.schedule(task, 2000);
+                break;
+            /*
+            * 执行驾车路线查询
+            * */
+            case R.id.geoButton1:
+                if(b == 0){
+                    String Name = et1.getText().toString();
+                    String Name1 = et2.getText().toString();
+                    if(Name.equals("我的位置")){
+                        getLatlon(Name1);
+                    }
+                    else{
+                        addressName.setLongitude(x.getLongitude());
+                        addressName.setLatitude(x.getLatitude());
+                        getLatlon(Name);
+                        getLatlon(Name1);
+                    }
+                }
+                b = 0;
+
+                showDialog();
+                /*
+                * 将跳转页面延迟几秒进行
+                * */
+                Timer timer1=new Timer();
+                TimerTask task1=new TimerTask(){
+                    public void run(){
+                        Intent intent = new Intent();
+                        intent.setClass(getActivity(),DriveRouteActivity.class);
+                        startActivity(intent);
+                        dismissDialog();
+                        getActivity().overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    }
+                };
+                timer1.schedule(task1, 2000);
                 break;
             /*
             * 交换起始地点
