@@ -38,6 +38,8 @@
         <activity android:name=".search.BusRouteDetailActivity"/>
         <activity android:name=".search.DriveRouteActivity"/>
         <activity android:name=".search.DriveRouteDetailActivity"/>
+        <activity android:name=".search.WalkRouteActivity"/>
+        <activity android:name=".search.WalkRouteDetailActivity"/>
         <activity android:name=".setting.AboutusActivity"/>
         <activity android:name=".setting.Introduce"/>
         <service android:name="com.amap.api.location.APSService"></service>
